@@ -17,33 +17,33 @@ const profile = {
     { number: "22992180404", label: "WhatsApp Secundário" }
   ],
   location: "Brazil (Remote)",
-  aboutEN: "AI Specialist, Data Engineer, and Full-Stack Developer with a robust foundation in mechanical engineering and industrial automation, enabling a unique approach to solving complex architectural problems. Specialized in LLM fine-tuning (LoRA, QLoRA, DPO), PyTorch, Hugging Face ecosystem, local AI orchestration (Model Context Protocol / MCP, vLLM, Ollama), building highly scalable data pipelines, distributed systems, and robust backend architectures using Python, Java, and Node.js. Experienced in cloud infrastructure, container orchestration (Docker/Kubernetes), and automating CI/CD workflows for enterprise-grade AI solutions.",
-  aboutPT: "Especialista em IA, Engenheiro de Dados e Desenvolvedor Full-Stack com sólida base em engenharia mecânica e automação industrial, proporcionando uma abordagem única para a resolução de problemas arquitetônicos complexos. Especializado em fine-tuning de LLMs (LoRA, QLoRA, DPO), PyTorch, ecossistema Hugging Face, orquestração de IA local (Model Context Protocol / MCP, vLLM, Ollama), construção de pipelines de dados altamente escaláveis, sistemas distribuídos e arquiteturas de backend robustas utilizando Python, Java e Node.js. Experiência em infraestrutura em nuvem, orquestração de contêineres (Docker/Kubernetes) e automação de fluxos de CI/CD para soluções corporativas de IA.",
-  stack: ["PyTorch", "Hugging Face", "vLLM", "Ollama", "MCP", "LangChain", "Node.js", "Python", "Java", "TypeScript", "AWS", "Docker", "Kubernetes", "PostgreSQL", "Linux", "Git"],
+  aboutEN: "AI Specialist and Senior Data Engineer with a strong foundation in mechanical engineering and industrial automation (IT/OT). Specialized in Generative AI (LLMs, RAG, Prompt Engineering, Fine-Tuning) and Microsoft Azure Data & Analytics ecosystems (Azure ML, Databricks, Fabric, ADF, MLflow, Purview). Experienced in architecting scalable data pipelines, end-to-end MLOps lifecycles, enterprise governance, and robust distributed backend architectures using Python, Java, and Node.js.",
+  aboutPT: "Especialista em IA e Engenheiro de Dados Sênior com sólida base em engenharia mecânica e automação industrial (integração IT/OT). Especializado em IA Generativa (LLMs, RAG, Prompt Engineering, Fine-Tuning) e no ecossistema Microsoft Azure Data & Analytics (Azure ML, Databricks, Fabric, ADF, MLflow, Purview). Experiência comprovada na arquitetura de pipelines de dados escaláveis, ciclo de vida MLOps, governança corporativa e sistemas distribuídos robustos com Python, Java e Node.js.",
+  stack: ["Azure ML", "Azure Databricks", "Microsoft Fabric", "Azure Data Factory", "Generative AI / RAG", "MLOps & MLflow", "PyTorch", "Hugging Face", "vLLM", "Model Context Protocol (MCP)", "Python", "Node.js", "Java", "PostgreSQL", "Azure SQL", "CosmosDB", "Microsoft Purview", "Power BI", "Docker", "Kubernetes", "Git"],
   experience: [
     {
       roleEN: "AI Specialist",
       rolePT: "Especialista em IA",
       company: "micro1",
       period: "Aug 2026 – Present",
-      descEN: "Drive end-to-end LLM development, fine-tuning, evaluation, and alignment. Conduct SFT and DPO/RLHF using PyTorch, Hugging Face (PEFT, LoRA/QLoRA), Unsloth, and Axolotl; perform adversarial testing to eliminate hallucinations and logic flaws. Evaluate AI code generation across Python, TypeScript, Node.js, FastAPI, React, Next.js, and JavaFX. Architect high-throughput local AI inference environments (MCP, vLLM, Triton Server, Ollama) on NVIDIA hardware (L4 / 24GB VRAM). Develop prompt engineering frameworks and curate synthetic data pipelines (Self-Instruct, Evol-Instruct) with automated validation.",
-      descPT: "Lidera o desenvolvimento, fine-tuning, avaliação e alinhamento de LLMs de ponta a ponta. Conduz SFT e DPO/RLHF com PyTorch, Hugging Face (PEFT, LoRA/QLoRA), Unsloth e Axolotl; realiza testes adversariais para eliminar alucinações e falhas de lógica. Avalia geração de código por IA em Python, TypeScript, Node.js, FastAPI, React, Next.js e JavaFX. Arquiteta ambientes de inferência local de alta performance (MCP, vLLM, Triton Server, Ollama) em hardware NVIDIA (L4 / 24GB VRAM). Desenvolve frameworks de prompt engineering e curadoria de pipelines de dados sintéticos (Self-Instruct, Evol-Instruct) com validação automatizada."
+      descEN: "Drive end-to-end Generative AI and LLM development, fine-tuning (LoRA/QLoRA, DPO), evaluation, and MLOps lifecycle management. Implement RAG architectures, prompt engineering frameworks, and enterprise AI governance leveraging Azure AI Foundry, Azure ML, MLflow, PyTorch, and Hugging Face. Architect high-throughput inference environments (MCP, vLLM, Ollama) on dedicated NVIDIA hardware (L4 GPU / 24GB VRAM) and curate automated synthetic data pipelines.",
+      descPT: "Lidera o desenvolvimento de IA Generativa e LLMs de ponta a ponta, fine-tuning (LoRA/QLoRA, DPO), avaliação e gestão do ciclo de vida MLOps. Implementa arquiteturas RAG, frameworks de prompt engineering e governança de IA corporativa com Azure AI Foundry, Azure ML, MLflow, PyTorch e Hugging Face. Arquiteta ambientes de inferência de alta performance (MCP, vLLM, Ollama) em hardware NVIDIA dedicado (GPU L4 / 24GB VRAM) e desenvolve pipelines automatizados de dados sintéticos."
     },
     {
       roleEN: "Full-Stack Developer & DevOps Engineer",
       rolePT: "Desenvolvedor Full-Stack & Engenheiro DevOps",
       company: "ABZ Serviços",
       period: "Jan 2025 – Present",
-      descEN: "Architected EmployeeHub (Node.js/React/TypeScript/PostgreSQL), reducing manual HR processing by 40%. Led cloud migration of legacy Windows Servers with zero downtime. Deployed WireGuard VPN for 50+ remote employees. Implemented CI/CD pipelines with GitHub Actions and Docker.",
-      descPT: "Arquitetou o EmployeeHub (Node.js/React/TypeScript/PostgreSQL), reduzindo 40% do processamento manual de RH. Liderou migração de servidores Windows Server legados para nuvem com zero downtime. Implantou VPN WireGuard para 50+ funcionários remotos. Implementou pipelines de CI/CD com GitHub Actions e Docker."
+      descEN: "Architected EmployeeHub (Node.js/React/TypeScript/PostgreSQL), reducing manual processing by 40%. Engineered enterprise data integration and ETL workflows leveraging Azure Data Factory (ADF), Azure SQL, SSIS, and Power BI dashboards. Led cloud infrastructure modernization, security and compliance architectures, WireGuard VPN deployment, and Docker/GitHub Actions CI/CD pipelines.",
+      descPT: "Arquitetou o EmployeeHub (Node.js/React/TypeScript/PostgreSQL), reduzindo 40% do processamento manual. Desenvolveu integrações de dados corporativos e fluxos ETL com Azure Data Factory (ADF), Azure SQL, SSIS e dashboards no Power BI. Liderou a modernização de infraestrutura em nuvem, arquiteturas de segurança e conformidade, implantação de VPN WireGuard e pipelines CI/CD com Docker e GitHub Actions."
     },
     {
       roleEN: "Python Developer & Spatial Data Engineer",
       rolePT: "Desenvolvedor Python & Engenheiro de Dados Espaciais",
       company: "BRTech3D",
       period: "Mar 2024 – Mar 2025",
-      descEN: "Developed high-performance Python scripts (NumPy, SciPy, Open3D) for geospatial data pipelines, optimizing processing of 100M+ point cloud data points. Increased processing speed by 40% and improved data compression. Modeled PostgreSQL databases with PostGIS extension for complex spatial queries.",
-      descPT: "Desenvolveu scripts de alta performance em Python (NumPy, SciPy, Open3D) para pipelines de dados geoespaciais, otimizando o processamento de nuvens de pontos com mais de 100 milhões de dados. Aumentou velocidade de processamento em 40% e melhorou compressão de dados. Modelou bancos PostgreSQL com extensão PostGIS para consultas espaciais complexas."
+      descEN: "Developed high-performance Python scripts (NumPy, SciPy, Open3D) for geospatial data pipelines, optimizing 100M+ point cloud processing by 40%. Structured Azure Data Lake storage and PostgreSQL/PostGIS spatial databases with automated API integrations for complex analytics.",
+      descPT: "Desenvolveu scripts de alta performance em Python (NumPy, SciPy, Open3D) para pipelines de dados geoespaciais, otimizando o processamento de 100M+ pontos em 40%. Estruturou armazenamento em Azure Data Lake e bancos espaciais PostgreSQL/PostGIS com integrações de API automatizadas para análise complexa."
     },
     {
       roleEN: "Technical Documentation & Support Specialist",
@@ -91,16 +91,16 @@ const profile = {
     { school: "ETP Escola Técnica Brasil", course: "Technical Diploma in Industrial Automation", coursePT: "Técnico em Automação Industrial", date: "Jan 2014 – Jan 2016" }
   ],
   skills: {
-    aiEN: "PyTorch, Hugging Face (PEFT, LoRA/QLoRA, TRL), DeepSpeed, Unsloth, vLLM, Model Context Protocol (MCP), LangChain, LlamaIndex, Ollama, Triton Inference, Synthetic Data Generation.",
-    aiPT: "PyTorch, Hugging Face (PEFT, LoRA/QLoRA, TRL), DeepSpeed, Unsloth, vLLM, Model Context Protocol (MCP), LangChain, LlamaIndex, Ollama, Triton Inference, Geração de Dados Sintéticos.",
-    backendEN: "Python 3 (NumPy, SciPy), Java (Spring Boot), Node.js, Express, TypeScript, REST & GraphQL APIs, JWT Auth.",
-    backendPT: "Python 3 (NumPy, SciPy), Java (Spring Boot), Node.js, Express, TypeScript, APIs REST & GraphQL, Autenticação JWT.",
-    cloudEN: "Docker, Kubernetes (Concepts), AWS S3, Linux (Ubuntu/CentOS), Proxmox, WireGuard VPN, Cloudflare.",
-    cloudPT: "Docker, Kubernetes (Conceitos), AWS S3, Linux (Ubuntu/CentOS), Proxmox, WireGuard VPN, Cloudflare.",
-    dbEN: "PostgreSQL, PostGIS, SQLite, NoSQL, GitHub Actions (CI/CD), Git, Advanced Scripting (PowerShell/Python).",
-    dbPT: "PostgreSQL, PostGIS, SQLite, NoSQL, GitHub Actions (CI/CD), Git, Scripting Avançado (PowerShell/Python).",
-    systemsEN: "Windows Server (2012-2025), Active Directory, DNS/DHCP, Distributed Systems Architecture.",
-    systemsPT: "Windows Server (2012-2025), Active Directory, DNS/DHCP, Arquitetura de Sistemas Distribuídos."
+    aiEN: "Generative AI (GenAI), LLMs, RAG, Prompt Engineering, Model Fine-Tuning (LoRA/QLoRA), Azure AI Foundry, Azure ML, MLOps, MLflow, ML Lifecycle Management, PyTorch, Hugging Face, vLLM, Ollama, MCP, Synthetic Data Generation.",
+    aiPT: "IA Generativa (GenAI), LLMs, RAG, Engenharia de Prompts, Fine-Tuning de Modelos (LoRA/QLoRA), Azure AI Foundry, Azure ML, MLOps, MLflow, Ciclo de Vida de ML, PyTorch, Hugging Face, vLLM, Ollama, MCP, Geração de Dados Sintéticos.",
+    backendEN: "Data Engineering (ADF, Databricks, Microsoft Fabric, SSIS), Python 3 (NumPy, SciPy), Java (Spring Boot), Node.js, Express, TypeScript, REST & GraphQL APIs, API Integration.",
+    backendPT: "Engenharia de Dados (ADF, Databricks, Microsoft Fabric, SSIS), Python 3 (NumPy, SciPy), Java (Spring Boot), Node.js, Express, TypeScript, APIs REST & GraphQL, Integração de APIs.",
+    cloudEN: "Microsoft Azure (Data Lake, Azure ML, Fabric, Databricks, ADF), AWS S3, Docker, Kubernetes, Linux (Ubuntu/CentOS), Proxmox, WireGuard VPN, Cloudflare.",
+    cloudPT: "Microsoft Azure (Data Lake, Azure ML, Fabric, Databricks, ADF), AWS S3, Docker, Kubernetes, Linux (Ubuntu/CentOS), Proxmox, WireGuard VPN, Cloudflare.",
+    dbEN: "Azure SQL, CosmosDB, PostgreSQL, PostGIS, SQLite, Microsoft Purview (Data Governance), GitHub Actions (CI/CD), Git, Advanced Scripting.",
+    dbPT: "Azure SQL, CosmosDB, PostgreSQL, PostGIS, SQLite, Microsoft Purview (Governança de Dados), GitHub Actions (CI/CD), Git, Scripting Avançado.",
+    systemsEN: "Solution & Analytics Architecture, Enterprise AI & Data Governance, Security & Compliance Architecture, Power BI, IT/OT Integration, Windows Server (Active Directory, DNS/DHCP).",
+    systemsPT: "Arquitetura de Soluções & Analytics, Governança de Dados & IA Corporativa, Segurança & Conformidade, Power BI, Integração IT/OT, Windows Server (Active Directory, DNS/DHCP)."
   },
   languages: {
     en: "Portuguese: Native | English: Fluent (C1) | Spanish/Italian: Advanced technical reading.",
@@ -120,10 +120,10 @@ const i18n = {
     allRights: "Todos os direitos reservados.",
     chatgptDesc: "Especialista em Prompt Engineering e automação com IA.",
     skillsTitle: "Competências Técnicas",
-    backendLabel: "Backend & Engenharia de Dados",
-    cloudLabel: "Cloud & DevOps",
-    dbLabel: "Bancos de Dados & CI/CD",
-    systemsLabel: "Sistemas Corporativos",
+    backendLabel: "Engenharia de Dados & Backend",
+    cloudLabel: "Cloud & MLOps",
+    dbLabel: "Bancos de Dados & Governança",
+    systemsLabel: "Arquitetura, Governança & BI",
     languagesLabel: "Idiomas",
     projectsTitle: "Projetos Relevantes",
     mcpDesc: "Desenvolveu e integrou um sistema de grafo de conhecimento no Model Context Protocol, configurando ferramentas para interfaceamento com LLMs locais (Ollama em GPUs NVIDIA).",
@@ -140,10 +140,10 @@ const i18n = {
     allRights: "All rights reserved.",
     chatgptDesc: "Expert in Prompt Engineering and AI automation.",
     skillsTitle: "Technical Skills",
-    backendLabel: "Backend & Data Engineering",
-    cloudLabel: "Cloud & DevOps",
-    dbLabel: "Databases & CI/CD",
-    systemsLabel: "Enterprise Systems",
+    backendLabel: "Data Engineering & Backend",
+    cloudLabel: "Cloud & MLOps",
+    dbLabel: "Databases & Governance",
+    systemsLabel: "Architecture, Governance & BI",
     languagesLabel: "Languages",
     projectsTitle: "Relevant Projects",
     mcpDesc: "Developed and integrated a knowledge graph system into the Model Context Protocol, configuring tools to interface with local LLMs (Ollama on NVIDIA GPUs).",
@@ -308,20 +308,15 @@ app.get('/', (req, res) => {
                         <tr><th>Skill / Technology</th><th>Years</th><th>Level</th></tr>
                     </thead>
                     <tbody>
-                        <tr><td>AI Engineering & LLMs (PyTorch, Hugging Face)</td><td>2 years</td><td>Senior</td></tr>
-                        <tr><td>LLM Fine-Tuning & Quantization (LoRA, Unsloth, vLLM)</td><td>2 years</td><td>Senior</td></tr>
-                        <tr><td>Backend Development</td><td>9 years</td><td>Senior</td></tr>
-                        <tr><td>Python</td><td>9 years</td><td>Senior</td></tr>
-                        <tr><td>SQL & NoSQL</td><td>9 years</td><td>Senior</td></tr>
-                        <tr><td>RESTful APIs</td><td>6 years</td><td>Senior</td></tr>
-                        <tr><td>Docker</td><td>6 years</td><td>Senior</td></tr>
-                        <tr><td>Data Engineering</td><td>5 years</td><td>Senior</td></tr>
-                        <tr><td>Node.js</td><td>5 years</td><td>Senior</td></tr>
-                        <tr><td>Java (Spring Boot)</td><td>4 years</td><td>Mid / Senior</td></tr>
-                        <tr><td>AWS</td><td>4 years</td><td>Mid</td></tr>
-                        <tr><td>GraphQL</td><td>3 years</td><td>Mid</td></tr>
-                        <tr><td>Kubernetes</td><td>3 years</td><td>Mid</td></tr>
-                        <tr><td>OCI Cloud</td><td>2 years</td><td>Mid</td></tr>
+                        <tr><td>Generative AI, LLMs & RAG (Azure AI Foundry, Prompt Eng., Fine-Tuning)</td><td>2 years</td><td>Senior</td></tr>
+                        <tr><td>MLOps & ML Lifecycle Management (Azure ML, MLflow, vLLM)</td><td>2 years</td><td>Senior</td></tr>
+                        <tr><td>Microsoft Azure Data & Analytics Stack (Databricks, Fabric, ADF)</td><td>3 years</td><td>Senior</td></tr>
+                        <tr><td>Data Engineering & ETL/ELT (Data Lake, SSIS, API Integration)</td><td>5 years</td><td>Senior</td></tr>
+                        <tr><td>Backend Development & APIs (Python, Node.js, Java)</td><td>9 years</td><td>Senior</td></tr>
+                        <tr><td>Databases & Storage (PostgreSQL, Azure SQL, CosmosDB)</td><td>9 years</td><td>Senior</td></tr>
+                        <tr><td>Solution Architecture, IT/OT & Data Governance (Purview)</td><td>4 years</td><td>Senior</td></tr>
+                        <tr><td>Business Intelligence & Reporting (Power BI)</td><td>4 years</td><td>Senior</td></tr>
+                        <tr><td>Cloud & DevOps (Azure, AWS, Docker, Kubernetes)</td><td>6 years</td><td>Senior</td></tr>
                     </tbody>
                 </table>
             </div>
@@ -336,20 +331,15 @@ app.get('/', (req, res) => {
                         <tr><th>Habilidade / Tecnologia</th><th>Anos</th><th>Nível</th></tr>
                     </thead>
                     <tbody>
-                        <tr><td>Engenharia de IA & LLMs (PyTorch, Hugging Face)</td><td>2 anos</td><td>Sênior</td></tr>
-                        <tr><td>Fine-Tuning & Quantização de LLMs (LoRA, Unsloth, vLLM)</td><td>2 anos</td><td>Sênior</td></tr>
-                        <tr><td>Desenvolvimento Backend</td><td>9 anos</td><td>Sênior</td></tr>
-                        <tr><td>Python</td><td>9 anos</td><td>Sênior</td></tr>
-                        <tr><td>SQL & NoSQL</td><td>9 anos</td><td>Sênior</td></tr>
-                        <tr><td>APIs RESTful</td><td>6 anos</td><td>Sênior</td></tr>
-                        <tr><td>Docker</td><td>6 anos</td><td>Sênior</td></tr>
-                        <tr><td>Engenharia de Dados</td><td>5 anos</td><td>Sênior</td></tr>
-                        <tr><td>Node.js</td><td>5 anos</td><td>Sênior</td></tr>
-                        <tr><td>Java (Spring Boot)</td><td>4 anos</td><td>Pleno / Sênior</td></tr>
-                        <tr><td>AWS</td><td>4 anos</td><td>Pleno</td></tr>
-                        <tr><td>GraphQL</td><td>3 anos</td><td>Pleno</td></tr>
-                        <tr><td>Kubernetes</td><td>3 anos</td><td>Pleno</td></tr>
-                        <tr><td>OCI Cloud</td><td>2 anos</td><td>Pleno</td></tr>
+                        <tr><td>IA Generativa, LLMs & RAG (Azure AI Foundry, Prompt Eng., Fine-Tuning)</td><td>2 anos</td><td>Sênior</td></tr>
+                        <tr><td>MLOps & Gestão de Ciclo de Vida de ML (Azure ML, MLflow, vLLM)</td><td>2 anos</td><td>Sênior</td></tr>
+                        <tr><td>Microsoft Azure Data & Analytics Stack (Databricks, Fabric, ADF)</td><td>3 anos</td><td>Sênior</td></tr>
+                        <tr><td>Engenharia de Dados & ETL/ELT (Data Lake, SSIS, Integração de APIs)</td><td>5 anos</td><td>Sênior</td></tr>
+                        <tr><td>Desenvolvimento Backend & APIs (Python, Node.js, Java)</td><td>9 anos</td><td>Sênior</td></tr>
+                        <tr><td>Bancos de Dados & Armazenamento (PostgreSQL, Azure SQL, CosmosDB)</td><td>9 anos</td><td>Sênior</td></tr>
+                        <tr><td>Arquitetura de Soluções, IT/OT & Governança de Dados (Purview)</td><td>4 anos</td><td>Sênior</td></tr>
+                        <tr><td>Business Intelligence & Relatórios (Power BI)</td><td>4 anos</td><td>Sênior</td></tr>
+                        <tr><td>Cloud & DevOps (Azure, AWS, Docker, Kubernetes)</td><td>6 anos</td><td>Sênior</td></tr>
                     </tbody>
                 </table>
             </div>
@@ -611,28 +601,23 @@ app.get('/resume', (req, res) => {
             <table class="matrix-table">
                 <thead><tr><th>Skill / Technology</th><th>Years</th><th>Level</th></tr></thead>
                 <tbody>
-                    <tr><td>AI Engineering & LLMs (PyTorch, Hugging Face)</td><td>2 years</td><td>Senior</td></tr>
-                    <tr><td>LLM Fine-Tuning & Quantization (LoRA, Unsloth, vLLM)</td><td>2 years</td><td>Senior</td></tr>
-                    <tr><td>Backend Development</td><td>9 years</td><td>Senior</td></tr>
-                    <tr><td>Python</td><td>9 years</td><td>Senior</td></tr>
-                    <tr><td>SQL & NoSQL</td><td>9 years (each)</td><td>Senior</td></tr>
-                    <tr><td>RESTful APIs</td><td>6 years</td><td>Senior</td></tr>
-                    <tr><td>Docker</td><td>6 years</td><td>Senior</td></tr>
-                    <tr><td>Data Engineering</td><td>5 years</td><td>Senior</td></tr>
-                    <tr><td>Node.js</td><td>5 years</td><td>Senior</td></tr>
-                    <tr><td>Java (Spring Boot)</td><td>4 years</td><td>Mid / Senior</td></tr>
-                    <tr><td>AWS</td><td>4 years</td><td>Mid</td></tr>
-                    <tr><td>GraphQL</td><td>3 years</td><td>Mid</td></tr>
-                    <tr><td>Kubernetes</td><td>3 years</td><td>Mid</td></tr>
-                    <tr><td>OCI Cloud</td><td>2 years</td><td>Mid</td></tr>
+                    <tr><td>Generative AI, LLMs & RAG (Azure AI Foundry, Prompt Eng., Fine-Tuning)</td><td>2 years</td><td>Senior</td></tr>
+                    <tr><td>MLOps & ML Lifecycle Management (Azure ML, MLflow, vLLM)</td><td>2 years</td><td>Senior</td></tr>
+                    <tr><td>Microsoft Azure Data & Analytics Stack (Databricks, Fabric, ADF)</td><td>3 years</td><td>Senior</td></tr>
+                    <tr><td>Data Engineering & ETL/ELT (Data Lake, SSIS, API Integration)</td><td>5 years</td><td>Senior</td></tr>
+                    <tr><td>Backend Development & APIs (Python, Node.js, Java)</td><td>9 years</td><td>Senior</td></tr>
+                    <tr><td>Databases & Storage (PostgreSQL, Azure SQL, CosmosDB)</td><td>9 years</td><td>Senior</td></tr>
+                    <tr><td>Solution Architecture, IT/OT & Data Governance (Purview)</td><td>4 years</td><td>Senior</td></tr>
+                    <tr><td>Business Intelligence & Reporting (Power BI)</td><td>4 years</td><td>Senior</td></tr>
+                    <tr><td>Cloud & DevOps (Azure, AWS, Docker, Kubernetes)</td><td>6 years</td><td>Senior</td></tr>
                 </tbody>
             </table>
         </section>
         <section>
             <h3>Professional Experience</h3>
-            <div class="job"><div class="job-header"><span class="job-title">AI Specialist</span><span class="job-meta">micro1 • Aug 2026 – Present</span></div><ul class="job-details"><li>Drive the end-to-end development, fine-tuning, evaluation, and alignment of Large Language Models (LLMs), maximizing algorithmic precision, logical reasoning, and code generation quality.</li><li>Conduct Supervised Fine-Tuning (SFT) and Direct Preference Optimization (DPO/RLHF) using PyTorch, Hugging Face (PEFT, LoRA/QLoRA), Unsloth, and Axolotl; perform adversarial testing to eliminate hallucinations and logic flaws.</li><li>Rigorously evaluate AI code generation across Python, TypeScript, Node.js, FastAPI, React, Next.js, and JavaFX, benchmarking data structure choices, dynamic execution, and complex API integrations.</li><li>Architect high-throughput local AI inference and testing environments on Windows/Linux using MCP, vLLM, Triton Server, Ollama, and LM Studio on dedicated NVIDIA hardware (L4 GPU / 24GB VRAM).</li><li>Develop advanced prompt engineering frameworks, System Prompts, and tool-use chains to direct AI behavior.</li><li>Curate high-quality training datasets and synthetic data pipelines (Self-Instruct, Evol-Instruct), establishing strict automated validation for dataset integrity, schema compliance, and model alignment.</li></ul></div>
-            <div class="job"><div class="job-header"><span class="job-title">Full-Stack Developer & DevOps Engineer</span><span class="job-meta">ABZ Serviços • Jan 2025 – Present</span></div><ul class="job-details"><li>Architected and developed <em>EmployeeHub</em>, an internal HR management system used by 200+ employees. Built with Node.js (Express), React, TypeScript, and PostgreSQL, automating workflows and reducing manual processing time by 40%.</li><li>Led the cloud migration of legacy on-premise Windows Servers (2012-2025), achieving 80% completion with zero downtime in production environments.</li><li>Engineered and deployed a WireGuard-based VPN infrastructure for 50+ remote employees, drastically reducing support tickets and connection failures.</li><li>Implemented end-to-end CI/CD pipelines using GitHub Actions, Docker containerization, and administered virtualized environments across Proxmox and AWS S3.</li></ul></div>
-            <div class="job"><div class="job-header"><span class="job-title">Python Developer & Spatial Data Engineer</span><span class="job-meta">BRTech3D • Mar 2024 – Mar 2025</span></div><ul class="job-details"><li>Developed high-performance Python scripts (NumPy, SciPy, Open3D) to automate geospatial data pipelines, optimizing the processing of dense point clouds (100+ million data points).</li><li>Implemented data routines that increased processing speed by 40% and improved data compression, yielding significant resource and time savings across dozens of projects.</li><li>Modeled and optimized PostgreSQL databases utilizing the PostGIS extension for complex spatial queries and seamless integration via REST APIs.</li></ul></div>
+            <div class="job"><div class="job-header"><span class="job-title">AI Specialist</span><span class="job-meta">micro1 • Aug 2026 – Present</span></div><ul class="job-details"><li>Drive end-to-end Generative AI and LLM development, fine-tuning (LoRA/QLoRA, DPO), evaluation, and model alignment.</li><li>Design and deploy RAG systems, prompt engineering frameworks, and enterprise AI governance workflows leveraging Azure AI Foundry, Azure ML, and MLflow for ML lifecycle management.</li><li>Architect high-throughput local inference and benchmarking environments (MCP, vLLM, Triton Server, Ollama) on dedicated NVIDIA hardware (L4 GPU / 24GB VRAM).</li><li>Rigorously benchmark AI code generation and dynamic execution across Python, TypeScript, Node.js, FastAPI, React, Next.js, and Java.</li><li>Curate synthetic data generation pipelines (Self-Instruct, Evol-Instruct) with automated validation for dataset integrity and schema compliance.</li></ul></div>
+            <div class="job"><div class="job-header"><span class="job-title">Full-Stack Developer & DevOps Engineer</span><span class="job-meta">ABZ Serviços • Jan 2025 – Present</span></div><ul class="job-details"><li>Architected and developed <em>EmployeeHub</em> (Node.js/React/TypeScript/PostgreSQL), reducing manual operational overhead by 40%.</li><li>Built automated data engineering pipelines and reporting solutions integrating Azure Data Factory (ADF), Azure SQL, SSIS, and Power BI dashboards.</li><li>Established security & compliance architecture and led cloud migration of legacy Windows Server workloads with zero downtime.</li><li>Deployed WireGuard VPN infrastructure for 50+ remote employees and maintained CI/CD pipelines via GitHub Actions and Docker.</li></ul></div>
+            <div class="job"><div class="job-header"><span class="job-title">Python Developer & Spatial Data Engineer</span><span class="job-meta">BRTech3D • Mar 2024 – Mar 2025</span></div><ul class="job-details"><li>Developed high-performance Python scripts (NumPy, SciPy, Open3D) for geospatial data pipelines, optimizing 100M+ point cloud processing by 40%.</li><li>Engineered scalable data ingestion and storage routines on Azure Data Lake alongside PostgreSQL (PostGIS) for advanced spatial query execution.</li><li>Implemented robust API integrations connecting spatial processing services with client endpoints.</li></ul></div>
             <div class="job"><div class="job-header"><span class="job-title">Topographical Survey Operator III (Laser Scanning)</span><span class="job-meta">Master Engineering Services • Aug 2023 – Mar 2024</span></div><ul class="job-details"><li>Operated high-precision 3D laser scanning equipment (Leica) in complex industrial and archaeological environments.</li><li>Led field campaign planning and technical documentation, ensuring millimeter-level precision and data backup redundancy for large-scale data collection.</li></ul></div>
             <div class="job"><div class="job-header"><span class="job-title">Topographical Survey Operator II</span><span class="job-meta">OfTech3D • Dec 2022 – Aug 2023</span></div><ul class="job-details"><li>Executed field data collection using Leica TLS equipment and introduced Quality Assurance (QA) processes for outlier cleaning and multiple scan registration.</li></ul></div>
             <div class="job"><div class="job-header"><span class="job-title">Technical Documentation & Support Specialist</span><span class="job-meta">SmartStore / Jackkk Connection • Mar 2021 – Dec 2022</span></div><ul class="job-details"><li>Produced 50+ bilingual technical manuals and system specifications for international clients.</li><li>Provided advanced pre-sales support and detailed hardware/software architecture mapping for complex business proposals.</li></ul></div>
@@ -647,11 +632,11 @@ app.get('/resume', (req, res) => {
         <section>
             <h3>Technical Skills</h3>
             <div class="skills-grid">
-                <div class="skill-category"><strong>AI & LLM Engineering</strong><p>${profile.skills.aiEN}</p></div>
-                <div class="skill-category"><strong>Backend & Data Engineering</strong><p>${profile.skills.backendEN}</p></div>
+                <div class="skill-category"><strong>Generative AI & MLOps</strong><p>${profile.skills.aiEN}</p></div>
+                <div class="skill-category"><strong>Data Engineering & Backend</strong><p>${profile.skills.backendEN}</p></div>
                 <div class="skill-category"><strong>Cloud & DevOps</strong><p>${profile.skills.cloudEN}</p></div>
-                <div class="skill-category"><strong>Databases & CI/CD</strong><p>${profile.skills.dbEN}</p></div>
-                <div class="skill-category"><strong>Enterprise Systems</strong><p>${profile.skills.systemsEN}</p></div>
+                <div class="skill-category"><strong>Databases & Governance</strong><p>${profile.skills.dbEN}</p></div>
+                <div class="skill-category"><strong>Architecture, Governance & BI</strong><p>${profile.skills.systemsEN}</p></div>
             </div>
         </section>
         <section>
@@ -684,28 +669,23 @@ app.get('/resume', (req, res) => {
             <table class="matrix-table">
                 <thead><tr><th>Habilidade / Tecnologia</th><th>Anos</th><th>Nível</th></tr></thead>
                 <tbody>
-                    <tr><td>Engenharia de IA & LLMs (PyTorch, Hugging Face)</td><td>2 anos</td><td>Sênior</td></tr>
-                    <tr><td>Fine-Tuning & Quantização de LLMs (LoRA, Unsloth, vLLM)</td><td>2 anos</td><td>Sênior</td></tr>
-                    <tr><td>Desenvolvimento Backend</td><td>9 anos</td><td>Sênior</td></tr>
-                    <tr><td>Python</td><td>9 anos</td><td>Sênior</td></tr>
-                    <tr><td>SQL & NoSQL</td><td>9 anos (cada)</td><td>Sênior</td></tr>
-                    <tr><td>APIs RESTful</td><td>6 anos</td><td>Sênior</td></tr>
-                    <tr><td>Docker</td><td>6 anos</td><td>Sênior</td></tr>
-                    <tr><td>Engenharia de Dados</td><td>5 anos</td><td>Sênior</td></tr>
-                    <tr><td>Node.js</td><td>5 anos</td><td>Sênior</td></tr>
-                    <tr><td>Java (Spring Boot)</td><td>4 anos</td><td>Pleno / Sênior</td></tr>
-                    <tr><td>AWS</td><td>4 anos</td><td>Pleno</td></tr>
-                    <tr><td>GraphQL</td><td>3 anos</td><td>Pleno</td></tr>
-                    <tr><td>Kubernetes</td><td>3 anos</td><td>Pleno</td></tr>
-                    <tr><td>OCI Cloud</td><td>2 anos</td><td>Pleno</td></tr>
+                    <tr><td>IA Generativa, LLMs & RAG (Azure AI Foundry, Prompt Eng., Fine-Tuning)</td><td>2 anos</td><td>Sênior</td></tr>
+                    <tr><td>MLOps & Gestão de Ciclo de Vida de ML (Azure ML, MLflow, vLLM)</td><td>2 anos</td><td>Sênior</td></tr>
+                    <tr><td>Microsoft Azure Data & Analytics Stack (Databricks, Fabric, ADF)</td><td>3 anos</td><td>Sênior</td></tr>
+                    <tr><td>Engenharia de Dados & ETL/ELT (Data Lake, SSIS, Integração de APIs)</td><td>5 anos</td><td>Sênior</td></tr>
+                    <tr><td>Desenvolvimento Backend & APIs (Python, Node.js, Java)</td><td>9 anos</td><td>Sênior</td></tr>
+                    <tr><td>Bancos de Dados & Armazenamento (PostgreSQL, Azure SQL, CosmosDB)</td><td>9 anos</td><td>Sênior</td></tr>
+                    <tr><td>Arquitetura de Soluções, IT/OT & Governança de Dados (Purview)</td><td>4 anos</td><td>Sênior</td></tr>
+                    <tr><td>Business Intelligence & Relatórios (Power BI)</td><td>4 anos</td><td>Sênior</td></tr>
+                    <tr><td>Cloud & DevOps (Azure, AWS, Docker, Kubernetes)</td><td>6 anos</td><td>Sênior</td></tr>
                 </tbody>
             </table>
         </section>
         <section>
             <h3>Experiência Profissional</h3>
-            <div class="job"><div class="job-header"><span class="job-title">Especialista em IA</span><span class="job-meta">micro1 • Ago 2026 – Presente</span></div><ul class="job-details"><li>Lidera o desenvolvimento, fine-tuning, avaliação e alinhamento de LLMs de ponta a ponta, maximizando precisão algorítmica, raciocínio lógico e qualidade de geração de código.</li><li>Conduz Supervised Fine-Tuning (SFT) e Direct Preference Optimization (DPO/RLHF) com PyTorch, Hugging Face (PEFT, LoRA/QLoRA), Unsloth e Axolotl; realiza testes adversariais para eliminar alucinações e falhas de lógica.</li><li>Avalia rigorosamente geração de código por IA em Python, TypeScript, Node.js, FastAPI, React, Next.js e JavaFX, comparando escolhas de estruturas de dados, execução dinâmica e integrações de API complexas.</li><li>Arquiteta ambientes locais de inferência e teste de IA de alta performance em Windows/Linux usando MCP, vLLM, Triton Server, Ollama e LM Studio em hardware NVIDIA dedicado (GPU L4 / 24GB VRAM).</li><li>Desenvolve frameworks avançados de prompt engineering, System Prompts e cadeias de uso de ferramentas para direcionar o comportamento da IA.</li><li>Cura datasets de treinamento de alta qualidade e pipelines de dados sintéticos (Self-Instruct, Evol-Instruct), estabelecendo validação automatizada rigorosa para integridade dos dados, conformidade de schema e alinhamento do modelo.</li></ul></div>
-            <div class="job"><div class="job-header"><span class="job-title">Desenvolvedor Full-Stack & Engenheiro DevOps</span><span class="job-meta">ABZ Serviços • Jan 2025 – Presente</span></div><ul class="job-details"><li>Arquitetou e desenvolveu o <em>EmployeeHub</em>, um sistema interno de gestão de RH utilizado por mais de 200 colaboradores. Construído com Node.js (Express), React, TypeScript e PostgreSQL, automatizando fluxos de trabalho e reduzindo o tempo de processamento manual em 40%.</li><li>Liderou a migração para a nuvem de servidores Windows Server locais (2012-2025), atingindo 80% de conclusão com zero tempo de inatividade em ambientes de produção.</li><li>Projetou e implantou uma infraestrutura de VPN baseada em WireGuard para mais de 50 funcionários remotos, reduzindo drasticamente tickets de suporte e falhas de conexão.</li><li>Implementou pipelines de CI/CD de ponta a ponta utilizando GitHub Actions, conteinerização com Docker e administrou ambientes virtualizados via Proxmox e AWS S3.</li></ul></div>
-            <div class="job"><div class="job-header"><span class="job-title">Desenvolvedor Python & Engenheiro de Dados Espaciais</span><span class="job-meta">BRTech3D • Mar 2024 – Mar 2025</span></div><ul class="job-details"><li>Desenvolveu scripts de alta performance em Python (NumPy, SciPy, Open3D) para automatizar pipelines de dados geoespaciais, otimizando o processamento de nuvens de pontos densas (mais de 100 milhões de pontos de dados).</li><li>Implementou rotinas de dados que aumentaram a velocidade de processamento em 40% e melhoraram a compressão de dados, gerando economias significativas de tempo e recursos em dezenas de projetos.</li><li>Modelou e otimizou bancos de dados PostgreSQL utilizando a extensão PostGIS para consultas espaciais complexas e integração perfeita via APIs REST.</li></ul></div>
+            <div class="job"><div class="job-header"><span class="job-title">Especialista em IA</span><span class="job-meta">micro1 • Ago 2026 – Presente</span></div><ul class="job-details"><li>Lidera o desenvolvimento, fine-tuning (LoRA/QLoRA, DPO), avaliação e alinhamento de IA Generativa e Modelos de Linguagem (LLMs).</li><li>Projeta e implanta sistemas RAG, frameworks de engenharia de prompts e fluxos de governança corporativa de IA utilizando Azure AI Foundry, Azure ML e MLflow para gestão do ciclo de vida de ML.</li><li>Arquiteta ambientes locais de inferência e benchmarking de alta performance (MCP, vLLM, Triton Server, Ollama) em hardware NVIDIA dedicado (GPU L4 / 24GB VRAM).</li><li>Avalia com rigor a geração de código por IA e execução dinâmica em Python, TypeScript, Node.js, FastAPI, React, Next.js e Java.</li><li>Cura pipelines de geração de dados sintéticos (Self-Instruct, Evol-Instruct) com validação automatizada de integridade e conformidade de schema.</li></ul></div>
+            <div class="job"><div class="job-header"><span class="job-title">Desenvolvedor Full-Stack & Engenheiro DevOps</span><span class="job-meta">ABZ Serviços • Jan 2025 – Presente</span></div><ul class="job-details"><li>Arquitetou e desenvolveu o <em>EmployeeHub</em> (Node.js/React/TypeScript/PostgreSQL), reduzindo em 40% o processamento operacional manual.</li><li>Construiu pipelines de engenharia de dados automatizados e soluções de relatórios integrando Azure Data Factory (ADF), Azure SQL, SSIS e dashboards no Power BI.</li><li>Estabeleceu arquitetura de segurança e conformidade, liderando a migração para a nuvem de servidores Windows Server legados com zero downtime.</li><li>Implantou infraestrutura de VPN WireGuard para 50+ colaboradores remotos e manteve pipelines de CI/CD com GitHub Actions e Docker.</li></ul></div>
+            <div class="job"><div class="job-header"><span class="job-title">Desenvolvedor Python & Engenheiro de Dados Espaciais</span><span class="job-meta">BRTech3D • Mar 2024 – Mar 2025</span></div><ul class="job-details"><li>Desenvolveu scripts de alta performance em Python (NumPy, SciPy, Open3D) para pipelines de dados geoespaciais, otimizando o processamento de 100M+ pontos em 40%.</li><li>Estruturou rotinas escaláveis de ingestão e armazenamento no Azure Data Lake integradas ao PostgreSQL (PostGIS) para consultas espaciais avançadas.</li><li>Implementou integrações de API robustas conectando serviços de processamento espacial aos endpoints dos clientes.</li></ul></div>
             <div class="job"><div class="job-header"><span class="job-title">Operador de Levantamento Topográfico III (Laser Scanning)</span><span class="job-meta">Master Engineering Services • Ago 2023 – Mar 2024</span></div><ul class="job-details"><li>Operou equipamentos de escaneamento a laser 3D de alta precisão (Leica) em ambientes industriais e arqueológicos complexos.</li><li>Liderou o planejamento de campanhas de campo e documentação técnica, garantindo precisão milimétrica e redundância de backup de dados em coletas de grande escala.</li></ul></div>
             <div class="job"><div class="job-header"><span class="job-title">Operador de Levantamento Topográfico II</span><span class="job-meta">OfTech3D • Dez 2022 – Ago 2023</span></div><ul class="job-details"><li>Executou a coleta de dados em campo utilizando equipamentos Leica TLS e introduziu processos de Garantia da Qualidade (QA) para limpeza de outliers e registro de múltiplos escaneamentos.</li></ul></div>
             <div class="job"><div class="job-header"><span class="job-title">Especialista em Documentação Técnica e Suporte</span><span class="job-meta">SmartStore / Jackkk Connection • Mar 2021 – Dez 2022</span></div><ul class="job-details"><li>Produziu mais de 50 manuais técnicos bilíngues e especificações de sistemas para clientes internacionais.</li><li>Forneceu suporte avançado de pré-vendas e mapeamento detalhado de arquitetura de hardware/software para propostas comerciais complexas.</li></ul></div>
@@ -720,11 +700,11 @@ app.get('/resume', (req, res) => {
         <section>
             <h3>Habilidades Técnicas</h3>
             <div class="skills-grid">
-                <div class="skill-category"><strong>Engenharia de IA & LLMs</strong><p>${profile.skills.aiPT}</p></div>
-                <div class="skill-category"><strong>Engenharia de Dados e Backend</strong><p>${profile.skills.backendPT}</p></div>
+                <div class="skill-category"><strong>IA Generativa & MLOps</strong><p>${profile.skills.aiPT}</p></div>
+                <div class="skill-category"><strong>Engenharia de Dados & Backend</strong><p>${profile.skills.backendPT}</p></div>
                 <div class="skill-category"><strong>Cloud & DevOps</strong><p>${profile.skills.cloudPT}</p></div>
-                <div class="skill-category"><strong>Bancos de Dados & CI/CD</strong><p>${profile.skills.dbPT}</p></div>
-                <div class="skill-category"><strong>Sistemas Corporativos</strong><p>${profile.skills.systemsPT}</p></div>
+                <div class="skill-category"><strong>Bancos de Dados & Governança</strong><p>${profile.skills.dbPT}</p></div>
+                <div class="skill-category"><strong>Arquitetura, Governança & BI</strong><p>${profile.skills.systemsPT}</p></div>
             </div>
         </section>
         <section>
