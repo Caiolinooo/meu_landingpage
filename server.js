@@ -5,8 +5,8 @@ const PORT = 3000;
 // Dados do Perfil (Extraídos do LinkedIn, GitHub e Currículo)
 const profile = {
   name: "Caio Valério Goulart Correia",
-  titleEN: "Senior Data Engineer & Backend Developer",
-  titlePT: "Engenheiro de Dados Sênior & Desenvolvedor Backend",
+  titleEN: "AI Specialist, Senior Data Engineer & Backend Developer",
+  titlePT: "Especialista em IA, Engenheiro de Dados Sênior & Desenvolvedor Backend",
   taglineEN: "Bridging Mechanical Engineering, Automation, and Software.",
   taglinePT: "Unindo Engenharia Mecânica, Automação e Software.",
   email: "caiovaleriogoulartcorreia@gmail.com",
@@ -17,10 +17,18 @@ const profile = {
     { number: "22992180404", label: "WhatsApp Secundário" }
   ],
   location: "Brazil (Remote)",
-  aboutEN: "Backend-focused Data Engineer and Full-Stack Developer with a robust foundation in mechanical engineering and industrial automation, enabling a unique approach to solving complex architectural problems. Specialized in building highly scalable data pipelines, distributed systems, and robust backend architectures using Python, Java, and Node.js. Experienced in cloud infrastructure, container orchestration (Docker/Kubernetes), and automating CI/CD workflows, aiming to deliver efficient code within highly scalable and data-driven environments.",
-  aboutPT: "Engenheiro de Dados com foco em Backend e Desenvolvedor Full-Stack com sólida base em engenharia mecânica e automação industrial, proporcionando uma abordagem única para a resolução de problemas arquitetônicos complexos. Especializado na construção de pipelines de dados altamente escaláveis, sistemas distribuídos e arquiteturas de backend robustas utilizando Python, Java e Node.js. Experiência em infraestrutura em nuvem, orquestração de contêineres (Docker/Kubernetes) e automação de fluxos de CI/CD.",
-  stack: ["Node.js", "Python", "Java", "TypeScript", "AWS", "Docker", "Kubernetes", "PostgreSQL", "Linux", "Git", "GraphQL", "Unreal Engine", "CAD/CAM"],
+  aboutEN: "AI Specialist, Data Engineer, and Full-Stack Developer with a robust foundation in mechanical engineering and industrial automation, enabling a unique approach to solving complex architectural problems. Specialized in LLM fine-tuning (LoRA, QLoRA, DPO), PyTorch, Hugging Face ecosystem, local AI orchestration (Model Context Protocol / MCP, vLLM, Ollama), building highly scalable data pipelines, distributed systems, and robust backend architectures using Python, Java, and Node.js. Experienced in cloud infrastructure, container orchestration (Docker/Kubernetes), and automating CI/CD workflows for enterprise-grade AI solutions.",
+  aboutPT: "Especialista em IA, Engenheiro de Dados e Desenvolvedor Full-Stack com sólida base em engenharia mecânica e automação industrial, proporcionando uma abordagem única para a resolução de problemas arquitetônicos complexos. Especializado em fine-tuning de LLMs (LoRA, QLoRA, DPO), PyTorch, ecossistema Hugging Face, orquestração de IA local (Model Context Protocol / MCP, vLLM, Ollama), construção de pipelines de dados altamente escaláveis, sistemas distribuídos e arquiteturas de backend robustas utilizando Python, Java e Node.js. Experiência em infraestrutura em nuvem, orquestração de contêineres (Docker/Kubernetes) e automação de fluxos de CI/CD para soluções corporativas de IA.",
+  stack: ["PyTorch", "Hugging Face", "vLLM", "Ollama", "MCP", "LangChain", "Node.js", "Python", "Java", "TypeScript", "AWS", "Docker", "Kubernetes", "PostgreSQL", "Linux", "Git"],
   experience: [
+    {
+      roleEN: "AI Specialist",
+      rolePT: "Especialista em IA",
+      company: "micro1",
+      period: "Aug 2026 – Present",
+      descEN: "Drive end-to-end LLM development, fine-tuning, evaluation, and alignment. Conduct SFT and DPO/RLHF using PyTorch, Hugging Face (PEFT, LoRA/QLoRA), Unsloth, and Axolotl; perform adversarial testing to eliminate hallucinations and logic flaws. Evaluate AI code generation across Python, TypeScript, Node.js, FastAPI, React, Next.js, and JavaFX. Architect high-throughput local AI inference environments (MCP, vLLM, Triton Server, Ollama) on NVIDIA hardware (L4 / 24GB VRAM). Develop prompt engineering frameworks and curate synthetic data pipelines (Self-Instruct, Evol-Instruct) with automated validation.",
+      descPT: "Lidera o desenvolvimento, fine-tuning, avaliação e alinhamento de LLMs de ponta a ponta. Conduz SFT e DPO/RLHF com PyTorch, Hugging Face (PEFT, LoRA/QLoRA), Unsloth e Axolotl; realiza testes adversariais para eliminar alucinações e falhas de lógica. Avalia geração de código por IA em Python, TypeScript, Node.js, FastAPI, React, Next.js e JavaFX. Arquiteta ambientes de inferência local de alta performance (MCP, vLLM, Triton Server, Ollama) em hardware NVIDIA (L4 / 24GB VRAM). Desenvolve frameworks de prompt engineering e curadoria de pipelines de dados sintéticos (Self-Instruct, Evol-Instruct) com validação automatizada."
+    },
     {
       roleEN: "Full-Stack Developer & DevOps Engineer",
       rolePT: "Desenvolvedor Full-Stack & Engenheiro DevOps",
@@ -38,12 +46,12 @@ const profile = {
       descPT: "Desenvolveu scripts de alta performance em Python (NumPy, SciPy, Open3D) para pipelines de dados geoespaciais, otimizando o processamento de nuvens de pontos com mais de 100 milhões de dados. Aumentou velocidade de processamento em 40% e melhorou compressão de dados. Modelou bancos PostgreSQL com extensão PostGIS para consultas espaciais complexas."
     },
     {
-      roleEN: "Proprietário / Diretor",
-      rolePT: "Proprietário / Diretor",
-      company: "SmartStore",
-      period: "Mai 2021 – Presente",
-      descEN: "Gestão logística e atendimento ao cliente em escala. Technical documentation and pre-sales support for international clients.",
-      descPT: "Gestão logística e atendimento ao cliente em escala. Documentação técnica e suporte de pré-vendas para clientes internacionais."
+      roleEN: "Technical Documentation & Support Specialist",
+      rolePT: "Especialista em Documentação Técnica e Suporte",
+      company: "SmartStore / Jackkk Connection",
+      period: "Mar 2021 – Dec 2022",
+      descEN: "Produced 50+ bilingual technical manuals and system specifications for international clients. Provided advanced pre-sales support and detailed hardware/software architecture mapping for complex business proposals.",
+      descPT: "Produziu mais de 50 manuais técnicos bilíngues e especificações de sistemas para clientes internacionais. Forneceu suporte avançado de pré-vendas e mapeamento detalhado de arquitetura de hardware/software para propostas comerciais complexas."
     },
     {
       roleEN: "Topographical Survey Operator III (Laser Scanning)",
@@ -56,18 +64,10 @@ const profile = {
     {
       roleEN: "Topographical Survey Operator II",
       rolePT: "Operador de Levantamento Topográfico II",
-      company: "BRTech3D",
+      company: "OfTech3D",
       period: "Dez 2022 – Ago 2023",
       descEN: "Executed field data collection using Leica TLS equipment and introduced Quality Assurance (QA) processes for outlier cleaning and multiple scan registration.",
       descPT: "Executou coleta de dados em campo com equipamentos Leica TLS e introduziu processos de Garantia da Qualidade (QA) para limpeza de outliers e registro de múltiplos escaneamentos."
-    },
-    {
-      roleEN: "Desenhista Técnico - II",
-      rolePT: "Desenhista Técnico - II",
-      company: "BRTech3D",
-      period: "Mar 2024 – Mar 2025",
-      descEN: "3D models in AutoCAD/Plant, point cloud processing (Leica Cyclone) and prototyping in Unreal Engine.",
-      descPT: "Modelos em AutoCAD/Plant, processamento de nuvem de pontos (Leica Cyclone) e prototipagem em Unreal Engine."
     },
     {
       roleEN: "Training Specialist & Automation Technician",
@@ -91,6 +91,8 @@ const profile = {
     { school: "ETP Escola Técnica Brasil", course: "Technical Diploma in Industrial Automation", coursePT: "Técnico em Automação Industrial", date: "Jan 2014 – Jan 2016" }
   ],
   skills: {
+    aiEN: "PyTorch, Hugging Face (PEFT, LoRA/QLoRA, TRL), DeepSpeed, Unsloth, vLLM, Model Context Protocol (MCP), LangChain, LlamaIndex, Ollama, Triton Inference, Synthetic Data Generation.",
+    aiPT: "PyTorch, Hugging Face (PEFT, LoRA/QLoRA, TRL), DeepSpeed, Unsloth, vLLM, Model Context Protocol (MCP), LangChain, LlamaIndex, Ollama, Triton Inference, Geração de Dados Sintéticos.",
     backendEN: "Python 3 (NumPy, SciPy), Java (Spring Boot), Node.js, Express, TypeScript, REST & GraphQL APIs, JWT Auth.",
     backendPT: "Python 3 (NumPy, SciPy), Java (Spring Boot), Node.js, Express, TypeScript, APIs REST & GraphQL, Autenticação JWT.",
     cloudEN: "Docker, Kubernetes (Concepts), AWS S3, Linux (Ubuntu/CentOS), Proxmox, WireGuard VPN, Cloudflare.",
@@ -306,6 +308,8 @@ app.get('/', (req, res) => {
                         <tr><th>Skill / Technology</th><th>Years</th><th>Level</th></tr>
                     </thead>
                     <tbody>
+                        <tr><td>AI Engineering & LLMs (PyTorch, Hugging Face)</td><td>2 years</td><td>Senior</td></tr>
+                        <tr><td>LLM Fine-Tuning & Quantization (LoRA, Unsloth, vLLM)</td><td>2 years</td><td>Senior</td></tr>
                         <tr><td>Backend Development</td><td>9 years</td><td>Senior</td></tr>
                         <tr><td>Python</td><td>9 years</td><td>Senior</td></tr>
                         <tr><td>SQL & NoSQL</td><td>9 years</td><td>Senior</td></tr>
@@ -332,6 +336,8 @@ app.get('/', (req, res) => {
                         <tr><th>Habilidade / Tecnologia</th><th>Anos</th><th>Nível</th></tr>
                     </thead>
                     <tbody>
+                        <tr><td>Engenharia de IA & LLMs (PyTorch, Hugging Face)</td><td>2 anos</td><td>Sênior</td></tr>
+                        <tr><td>Fine-Tuning & Quantização de LLMs (LoRA, Unsloth, vLLM)</td><td>2 anos</td><td>Sênior</td></tr>
                         <tr><td>Desenvolvimento Backend</td><td>9 anos</td><td>Sênior</td></tr>
                         <tr><td>Python</td><td>9 anos</td><td>Sênior</td></tr>
                         <tr><td>SQL & NoSQL</td><td>9 anos</td><td>Sênior</td></tr>
@@ -352,6 +358,10 @@ app.get('/', (req, res) => {
         <!-- EN Skills Grid -->
         <section class="lang-content active" data-lang="en">
             <div class="skills-grid">
+                <div class="skill-category">
+                    <strong>AI & LLM Engineering</strong>
+                    <p>${profile.skills.aiEN}</p>
+                </div>
                 <div class="skill-category">
                     <strong>${i18n.en.backendLabel}</strong>
                     <p>${profile.skills.backendEN}</p>
@@ -374,6 +384,10 @@ app.get('/', (req, res) => {
         <!-- PT Skills Grid -->
         <section class="lang-content" data-lang="pt">
             <div class="skills-grid">
+                <div class="skill-category">
+                    <strong>Engenharia de IA & LLMs</strong>
+                    <p>${profile.skills.aiPT}</p>
+                </div>
                 <div class="skill-category">
                     <strong>${i18n.pt.backendLabel}</strong>
                     <p>${profile.skills.backendPT}</p>
@@ -582,7 +596,7 @@ app.get('/resume', (req, res) => {
     <div class="lang-en">
         <header>
             <h1>Caio Valério Goulart Correia</h1>
-            <h2>Senior Data Engineer & Backend Developer</h2>
+            <h2>AI Specialist, Senior Data Engineer & Backend Developer</h2>
             <div class="contact">
                 <span>Brazil (Remote)</span>
                 <span><a href="mailto:${profile.email}">${profile.email}</a></span>
@@ -597,6 +611,8 @@ app.get('/resume', (req, res) => {
             <table class="matrix-table">
                 <thead><tr><th>Skill / Technology</th><th>Years</th><th>Level</th></tr></thead>
                 <tbody>
+                    <tr><td>AI Engineering & LLMs (PyTorch, Hugging Face)</td><td>2 years</td><td>Senior</td></tr>
+                    <tr><td>LLM Fine-Tuning & Quantization (LoRA, Unsloth, vLLM)</td><td>2 years</td><td>Senior</td></tr>
                     <tr><td>Backend Development</td><td>9 years</td><td>Senior</td></tr>
                     <tr><td>Python</td><td>9 years</td><td>Senior</td></tr>
                     <tr><td>SQL & NoSQL</td><td>9 years (each)</td><td>Senior</td></tr>
@@ -614,10 +630,11 @@ app.get('/resume', (req, res) => {
         </section>
         <section>
             <h3>Professional Experience</h3>
+            <div class="job"><div class="job-header"><span class="job-title">AI Specialist</span><span class="job-meta">micro1 • Aug 2026 – Present</span></div><ul class="job-details"><li>Drive the end-to-end development, fine-tuning, evaluation, and alignment of Large Language Models (LLMs), maximizing algorithmic precision, logical reasoning, and code generation quality.</li><li>Conduct Supervised Fine-Tuning (SFT) and Direct Preference Optimization (DPO/RLHF) using PyTorch, Hugging Face (PEFT, LoRA/QLoRA), Unsloth, and Axolotl; perform adversarial testing to eliminate hallucinations and logic flaws.</li><li>Rigorously evaluate AI code generation across Python, TypeScript, Node.js, FastAPI, React, Next.js, and JavaFX, benchmarking data structure choices, dynamic execution, and complex API integrations.</li><li>Architect high-throughput local AI inference and testing environments on Windows/Linux using MCP, vLLM, Triton Server, Ollama, and LM Studio on dedicated NVIDIA hardware (L4 GPU / 24GB VRAM).</li><li>Develop advanced prompt engineering frameworks, System Prompts, and tool-use chains to direct AI behavior.</li><li>Curate high-quality training datasets and synthetic data pipelines (Self-Instruct, Evol-Instruct), establishing strict automated validation for dataset integrity, schema compliance, and model alignment.</li></ul></div>
             <div class="job"><div class="job-header"><span class="job-title">Full-Stack Developer & DevOps Engineer</span><span class="job-meta">ABZ Serviços • Jan 2025 – Present</span></div><ul class="job-details"><li>Architected and developed <em>EmployeeHub</em>, an internal HR management system used by 200+ employees. Built with Node.js (Express), React, TypeScript, and PostgreSQL, automating workflows and reducing manual processing time by 40%.</li><li>Led the cloud migration of legacy on-premise Windows Servers (2012-2025), achieving 80% completion with zero downtime in production environments.</li><li>Engineered and deployed a WireGuard-based VPN infrastructure for 50+ remote employees, drastically reducing support tickets and connection failures.</li><li>Implemented end-to-end CI/CD pipelines using GitHub Actions, Docker containerization, and administered virtualized environments across Proxmox and AWS S3.</li></ul></div>
             <div class="job"><div class="job-header"><span class="job-title">Python Developer & Spatial Data Engineer</span><span class="job-meta">BRTech3D • Mar 2024 – Mar 2025</span></div><ul class="job-details"><li>Developed high-performance Python scripts (NumPy, SciPy, Open3D) to automate geospatial data pipelines, optimizing the processing of dense point clouds (100+ million data points).</li><li>Implemented data routines that increased processing speed by 40% and improved data compression, yielding significant resource and time savings across dozens of projects.</li><li>Modeled and optimized PostgreSQL databases utilizing the PostGIS extension for complex spatial queries and seamless integration via REST APIs.</li></ul></div>
             <div class="job"><div class="job-header"><span class="job-title">Topographical Survey Operator III (Laser Scanning)</span><span class="job-meta">Master Engineering Services • Aug 2023 – Mar 2024</span></div><ul class="job-details"><li>Operated high-precision 3D laser scanning equipment (Leica) in complex industrial and archaeological environments.</li><li>Led field campaign planning and technical documentation, ensuring millimeter-level precision and data backup redundancy for large-scale data collection.</li></ul></div>
-            <div class="job"><div class="job-header"><span class="job-title">Topographical Survey Operator II</span><span class="job-meta">BRTech3D • Dec 2022 – Aug 2023</span></div><ul class="job-details"><li>Executed field data collection using Leica TLS equipment and introduced Quality Assurance (QA) processes for outlier cleaning and multiple scan registration.</li></ul></div>
+            <div class="job"><div class="job-header"><span class="job-title">Topographical Survey Operator II</span><span class="job-meta">OfTech3D • Dec 2022 – Aug 2023</span></div><ul class="job-details"><li>Executed field data collection using Leica TLS equipment and introduced Quality Assurance (QA) processes for outlier cleaning and multiple scan registration.</li></ul></div>
             <div class="job"><div class="job-header"><span class="job-title">Technical Documentation & Support Specialist</span><span class="job-meta">SmartStore / Jackkk Connection • Mar 2021 – Dec 2022</span></div><ul class="job-details"><li>Produced 50+ bilingual technical manuals and system specifications for international clients.</li><li>Provided advanced pre-sales support and detailed hardware/software architecture mapping for complex business proposals.</li></ul></div>
             <div class="job"><div class="job-header"><span class="job-title">Training Specialist & Automation Technician</span><span class="job-meta">Jackkk Connection Comercial • May 2017 – Mar 2021</span></div><ul class="job-details"><li>Coordinated and delivered technical training for over 500 professionals in PLCs, hydraulics, and industrial automation.</li><li>Developed educational simulations and managed B2B technical sales, building direct relationships with international suppliers.</li></ul></div>
             <div class="job"><div class="job-header"><span class="job-title">Technical Team Lead & Specialized Support</span><span class="job-meta">Diesel Line Cambuí • Aug 2016 – May 2017</span></div><ul class="job-details"><li>Led specialized field teams in the maintenance of large-scale engines and turbines (CAT, Cummins, MAK).</li><li>Managed English-language technical support tickets for international clients and formally documented failure analysis processes.</li></ul></div>
@@ -630,6 +647,7 @@ app.get('/resume', (req, res) => {
         <section>
             <h3>Technical Skills</h3>
             <div class="skills-grid">
+                <div class="skill-category"><strong>AI & LLM Engineering</strong><p>${profile.skills.aiEN}</p></div>
                 <div class="skill-category"><strong>Backend & Data Engineering</strong><p>${profile.skills.backendEN}</p></div>
                 <div class="skill-category"><strong>Cloud & DevOps</strong><p>${profile.skills.cloudEN}</p></div>
                 <div class="skill-category"><strong>Databases & CI/CD</strong><p>${profile.skills.dbEN}</p></div>
@@ -651,7 +669,7 @@ app.get('/resume', (req, res) => {
     <div class="lang-pt">
         <header>
             <h1>Caio Valério Goulart Correia</h1>
-            <h2>Engenheiro de Dados Sênior & Desenvolvedor Backend</h2>
+            <h2>Especialista em IA, Engenheiro de Dados Sênior & Desenvolvedor Backend</h2>
             <div class="contact">
                 <span>Brasil (Remoto)</span>
                 <span><a href="mailto:${profile.email}">${profile.email}</a></span>
@@ -666,6 +684,8 @@ app.get('/resume', (req, res) => {
             <table class="matrix-table">
                 <thead><tr><th>Habilidade / Tecnologia</th><th>Anos</th><th>Nível</th></tr></thead>
                 <tbody>
+                    <tr><td>Engenharia de IA & LLMs (PyTorch, Hugging Face)</td><td>2 anos</td><td>Sênior</td></tr>
+                    <tr><td>Fine-Tuning & Quantização de LLMs (LoRA, Unsloth, vLLM)</td><td>2 anos</td><td>Sênior</td></tr>
                     <tr><td>Desenvolvimento Backend</td><td>9 anos</td><td>Sênior</td></tr>
                     <tr><td>Python</td><td>9 anos</td><td>Sênior</td></tr>
                     <tr><td>SQL & NoSQL</td><td>9 anos (cada)</td><td>Sênior</td></tr>
@@ -683,10 +703,11 @@ app.get('/resume', (req, res) => {
         </section>
         <section>
             <h3>Experiência Profissional</h3>
+            <div class="job"><div class="job-header"><span class="job-title">Especialista em IA</span><span class="job-meta">micro1 • Ago 2026 – Presente</span></div><ul class="job-details"><li>Lidera o desenvolvimento, fine-tuning, avaliação e alinhamento de LLMs de ponta a ponta, maximizando precisão algorítmica, raciocínio lógico e qualidade de geração de código.</li><li>Conduz Supervised Fine-Tuning (SFT) e Direct Preference Optimization (DPO/RLHF) com PyTorch, Hugging Face (PEFT, LoRA/QLoRA), Unsloth e Axolotl; realiza testes adversariais para eliminar alucinações e falhas de lógica.</li><li>Avalia rigorosamente geração de código por IA em Python, TypeScript, Node.js, FastAPI, React, Next.js e JavaFX, comparando escolhas de estruturas de dados, execução dinâmica e integrações de API complexas.</li><li>Arquiteta ambientes locais de inferência e teste de IA de alta performance em Windows/Linux usando MCP, vLLM, Triton Server, Ollama e LM Studio em hardware NVIDIA dedicado (GPU L4 / 24GB VRAM).</li><li>Desenvolve frameworks avançados de prompt engineering, System Prompts e cadeias de uso de ferramentas para direcionar o comportamento da IA.</li><li>Cura datasets de treinamento de alta qualidade e pipelines de dados sintéticos (Self-Instruct, Evol-Instruct), estabelecendo validação automatizada rigorosa para integridade dos dados, conformidade de schema e alinhamento do modelo.</li></ul></div>
             <div class="job"><div class="job-header"><span class="job-title">Desenvolvedor Full-Stack & Engenheiro DevOps</span><span class="job-meta">ABZ Serviços • Jan 2025 – Presente</span></div><ul class="job-details"><li>Arquitetou e desenvolveu o <em>EmployeeHub</em>, um sistema interno de gestão de RH utilizado por mais de 200 colaboradores. Construído com Node.js (Express), React, TypeScript e PostgreSQL, automatizando fluxos de trabalho e reduzindo o tempo de processamento manual em 40%.</li><li>Liderou a migração para a nuvem de servidores Windows Server locais (2012-2025), atingindo 80% de conclusão com zero tempo de inatividade em ambientes de produção.</li><li>Projetou e implantou uma infraestrutura de VPN baseada em WireGuard para mais de 50 funcionários remotos, reduzindo drasticamente tickets de suporte e falhas de conexão.</li><li>Implementou pipelines de CI/CD de ponta a ponta utilizando GitHub Actions, conteinerização com Docker e administrou ambientes virtualizados via Proxmox e AWS S3.</li></ul></div>
             <div class="job"><div class="job-header"><span class="job-title">Desenvolvedor Python & Engenheiro de Dados Espaciais</span><span class="job-meta">BRTech3D • Mar 2024 – Mar 2025</span></div><ul class="job-details"><li>Desenvolveu scripts de alta performance em Python (NumPy, SciPy, Open3D) para automatizar pipelines de dados geoespaciais, otimizando o processamento de nuvens de pontos densas (mais de 100 milhões de pontos de dados).</li><li>Implementou rotinas de dados que aumentaram a velocidade de processamento em 40% e melhoraram a compressão de dados, gerando economias significativas de tempo e recursos em dezenas de projetos.</li><li>Modelou e otimizou bancos de dados PostgreSQL utilizando a extensão PostGIS para consultas espaciais complexas e integração perfeita via APIs REST.</li></ul></div>
             <div class="job"><div class="job-header"><span class="job-title">Operador de Levantamento Topográfico III (Laser Scanning)</span><span class="job-meta">Master Engineering Services • Ago 2023 – Mar 2024</span></div><ul class="job-details"><li>Operou equipamentos de escaneamento a laser 3D de alta precisão (Leica) em ambientes industriais e arqueológicos complexos.</li><li>Liderou o planejamento de campanhas de campo e documentação técnica, garantindo precisão milimétrica e redundância de backup de dados em coletas de grande escala.</li></ul></div>
-            <div class="job"><div class="job-header"><span class="job-title">Operador de Levantamento Topográfico II</span><span class="job-meta">BRTech3D • Dez 2022 – Ago 2023</span></div><ul class="job-details"><li>Executou a coleta de dados em campo utilizando equipamentos Leica TLS e introduziu processos de Garantia da Qualidade (QA) para limpeza de outliers e registro de múltiplos escaneamentos.</li></ul></div>
+            <div class="job"><div class="job-header"><span class="job-title">Operador de Levantamento Topográfico II</span><span class="job-meta">OfTech3D • Dez 2022 – Ago 2023</span></div><ul class="job-details"><li>Executou a coleta de dados em campo utilizando equipamentos Leica TLS e introduziu processos de Garantia da Qualidade (QA) para limpeza de outliers e registro de múltiplos escaneamentos.</li></ul></div>
             <div class="job"><div class="job-header"><span class="job-title">Especialista em Documentação Técnica e Suporte</span><span class="job-meta">SmartStore / Jackkk Connection • Mar 2021 – Dez 2022</span></div><ul class="job-details"><li>Produziu mais de 50 manuais técnicos bilíngues e especificações de sistemas para clientes internacionais.</li><li>Forneceu suporte avançado de pré-vendas e mapeamento detalhado de arquitetura de hardware/software para propostas comerciais complexas.</li></ul></div>
             <div class="job"><div class="job-header"><span class="job-title">Especialista em Treinamento e Técnico em Automação</span><span class="job-meta">Jackkk Connection Comercial • Mai 2017 – Mar 2021</span></div><ul class="job-details"><li>Coordenou e ministrou treinamentos técnicos para mais de 500 profissionais em CLPs, hidráulica e automação industrial.</li><li>Desenvolveu simulações educacionais e gerenciou vendas técnicas B2B, construindo relacionamento direto com fornecedores internacionais.</li></ul></div>
             <div class="job"><div class="job-header"><span class="job-title">Líder de Equipe Técnica e Suporte Especializado</span><span class="job-meta">Diesel Line Cambuí • Ago 2016 – Mai 2017</span></div><ul class="job-details"><li>Liderou equipes de campo especializadas na manutenção de motores e turbinas de grande porte (CAT, Cummins, MAK).</li><li>Gerenciou tickets de suporte técnico em inglês para clientes internacionais e documentou formalmente processos de análise de falhas.</li></ul></div>
@@ -699,6 +720,7 @@ app.get('/resume', (req, res) => {
         <section>
             <h3>Habilidades Técnicas</h3>
             <div class="skills-grid">
+                <div class="skill-category"><strong>Engenharia de IA & LLMs</strong><p>${profile.skills.aiPT}</p></div>
                 <div class="skill-category"><strong>Engenharia de Dados e Backend</strong><p>${profile.skills.backendPT}</p></div>
                 <div class="skill-category"><strong>Cloud & DevOps</strong><p>${profile.skills.cloudPT}</p></div>
                 <div class="skill-category"><strong>Bancos de Dados & CI/CD</strong><p>${profile.skills.dbPT}</p></div>
