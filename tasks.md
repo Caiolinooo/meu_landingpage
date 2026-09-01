@@ -1,18 +1,13 @@
-# Atualizar projetos relevantes a partir do GitHub
+# Correções: nome, PDF gerado e deploy na main
 
 ## Objetivo
-Substituir descrições genéricas por projetos reais do GitHub (`Caiolinooo`), com texto técnico em EN e PT.
+- Trocar "Valério" por "Valerio" (sem acento)
+- Gerar o PDF do currículo no próprio projeto (`/resume.pdf`)
+- Apontar o download para esse PDF, não para o HackerEarth
+- Subir tudo para `main`
 
-## Projetos escolhidos
-1. Painel ABZ (EmployeeHub)
-2. SGLang Commander
-3. Visualizador 3D FARO/Matterport
-4. Gerador de Malha Open3D
-5. AD Migration Suite
-6. Auditoria de Dados
-7. Network Monitor
-
-## Passos
-1. Atualizar `profile.projects` com stack, GitHub e descrições reais.
-2. Exibir links nas cards da landing e na página `/resume`.
-3. Verificar EN/PT no browser.
+## Status
+- Nome corrigido em todo o site.
+- PDF gerado em `/resume.pdf?lang=en|pt` a partir dos dados do perfil.
+- Download da home, barra de contato e `/resume` apontam para o PDF gerado.
+- Verificado no browser (EN/PT) e o download `Caio_Valerio_Goulart_Correia_Curriculo.pdf`.

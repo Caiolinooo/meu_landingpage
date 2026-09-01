@@ -1,5 +1,6 @@
 const express = require('express');
 const path = require('path');
+const { pipeResumePdf } = require('./resume-pdf');
 const app = express();
 const PORT = 3000;
 
@@ -7,14 +8,14 @@ app.use('/public', express.static(path.join(__dirname, 'public')));
 app.get('/favicon.ico', (_req, res) => res.status(204).end());
 
 const profile = {
-  name: "Caio Valério Goulart Correia",
+  name: "Caio Valerio Goulart Correia",
   titleEN: "AI Specialist, Senior Data Engineer & Backend Developer",
   titlePT: "Especialista em IA, Engenheiro de Dados Sênior & Desenvolvedor Backend",
   email: "caiovaleriogoulartcorreia@gmail.com",
   linkedin: "https://www.linkedin.com/in/caio-goulart",
   github: "https://github.com/Caiolinooo",
   hackerearth: "https://www.hackerearth.com/@caiovaleriogoulartcorreia/",
-  resumePdf: "/public/EN-Resume_Caio_Correia.pdf",
+  resumePdf: "/resume.pdf",
   phones: [
     { number: "22997847289", label: "WhatsApp Principal" },
     { number: "22992180404", label: "WhatsApp Secundário" }
@@ -510,8 +511,11 @@ app.get('/', (req, res) => {
                 <a href="https://wa.me/55${profile.phones[0].number}" class="btn btn-outline" target="_blank">
                     <i class="fa-brands fa-whatsapp"></i> ${i18n.en.talkToMe}
                 </a>
-                <a href="/resume" class="btn btn-outline" target="_blank">
+                <a href="/resume" class="btn btn-outline">
                     <i class="fa-solid fa-file-lines"></i> ${i18n.en.resumeBtn}
+                </a>
+                <a href="/resume.pdf?lang=en" class="btn btn-outline pdf-download">
+                    <i class="fa-solid fa-file-pdf"></i> ${i18n.en.downloadPdf}
                 </a>
             </div>
         </section>
@@ -528,8 +532,11 @@ app.get('/', (req, res) => {
                 <a href="https://wa.me/55${profile.phones[0].number}" class="btn btn-outline" target="_blank">
                     <i class="fa-brands fa-whatsapp"></i> ${i18n.pt.talkToMe}
                 </a>
-                <a href="/resume" class="btn btn-outline" target="_blank">
+                <a href="/resume" class="btn btn-outline">
                     <i class="fa-solid fa-file-lines"></i> ${i18n.pt.resumeBtn}
+                </a>
+                <a href="/resume.pdf?lang=pt" class="btn btn-outline pdf-download">
+                    <i class="fa-solid fa-file-pdf"></i> ${i18n.pt.downloadPdf}
                 </a>
             </div>
         </section>
@@ -605,7 +612,7 @@ app.get('/', (req, res) => {
         <a href="https://wa.me/55${profile.phones[0].number}" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
         <a href="mailto:${profile.email}" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
         <a href="${profile.github}" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-        <a href="${profile.hackerearth}" target="_blank" aria-label="HackerEarth"><i class="fa-solid fa-code"></i></a>
+        <a href="/resume.pdf?lang=en" class="pdf-download" aria-label="Download PDF"><i class="fa-solid fa-file-pdf"></i></a>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
@@ -617,6 +624,9 @@ app.get('/', (req, res) => {
             document.querySelectorAll('.lang-toggle a').forEach(el => el.classList.remove('active'));
             document.querySelector('.lang-toggle a[onclick*="' + lang + '"]').classList.add('active');
             document.documentElement.lang = lang;
+            document.querySelectorAll('.pdf-download').forEach(el => {
+                el.href = '/resume.pdf?lang=' + lang;
+            });
         }
 
         const container = document.getElementById('canvas-container');
@@ -651,6 +661,18 @@ app.get('/', (req, res) => {
 </body>
 </html>
   `);
+});
+
+app.get('/resume.pdf', (req, res) => {
+  const lang = String(req.query.lang || '').toLowerCase() === 'pt' ? 'pt' : 'en';
+  try {
+    pipeResumePdf(res, lang, profile);
+  } catch (err) {
+    console.error(err);
+    if (!res.headersSent) {
+      res.status(500).send('Failed to generate resume PDF');
+    }
+  }
 });
 
 app.get('/resume', (req, res) => {
@@ -702,12 +724,16 @@ app.get('/resume', (req, res) => {
                 document.getElementById('btn-en').classList.remove('active');
                 document.getElementById('btn-pt').classList.add('active');
                 document.documentElement.lang = 'pt';
+                document.getElementById('download-pdf').href = '/resume.pdf?lang=pt';
+                document.getElementById('download-pdf').textContent = 'Baixar PDF';
             } else {
                 document.querySelectorAll('.lang-pt').forEach(el => el.style.display = 'none');
                 document.querySelectorAll('.lang-en').forEach(el => el.style.display = 'block');
                 document.getElementById('btn-pt').classList.remove('active');
                 document.getElementById('btn-en').classList.add('active');
                 document.documentElement.lang = 'en';
+                document.getElementById('download-pdf').href = '/resume.pdf?lang=en';
+                document.getElementById('download-pdf').textContent = 'Download PDF';
             }
         }
     </script>
@@ -715,7 +741,7 @@ app.get('/resume', (req, res) => {
 <body>
     <div class="actions">
         <a class="back-link" href="/">&larr; Back to Portfolio / Voltar ao Portfólio</a>
-        <a class="back-link" href="${profile.resumePdf}" target="_blank">Download PDF</a>
+        <a id="download-pdf" class="back-link" href="/resume.pdf?lang=en">Download PDF</a>
     </div>
 
     <div class="lang-toggle">
