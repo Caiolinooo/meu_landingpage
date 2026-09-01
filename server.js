@@ -172,19 +172,54 @@ const profile = {
   ],
   projects: [
     {
-      name: "Portal ABZ",
-      descEN: "Developed a corporate operations portal that streamlined internal communication and ensured compliance for ABZ Group. The portal features robust functionalities that enhance collaboration among teams, automate compliance tracking, and facilitate efficient information sharing, significantly improving operational workflows.",
-      descPT: "Desenvolveu um portal corporativo de operações que otimizou a comunicação interna e assegurou a conformidade do Grupo ABZ. O portal conta com funcionalidades robustas que aprimoram a colaboração entre equipes, automatizam o acompanhamento de compliance e facilitam o compartilhamento eficiente de informações, melhorando significativamente os fluxos operacionais."
+      name: "Painel ABZ",
+      stack: "Next.js 15 · TypeScript · PostgreSQL · Supabase",
+      url: "https://github.com/Caiolinooo/EmployeeHub",
+      demo: "https://employee-hub-kappa-flame.vercel.app",
+      descEN: "Corporate operations portal for ABZ Group: HR, offshore crew management, payroll, reimbursements and internal comms on Next.js 15, React 18 and Supabase/PostgreSQL (50+ tables with RLS). Ships e-Social (13 events, RSA-SHA256 XML, SOAP mTLS), OCR (Tesseract) for ASO/ID docs, digital signatures, MIO ERP sync, and an AI companion with LiveKit voice, MS Graph and autonomous KPI agents.",
+      descPT: "Portal corporativo do Grupo ABZ: RH, gestão de tripulantes offshore, folha, reembolsos e comunicação interna em Next.js 15, React 18 e Supabase/PostgreSQL (50+ tabelas com RLS). Inclui e-Social (13 eventos, XML RSA-SHA256, SOAP mTLS), OCR (Tesseract) de ASO/documentos, assinatura digital, sync com o ERP MIO e um AI Companion com voz LiveKit, MS Graph e agentes autônomos de KPI."
     },
     {
       name: "SGLang Commander",
-      descEN: "Developed a comprehensive management console for SGLang inference servers, incorporating advanced metrics and deployment functionalities. This console enables real-time monitoring and management of server performance, facilitating efficient resource allocation and deployment processes. By integrating detailed analytics, it enhances operational oversight and supports data-driven decision-making, significantly improving server management efficiency.",
-      descPT: "Desenvolveu um console de gestão completo para servidores de inferência SGLang, incorporando métricas avançadas e funcionalidades de implantação. O console permite monitoramento e gestão em tempo real do desempenho dos servidores, facilitando a alocação eficiente de recursos e os processos de deploy. Ao integrar analytics detalhados, amplia a visibilidade operacional e apoia decisões baseadas em dados, melhorando significativamente a eficiência da gestão dos servidores."
+      stack: "Python · FastAPI · React · PySide6",
+      url: "https://github.com/Caiolinooo/sglang-commander",
+      descEN: "Desktop (PySide6) and web (React + FastAPI) console for SGLang inference servers. Starts and stops servers, streams multimodal chat (image/audio), plots live GPU/VRAM/latency metrics, deploys Hugging Face models in one click, runs P50/P95/P99 benchmarks, and supports Docker plus ZeroTier remote deploys.",
+      descPT: "Console desktop (PySide6) e web (React + FastAPI) para servidores de inferência SGLang. Sobe e derruba servidores, faz chat multimodal (imagem/áudio), plota GPU/VRAM/latência em tempo real, faz deploy de modelos Hugging Face em um clique, executa benchmarks P50/P95/P99 e suporta Docker e deploys remotos via ZeroTier."
     },
     {
-      name: "Ticket Manager",
-      descEN: "Developed an AI-driven support-ticket system that automates triaging and workflow management, significantly improving response times and operational efficiency. The system leverages machine learning algorithms to categorize incoming tickets, prioritize issues, and direct them to the appropriate teams, ensuring a streamlined resolution process. This innovative approach enhances user experience and optimizes resource allocation within support operations.",
-      descPT: "Desenvolveu um sistema de tickets de suporte orientado por IA que automatiza a triagem e a gestão de fluxos, melhorando significativamente os tempos de resposta e a eficiência operacional. O sistema utiliza algoritmos de machine learning para categorizar tickets, priorizar problemas e direcioná-los às equipes adequadas, garantindo um processo de resolução mais ágil. Essa abordagem inovadora aprimora a experiência do usuário e otimiza a alocação de recursos nas operações de suporte."
+      name: "Visualizador 3D FARO",
+      stack: "Three.js · React · Open3D · MCP",
+      url: "https://github.com/Caiolinooo/Visualizador3D_Matterport_Clone",
+      descEN: "Matterport-style web viewer for FARO Focus scans. Renders PTS/E57 point clouds and TrueView 360 panoramas with Three.js and React Three Fiber, plus dollhouse view, floor plans, distance measurement, annotations, auto-tours and a Model Context Protocol bridge so local LLMs can drive the 3D scene.",
+      descPT: "Visualizador web estilo Matterport para scans FARO Focus. Renderiza nuvens PTS/E57 e panorâmicas TrueView 360 com Three.js e React Three Fiber, com vista dollhouse, planta baixa, medição, anotações, tour automático e uma ponte Model Context Protocol para LLMs locais controlarem a cena 3D."
+    },
+    {
+      name: "Gerador de Malha Open3D",
+      stack: "Python · Open3D · NumPy",
+      url: "https://github.com/Caiolinooo/Projeto_Open_Mesh_",
+      descEN: "Desktop pipeline that turns industrial point clouds into production meshes: Poisson reconstruction, hole filling, density-based vertex cleanup, smoothing and export to PLY/OBJ/STL — built for geospatial and laser-scan workflows with 100M+ points.",
+      descPT: "Pipeline desktop que transforma nuvens de pontos industriais em malhas de produção: reconstrução Poisson, preenchimento de buracos, limpeza por densidade, suavização e exportação PLY/OBJ/STL — feito para fluxos geoespaciais e laser scan com 100M+ pontos."
+    },
+    {
+      name: "AD Migration Suite",
+      stack: "C# · .NET 8 · WPF",
+      url: "https://github.com/Caiolinooo/AD_Migrator",
+      descEN: "Enterprise Active Directory migration from Windows Server 2012/2016 to 2019/2022. Agent-based architecture on a single port (8765) avoids WinRM/Kerberos setup, preserves SID history, replicates GPOs/OUs and migrates file shares with ACL translation across domains.",
+      descPT: "Migração empresarial de Active Directory de Windows Server 2012/2016 para 2019/2022. Arquitetura com agente em uma única porta (8765) evita WinRM/Kerberos, preserva SID History, replica GPOs/OUs e migra shares de arquivo com tradução de ACL entre domínios."
+    },
+    {
+      name: "Auditoria de Dados",
+      stack: "Python · Pandas · Dash · Plotly",
+      url: "https://github.com/Caiolinooo/Python_Audit_Script",
+      descEN: "Server data-audit toolkit with parallel directory scans, file-type and growth analysis, caching and an interactive Dash/Plotly dashboard. Generates timestamped HTML and XLSX reports with client-level filters for large file-server inventories.",
+      descPT: "Ferramenta de auditoria de dados em servidores: varredura paralela de diretórios, análise de tipos e crescimento, cache e dashboard interativo Dash/Plotly. Gera relatórios HTML e XLSX com timestamp e filtros por cliente para inventários grandes de file server."
+    },
+    {
+      name: "Network Monitor",
+      stack: "Python · Flask · PWA",
+      url: "https://github.com/Caiolinooo/network-monitor",
+      descEN: "Cross-platform network monitor (Windows, Linux, macOS, including Windows Server 2012) with live download/upload/latency, speed tests, history charts, PDF reports and PWA install for offline use on the LAN.",
+      descPT: "Monitor de rede multiplataforma (Windows, Linux, macOS, inclusive Windows Server 2012) com download/upload/latência ao vivo, testes de velocidade, gráficos de histórico, relatórios PDF e PWA para uso offline na LAN."
     }
   ],
   skills: {
@@ -224,7 +259,9 @@ const i18n = {
     projectsTitle: "Projetos Relevantes",
     resumeBtn: "Ver Currículo",
     downloadPdf: "Baixar PDF",
-    aiLabel: "Engenharia de IA & LLMs"
+    aiLabel: "Engenharia de IA & LLMs",
+    viewCode: "Ver código",
+    liveDemo: "Demo"
   },
   en: {
     greeting: "Hello, world.",
@@ -244,7 +281,9 @@ const i18n = {
     projectsTitle: "Relevant Projects",
     resumeBtn: "View Resume",
     downloadPdf: "Download PDF",
-    aiLabel: "AI & LLM Engineering"
+    aiLabel: "AI & LLM Engineering",
+    viewCode: "View code",
+    liveDemo: "Live demo"
   }
 };
 
@@ -276,21 +315,46 @@ function renderResumeJobs(lang) {
 
 function renderProjectCards(lang) {
   const isPT = lang === "pt";
-  return profile.projects.map((project) => `
+  const t = i18n[lang];
+  return profile.projects.map((project) => {
+    const links = [];
+    if (project.url) {
+      links.push(`<a href="${project.url}" target="_blank" rel="noopener">${t.viewCode}</a>`);
+    }
+    if (project.demo) {
+      links.push(`<a href="${project.demo}" target="_blank" rel="noopener">${t.liveDemo}</a>`);
+    }
+    return `
                 <div class="card">
-                    <div class="meta">${isPT ? "Projeto" : "Project"}</div>
+                    <div class="meta">${project.stack}</div>
                     <h3>${project.name}</h3>
                     <p>${isPT ? project.descPT : project.descEN}</p>
-                </div>`).join("");
+                    <div class="project-links">${links.join("")}</div>
+                </div>`;
+  }).join("");
 }
 
 function renderResumeProjects(lang) {
   const isPT = lang === "pt";
-  return profile.projects.map((project) => `
+  const t = i18n[lang];
+  return profile.projects.map((project) => {
+    const links = [];
+    if (project.url) {
+      links.push(`<a href="${project.url}" target="_blank" rel="noopener">${t.viewCode}</a>`);
+    }
+    if (project.demo) {
+      links.push(`<a href="${project.demo}" target="_blank" rel="noopener">${t.liveDemo}</a>`);
+    }
+    return `
             <div class="job">
-                <div class="job-header"><span class="job-title">${project.name}</span></div>
+                <div class="job-header">
+                    <span class="job-title">${project.name}</span>
+                    <span class="job-meta">${project.stack}</span>
+                </div>
                 <p class="project-copy">${isPT ? project.descPT : project.descEN}</p>
-            </div>`).join("");
+                <p class="project-links">${links.join(" · ")}</p>
+            </div>`;
+  }).join("");
 }
 
 function renderEducationCards(lang) {
@@ -392,6 +456,9 @@ app.get('/', (req, res) => {
         .card p, .card ul { color: var(--muted); font-size: 0.95rem; line-height: 1.6; }
         .card ul { padding-left: 18px; }
         .card li { margin-bottom: 8px; }
+        .project-links { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 16px; }
+        .project-links a { color: var(--primary); font-size: 0.85rem; font-family: 'JetBrains Mono', monospace; text-decoration: none; }
+        .project-links a:hover { text-decoration: underline; }
         .tech-grid { display: flex; flex-wrap: wrap; gap: 15px; }
         .tech-item { background: rgba(255,255,255,0.05); padding: 10px 20px; border-radius: 50px; border: 1px solid transparent; transition: 0.3s; }
         .tech-item:hover { border-color: var(--primary); background: rgba(0, 242, 255, 0.1); color: var(--primary); }
@@ -614,6 +681,7 @@ app.get('/resume', (req, res) => {
         .job-details { margin: 0; padding-left: 20px; font-size: 14px; color: #24292e; }
         .job-details li { margin-bottom: 8px; }
         .project-copy { margin: 0; font-size: 14px; color: #24292e; }
+        .project-links { margin: 8px 0 0 0; font-size: 13px; }
         .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; font-size: 14px; }
         .skill-category strong { display: block; margin-bottom: 5px; color: var(--text); }
         .skill-category p { margin: 0; color: var(--muted); }
