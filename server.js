@@ -4,6 +4,7 @@ const app = express();
 const PORT = 3000;
 
 app.use('/public', express.static(path.join(__dirname, 'public')));
+app.get('/favicon.ico', (_req, res) => res.status(204).end());
 
 const profile = {
   name: "Caio Valério Goulart Correia",
@@ -363,7 +364,7 @@ app.get('/', (req, res) => {
         body { background-color: var(--bg); color: var(--text); font-family: 'Space Grotesk', sans-serif; overflow-x: hidden; }
         #canvas-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; opacity: 0.4; }
         .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; position: relative; z-index: 1; }
-        header { display: flex; justify-content: space-between; align-items: center; padding: 40px 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        header { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; padding: 40px 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
         .logo { font-weight: 700; font-size: 1.5rem; letter-spacing: -1px; }
         .logo span { color: var(--primary); }
         .hero { min-height: 80vh; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; }
@@ -409,6 +410,7 @@ app.get('/', (req, res) => {
         }
         .lang-content { display: none; }
         .lang-content.active { display: block; }
+        .hero.lang-content.active { display: flex; }
     </style>
 </head>
 <body>
@@ -597,7 +599,8 @@ app.get('/resume', (req, res) => {
         a:hover { text-decoration: underline; }
         .lang-toggle { display: flex; justify-content: flex-end; gap: 10px; margin-bottom: 20px; }
         .lang-toggle button { background-color: var(--btn-bg); border: 1px solid var(--border); color: var(--text); padding: 6px 12px; border-radius: 4px; cursor: pointer; font-size: 14px; font-weight: 600; transition: all 0.2s; }
-        .lang-toggle button:hover, .lang-toggle button.active { background-color: var(--border); }
+        .lang-toggle button:hover { background-color: var(--border); }
+        .lang-toggle button.active { background-color: var(--accent); color: #fff; border-color: var(--accent); }
         header { margin-bottom: 30px; }
         h1 { font-size: 32px; margin: 0 0 5px 0; letter-spacing: -0.5px; }
         h2 { font-size: 18px; color: var(--muted); font-weight: 400; margin: 0 0 15px 0; }
