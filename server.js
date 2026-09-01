@@ -449,6 +449,7 @@ app.get('/', (req, res) => {
         .section-title { font-size: 2.5rem; margin-bottom: 40px; position: relative; display: inline-block; }
         .section-title::after { content: ''; position: absolute; left: 0; bottom: -10px; width: 60px; height: 4px; background: var(--primary); }
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 30px; }
         .card { background: var(--card); border: 1px solid #222; padding: 30px; border-radius: 12px; transition: 0.3s; }
         .card:hover { border-color: var(--primary); transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
         .card h3 { margin-bottom: 10px; font-size: 1.4rem; }
@@ -565,12 +566,12 @@ app.get('/', (req, res) => {
 
         <section class="lang-content active" data-lang="en">
             <h2 class="section-title">${i18n.en.projectsTitle}</h2>
-            <div class="grid">${renderProjectCards("en")}</div>
+            <div class="projects-grid">${renderProjectCards("en")}</div>
         </section>
 
         <section class="lang-content" data-lang="pt">
             <h2 class="section-title">${i18n.pt.projectsTitle}</h2>
-            <div class="grid">${renderProjectCards("pt")}</div>
+            <div class="projects-grid">${renderProjectCards("pt")}</div>
         </section>
 
         <section class="lang-content active" data-lang="en">
