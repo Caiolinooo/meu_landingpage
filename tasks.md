@@ -1,13 +1,10 @@
-# Correções: nome, PDF gerado e deploy na main
+# Corrigir geração de PDF na Vercel
 
-## Objetivo
-- Trocar "Valério" por "Valerio" (sem acento)
-- Gerar o PDF do currículo no próprio projeto (`/resume.pdf`)
-- Apontar o download para esse PDF, não para o HackerEarth
-- Subir tudo para `main`
+## Causa
+A Vercel não aceita bem `pdfkit.pipe(res)` e pode não empacotar as fontes TTF.
 
-## Status
-- Nome corrigido em todo o site.
-- PDF gerado em `/resume.pdf?lang=en|pt` a partir dos dados do perfil.
-- Download da home, barra de contato e `/resume` apontam para o PDF gerado.
-- Verificado no browser (EN/PT) e o download `Caio_Valerio_Goulart_Correia_Curriculo.pdf`.
+## Correção
+- Gerar o PDF em buffer e enviar com `res.send`
+- Carregar fontes em memória, com vários caminhos
+- Empacotar `fonts/**` na function `api/index.js`
+- `Content-Disposition: inline` para visualizar no navegador

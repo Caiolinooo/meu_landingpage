@@ -1,8 +1,8 @@
 const express = require('express');
 const path = require('path');
-const { pipeResumePdf } = require('./resume-pdf');
+const { buildResumePdf } = require('./resume-pdf');
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 app.use('/public', express.static(path.join(__dirname, 'public')));
 app.get('/favicon.ico', (_req, res) => res.status(204).end());
@@ -663,14 +663,18 @@ app.get('/', (req, res) => {
   `);
 });
 
-app.get('/resume.pdf', (req, res) => {
+app.get('/resume.pdf', async (req, res) => {
   const lang = String(req.query.lang || '').toLowerCase() === 'pt' ? 'pt' : 'en';
   try {
-    pipeResumePdf(res, lang, profile);
+    const { buffer, filename } = await buildResumePdf(lang, profile);
+    res.setHeader('Content-Type', 'application/pdf');
+    res.setHeader('Content-Disposition', `inline; filename="${filename}"`);
+    res.setHeader('Cache-Control', 'no-store');
+    res.send(buffer);
   } catch (err) {
-    console.error(err);
+    console.error('PDF generation failed:', err);
     if (!res.headersSent) {
-      res.status(500).send('Failed to generate resume PDF');
+      res.status(500).type('text/plain').send('Failed to generate resume PDF');
     }
   }
 });
@@ -832,6 +836,10 @@ app.get('/resume', (req, res) => {
 </html>`);
 });
 
-app.listen(PORT, () => {
-  console.log(`Servidor rodando em http://localhost:${PORT}`);
-});
+module.exports = app;
+
+if (require.main === module) {
+  app.listen(PORT, () => {
+    console.log(`Servidor rodando em http://localhost:${PORT}`);
+  });
+}
