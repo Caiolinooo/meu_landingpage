@@ -9,8 +9,8 @@ app.get('/favicon.ico', (_req, res) => res.status(204).end());
 
 const profile = {
   name: "Caio Valerio Goulart Correia",
-  titleEN: "AI Specialist, Senior Data Engineer & Backend Developer",
-  titlePT: "Especialista em IA, Engenheiro de Dados Sênior & Desenvolvedor Backend",
+  titleEN: "Backend Engineer (TypeScript/Node.js) · APIs & Developer Tools · AI Specialist",
+  titlePT: "Engenheiro Backend (TypeScript/Node.js) · APIs e Ferramentas para Devs · Especialista em IA",
   email: "caiovaleriogoulartcorreia@gmail.com",
   linkedin: "https://www.linkedin.com/in/caio-goulart",
   github: "https://github.com/Caiolinooo",
@@ -22,47 +22,54 @@ const profile = {
   ],
   locationEN: "Rio das Ostras, Brazil",
   locationPT: "Rio das Ostras, Brasil",
-  aboutEN: "AI Specialist and Senior Data Engineer with a strong background in software engineering, focusing on data science solutions and backend development. Expertise in Python and Java programming, with a proven ability to implement complex systems independently. Skilled in fostering collaboration with clients and teams to deliver innovative solutions.",
-  aboutPT: "Especialista em IA e Engenheiro de Dados Sênior com sólida experiência em engenharia de software, com foco em soluções de ciência de dados e desenvolvimento backend. Expertise em programação Python e Java, com comprovada capacidade de implementar sistemas complexos de forma independente. Habilidade em fomentar a colaboração com clientes e equipes para entregar soluções inovadoras.",
+  aboutEN: "Backend engineer with 9+ years of technical experience building and maintaining APIs, services, and developer-facing tools — primarily TypeScript and Node.js, with deep Python alongside. Shipped and operates a production HR/operations platform (200+ employees) whose Node.js/TypeScript backend exposes 600+ API routes secured by JWT, two-factor authentication, and role-based authorization (PostgreSQL RLS + ACL). Defines cross-product API contracts (HMAC-authenticated sync), hardens third-party integrations with retries and fallback on rate-limit/503 responses, and maintains open-source developer tools on GitHub. Also deep in AI: LLM training/evaluation (SFT, DPO/RLHF), local serving (vLLM, SGLang), and RAG. Fluent English (C1), remote-first with international teams.",
+  aboutPT: "Engenheiro backend com mais de 9 anos de experiência técnica construindo e mantendo APIs, serviços e ferramentas para desenvolvedores — principalmente TypeScript e Node.js, com Python profundo em paralelo. Entregou e opera uma plataforma de RH/operações em produção (200+ colaboradores) cujo backend Node.js/TypeScript expõe mais de 600 rotas de API protegidas por JWT, autenticação em dois fatores e autorização baseada em papéis (RLS + ACL no PostgreSQL). Define contratos de API entre produtos (sync autenticado via HMAC), robustece integrações com terceiros com retries e fallback em respostas de rate-limit/503 e mantém ferramentas de desenvolvedor open source no GitHub. Também profundo em IA: treinamento/avaliação de LLMs (SFT, DPO/RLHF), serving local (vLLM, SGLang) e RAG. Inglês fluente (C1), atuação remota com times internacionais.",
   stack: [
-    "Python", "Java", "TypeScript", "Linux", "Git", "PostgreSQL", "DevOps", "Cloud",
-    "Data Engineering", "Backend Development", "Generative AI", "LLMs", "RAG",
-    "Prompt Engineering", "Model Fine-Tuning", "MLOps", "MLflow", "Azure Databricks",
-    "Azure SQL", "CosmosDB", "Docker", "Kubernetes", "API Integration",
-    "Data Governance", "Security", "Compliance", "Azure AI Foundry", "Azure ML",
-    "Power BI", "AWS"
+    "TypeScript", "Node.js", "Express", "Next.js", "REST APIs", "API Design", "GraphQL", "JWT & Auth", "Python", "FastAPI", "PostgreSQL", "Supabase", "PostGIS", "Docker", "Kubernetes", "AWS", "GitHub Actions", "CI/CD", "Linux", "Git", "Java", "Go", "Generative AI", "LLMs", "RAG", "Model Fine-Tuning", "MLOps", "vLLM", "MCP", "Backend Development", "Data Engineering", "Security", "Compliance"
   ],
   experience: [
     {
-      roleEN: "AI Specialist",
-      rolePT: "Especialista em IA",
+      roleEN: "AI Specialist (Contract)",
+      rolePT: "AI Specialist (Contrato)",
       company: "micro1",
-      periodEN: "Aug 2026 – Present",
-      periodPT: "Ago 2026 – Presente",
+      periodEN: "Aug 2026 – Sep 2026",
+      periodPT: "Ago 2026 – Set 2026",
       bulletsEN: [
-        "Lead the development of Generative AI and LLM solutions, focusing on model alignment and fine-tuning.",
-        "Design and implement RAG systems and AI governance workflows using Azure technologies.",
-        "Benchmark AI code generation across multiple programming languages including Python and Java."
+        "Trained and evaluated LLMs for frontier-model programs, running Supervised Fine-Tuning (SFT) and preference optimization (DPO/RLHF) with PyTorch, Hugging Face PEFT (LoRA/QLoRA), Unsloth, and Axolotl.",
+        "Ran adversarial testing (red teaming) to surface hallucinations, logic flaws, and bias, feeding corrections back into training datasets.",
+        "Reviewed and benchmarked AI-generated code across Python, TypeScript, Node.js, FastAPI, React, Next.js, and JavaFX — assessing data-structure choices, execution behavior, and complex API integrations.",
+        "Deployed local LLM serving and agent harnesses on Windows/Linux (vLLM, SGLang, llama.cpp) on dedicated NVIDIA hardware (L4 GPU, 24GB VRAM), plus MCP tool servers for retrieval and graph tools; measured latency/throughput with custom evaluation harnesses.",
+        "Curated high-quality training and synthetic datasets (Self-Instruct, Evol-Instruct) with automated validation for dataset integrity, schema compliance, and model alignment."
       ],
       bulletsPT: [
-        "Lidera o desenvolvimento de soluções de IA Generativa e LLMs, com foco em alinhamento e fine-tuning de modelos.",
-        "Projeta e implementa sistemas RAG e fluxos de governança de IA utilizando tecnologias Azure.",
-        "Avalia a geração de código por IA em múltiplas linguagens de programação, incluindo Python e Java."
+        "Treinou e avaliou LLMs para programas de frontier models, executando Fine-Tuning Supervisionado (SFT) e otimização de preferência (DPO/RLHF) com PyTorch, Hugging Face PEFT (LoRA/QLoRA), Unsloth e Axolotl.",
+        "Executou testes adversariais (red teaming) para identificar alucinações, falhas de lógica e vieses, realimentando correções nos datasets de treinamento.",
+        "Revisou e fez benchmarking de código gerado por IA em Python, TypeScript, Node.js, FastAPI, React, Next.js e JavaFX — avaliando escolhas de estruturas de dados, comportamento de execução e integrações complexas de APIs.",
+        "Implantou serving local de LLMs e agent harnesses em Windows/Linux (vLLM, SGLang, llama.cpp) em hardware NVIDIA dedicado (GPU L4, 24GB VRAM), além de servidores de ferramentas MCP para retrieval e grafos; mediu latência/throughput com harnesses de avaliação customizados.",
+        "Curou datasets de treinamento e dados sintéticos de alta qualidade (Self-Instruct, Evol-Instruct) com validação automatizada de integridade, conformidade de schema e alinhamento do modelo."
       ]
     },
     {
       roleEN: "Full-Stack Developer & DevOps Engineer",
       rolePT: "Desenvolvedor Full-Stack & Engenheiro DevOps",
       company: "ABZ Serviços",
-      periodEN: "Jan 2025 – Present",
-      periodPT: "Jan 2025 – Presente",
+      periodEN: "Mar 2025 – Present",
+      periodPT: "Mar 2025 – Presente",
       bulletsEN: [
-        "Developed EmployeeHub, enhancing operational efficiency by 40% through automation.",
-        "Built data engineering pipelines integrating Azure services and established security compliance architecture."
+        "Architected and shipped EmployeeHub (portal.groupabz.com), an HR/operations portal used by 200+ employees — personnel records, crew management, e-Social, vacation, reimbursement, and ACL — on Next.js 15, TypeScript, and Supabase (PostgreSQL with Row-Level Security) on Vercel; reduced HR manual workload by ~40% and approval time by ~95%.",
+        "Built and maintains the platform's Node.js/TypeScript backend — 600+ REST API routes (Next.js App Router) with JWT authentication, two-factor authentication (2FA), and role-based authorization via PostgreSQL Row-Level Security and ACL, protecting sensitive HR/PII data under LGPD.",
+        "Delivered the ABZ product suite around the portal: PontoFlow (bilingual offshore timesheets with manager approval, field annotations, and deadline locks enforced in UI and RLS), Invoice ABZ (FastAPI/SQLAlchemy engine turning payroll and charge-rate spreadsheets into client invoices), and Ticket-Manager (support automation via Microsoft Graph).",
+        "Defined the cross-product API contract (HMAC-authenticated import/export) between the portal and the PontoFlow timesheet product, keeping collaborator identity and period behavior consistent across both systems.",
+        "Led the cloud migration of legacy on-premise Windows Servers (2012–2025), reaching 80% completion with zero production downtime.",
+        "Implemented end-to-end CI/CD with GitHub Actions and Docker, administered Proxmox virtualization and AWS S3, and deployed a WireGuard VPN for 50+ remote employees — sharply reducing connectivity support tickets."
       ],
       bulletsPT: [
-        "Desenvolveu o EmployeeHub, aumentando a eficiência operacional em 40% por meio de automação.",
-        "Construiu pipelines de engenharia de dados integrando serviços Azure e estabeleceu arquitetura de segurança e conformidade."
+        "Arquitetou e entregou o EmployeeHub (portal.groupabz.com), portal de RH/operações usado por mais de 200 colaboradores — registros de pessoal, gestão de tripulantes, e-Social, férias, reembolso e ACL — em Next.js 15, TypeScript e Supabase (PostgreSQL com Row-Level Security) na Vercel; reduziu a carga manual do RH em ~40% e o tempo de aprovação em ~95%.",
+        "Construiu e mantém o backend Node.js/TypeScript da plataforma — mais de 600 rotas de API REST (Next.js App Router) com autenticação JWT, autenticação em dois fatores (2FA) e autorização baseada em papéis via Row-Level Security e ACL, protegendo dados sensíveis de RH/PII sob LGPD.",
+        "Entregou a suíte de produtos ABZ em torno do portal: PontoFlow (timesheets offshore bilíngues com aprovação de gestor, anotações por campo e bloqueio de prazo na UI e no RLS), Invoice ABZ (motor FastAPI/SQLAlchemy que transforma planilhas de folha e charge-rate em invoices de clientes) e Ticket-Manager (automação de suporte via Microsoft Graph).",
+        "Definiu o contrato de API entre produtos (import/export autenticado via HMAC) entre o portal e o produto de timesheet PontoFlow, mantendo identidade de colaboradores e comportamento de períodos consistente nos dois sistemas.",
+        "Liderou a migração para nuvem de Windows Servers legados on-premise (2012–2025), atingindo 80% de conclusão com zero downtime em produção.",
+        "Implementou CI/CD de ponta a ponta com GitHub Actions e Docker, administrou virtualização Proxmox e AWS S3 e implantou VPN WireGuard para mais de 50 colaboradores remotos — reduzindo drasticamente tickets de suporte de conectividade."
       ]
     },
     {
@@ -72,38 +79,40 @@ const profile = {
       periodEN: "Mar 2024 – Mar 2025",
       periodPT: "Mar 2024 – Mar 2025",
       bulletsEN: [
-        "Created high-performance data processing scripts for geospatial applications, significantly optimizing processing times.",
-        "Engineered scalable data storage solutions on Azure Data Lake and PostgreSQL."
+        "Built high-performance Python pipelines (NumPy, SciPy, Open3D) automating geospatial data processing for dense point clouds (100M+ points), increasing processing speed by 40% and improving data compression across dozens of projects.",
+        "Modeled and optimized PostgreSQL databases with the PostGIS extension for complex spatial queries, designing and maintaining the REST APIs that exposed them to internal processing pipelines."
       ],
       bulletsPT: [
-        "Criou scripts de processamento de dados de alta performance para aplicações geoespaciais, otimizando significativamente os tempos de processamento.",
-        "Projetou soluções escaláveis de armazenamento de dados no Azure Data Lake e PostgreSQL."
+        "Construiu pipelines Python de alta performance (NumPy, SciPy, Open3D) automatizando o processamento de dados geoespaciais de nuvens de pontos densas (100M+ pontos), aumentando a velocidade de processamento em 40% e melhorando a compressão de dados em dezenas de projetos.",
+        "Modelou e otimizou bancos PostgreSQL com a extensão PostGIS para consultas espaciais complexas, projetando e mantendo as APIs REST que as expunham a pipelines internos de processamento."
       ]
     },
     {
       roleEN: "Topographical Survey Operator III (Laser Scanning)",
       rolePT: "Operador de Levantamento Topográfico III (Laser Scanning)",
-      company: "Master Engineering Services",
+      company: "Laser Master Engineering Services",
       periodEN: "Aug 2023 – Mar 2024",
       periodPT: "Ago 2023 – Mar 2024",
       bulletsEN: [
-        "Operated 3D laser scanning equipment for precise data collection in industrial environments."
+        "Operated high-precision 3D laser scanning equipment (Leica) in complex industrial and archaeological environments.",
+        "Led field campaign planning and technical documentation, ensuring millimeter-level precision and data backup redundancy for large-scale data collection."
       ],
       bulletsPT: [
-        "Operou equipamentos de escaneamento a laser 3D para coleta precisa de dados em ambientes industriais."
+        "Operou equipamentos de escaneamento a laser 3D de alta precisão (Leica) em ambientes industriais e arqueológicos complexos.",
+        "Liderou o planejamento de campanhas de campo e documentação técnica, garantindo precisão milimétrica e redundância de backup de dados em coletas de grande escala."
       ]
     },
     {
       roleEN: "Topographical Survey Operator II",
       rolePT: "Operador de Levantamento Topográfico II",
-      company: "OfTech3D",
+      company: "BRTech3D",
       periodEN: "Dec 2022 – Aug 2023",
       periodPT: "Dez 2022 – Ago 2023",
       bulletsEN: [
-        "Executed field data collection and implemented QA processes for data integrity."
+        "Executed field data collection using Leica TLS equipment and introduced Quality Assurance (QA) processes for outlier cleaning and multiple scan registration."
       ],
       bulletsPT: [
-        "Executou coleta de dados em campo e implementou processos de QA para garantir a integridade dos dados."
+        "Executou a coleta de dados em campo utilizando equipamentos Leica TLS e introduziu processos de Garantia da Qualidade (QA) para limpeza de outliers e registro de múltiplos escaneamentos."
       ]
     },
     {
@@ -113,10 +122,12 @@ const profile = {
       periodEN: "Mar 2021 – Dec 2022",
       periodPT: "Mar 2021 – Dez 2022",
       bulletsEN: [
-        "Produced technical manuals and provided support for complex business proposals."
+        "Produced 50+ bilingual technical manuals and system specifications for international clients.",
+        "Provided advanced pre-sales support and detailed hardware/software architecture mapping for complex business proposals."
       ],
       bulletsPT: [
-        "Produziu manuais técnicos e prestou suporte a propostas comerciais complexas."
+        "Produziu mais de 50 manuais técnicos bilíngues e especificações de sistemas para clientes internacionais.",
+        "Forneceu suporte avançado de pré-vendas e mapeamento detalhado de arquitetura de hardware/software para propostas comerciais complexas."
       ]
     },
     {
@@ -126,10 +137,12 @@ const profile = {
       periodEN: "May 2017 – Mar 2021",
       periodPT: "Mai 2017 – Mar 2021",
       bulletsEN: [
-        "Coordinated training for professionals in industrial automation and developed educational simulations."
+        "Coordinated and delivered technical training for over 500 professionals in PLCs, hydraulics, and industrial automation.",
+        "Developed educational simulations and managed B2B technical sales, building direct relationships with international suppliers."
       ],
       bulletsPT: [
-        "Coordenou treinamentos para profissionais em automação industrial e desenvolveu simulações educacionais."
+        "Coordenou e ministrou treinamentos técnicos para mais de 500 profissionais em CLPs, hidráulica e automação industrial.",
+        "Desenvolveu simulações educacionais e gerenciou vendas técnicas B2B, construindo relacionamento direto com fornecedores internacionais."
       ]
     },
     {
@@ -139,10 +152,12 @@ const profile = {
       periodEN: "Aug 2016 – May 2017",
       periodPT: "Ago 2016 – Mai 2017",
       bulletsEN: [
-        "Led teams in maintenance of large-scale engines and managed technical support for international clients."
+        "Led specialized field teams in the maintenance of large-scale engines and turbines (CAT, Cummins, MAK).",
+        "Managed English-language technical support tickets for international clients and formally documented failure analysis processes."
       ],
       bulletsPT: [
-        "Liderou equipes na manutenção de motores de grande porte e gerenciou suporte técnico para clientes internacionais."
+        "Liderou equipes de campo especializadas na manutenção de motores e turbinas de grande porte (CAT, Cummins, MAK).",
+        "Gerenciou tickets de suporte técnico em inglês para clientes internacionais e documentou formalmente processos de análise de falhas."
       ]
     },
     {
@@ -152,10 +167,10 @@ const profile = {
       periodEN: "Oct 2015 – Aug 2016",
       periodPT: "Out 2015 – Ago 2016",
       bulletsEN: [
-        "Supported commercial processes and ensured compliance in system maintenance."
+        "Began career providing support to commercial processes, CRM management, and strict application of compliance procedures for diesel and gas systems maintenance."
       ],
       bulletsPT: [
-        "Apoiou processos comerciais e assegurou conformidade na manutenção de sistemas."
+        "Iniciou a carreira prestando suporte a processos comerciais, gestão de CRM e aplicação estrita de procedimentos de conformidade para manutenção de sistemas a diesel e gás."
       ]
     }
   ],
@@ -176,16 +191,32 @@ const profile = {
       name: "Painel ABZ",
       stack: "Next.js 15 · TypeScript · PostgreSQL · Supabase",
       url: "https://github.com/Caiolinooo/EmployeeHub",
-      demo: "https://employee-hub-kappa-flame.vercel.app",
-      descEN: "Corporate operations portal for ABZ Group: HR, offshore crew management, payroll, reimbursements and internal comms on Next.js 15, React 18 and Supabase/PostgreSQL (50+ tables with RLS). Ships e-Social (13 events, RSA-SHA256 XML, SOAP mTLS), OCR (Tesseract) for ASO/ID docs, digital signatures, MIO ERP sync, and an AI companion with LiveKit voice, MS Graph and autonomous KPI agents.",
-      descPT: "Portal corporativo do Grupo ABZ: RH, gestão de tripulantes offshore, folha, reembolsos e comunicação interna em Next.js 15, React 18 e Supabase/PostgreSQL (50+ tabelas com RLS). Inclui e-Social (13 eventos, XML RSA-SHA256, SOAP mTLS), OCR (Tesseract) de ASO/documentos, assinatura digital, sync com o ERP MIO e um AI Companion com voz LiveKit, MS Graph e agentes autônomos de KPI."
+      demo: "https://portal.groupabz.com",
+      descEN: "Corporate operations portal for ABZ Group: HR, offshore crew management, payroll, reimbursements and internal comms on Next.js 15, React 18 and Supabase/PostgreSQL (50+ tables with RLS) behind a Node.js/TypeScript API layer of 600+ routes with JWT auth and 2FA. Ships e-Social (13 events, RSA-SHA256 XML, SOAP mTLS), OCR (Tesseract) for ASO/ID docs, digital signatures, MIO ERP sync, and an AI companion with LiveKit voice, MS Graph and autonomous KPI agents.",
+      descPT: "Portal corporativo do Grupo ABZ: RH, gestão de tripulantes offshore, folha, reembolsos e comunicação interna em Next.js 15, React 18 e Supabase/PostgreSQL (50+ tabelas com RLS) atrás de uma camada de API Node.js/TypeScript com mais de 600 rotas, JWT e 2FA. Inclui e-Social (13 eventos, XML RSA-SHA256, SOAP mTLS), OCR (Tesseract) de ASO/documentos, assinatura digital, sync com o ERP MIO e um AI Companion com voz LiveKit, MS Graph e agentes autônomos de KPI."
+    },
+    {
+      name: "PontoFlow",
+      stack: "Next.js 15 · TypeScript · Node.js · Supabase",
+      url: "https://github.com/Caiolinooo/PontoFlow",
+      demo: "https://ponto-flow.vercel.app",
+      descEN: "Bilingual (pt-BR/en-GB) timesheet system for offshore crews with manager approval, field-level annotations, and monthly deadline locks enforced in UI and Postgres RLS. Node.js server runtime with Nodemailer cron reminders and multi-tenant admin; syncs with EmployeeHub through an HMAC-authenticated import/export API contract.",
+      descPT: "Sistema bilíngue (pt-BR/en-GB) de timesheet para equipes offshore com aprovação de gestor, anotações por campo e bloqueio mensal de prazo na UI e no RLS do Postgres. Runtime Node.js com lembretes via Nodemailer/cron e admin multi-tenant; sincroniza com o EmployeeHub por um contrato de API de import/export autenticado via HMAC."
+    },
+    {
+      name: "CloudSec & FinOps Auditor",
+      stack: "Next.js · TypeScript · RAG · Gemini",
+      url: "https://github.com/Caiolinooo/cloudsec-finops-auditor",
+      demo: "https://cloudsec-finops-auditor.vercel.app",
+      descEN: "Compliance auditor that evaluates cloud architecture scenarios against CIS / SOC 2 / FinOps-style policies, returning structured risk, cost impact, citations, and remediation steps. Hybrid RAG (BM25 + TF-IDF + reciprocal rank fusion) over versioned policies; resilient LLM calls with automatic retry and model fallback on 503/rate-limit responses; Vitest tests and CI evaluation pipeline.",
+      descPT: "Auditor de conformidade que avalia cenários de arquitetura cloud contra políticas estilo CIS / SOC 2 / FinOps, retornando risco estruturado, impacto de custo, citações e remediação. RAG híbrido (BM25 + TF-IDF + reciprocal rank fusion) sobre políticas versionadas; chamadas LLM resilientes com retry automático e fallback de modelo em respostas 503/rate-limit; testes Vitest e pipeline de avaliação em CI."
     },
     {
       name: "SGLang Commander",
       stack: "Python · FastAPI · React · PySide6",
       url: "https://github.com/Caiolinooo/sglang-commander",
-      descEN: "Desktop (PySide6) and web (React + FastAPI) console for SGLang inference servers. Starts and stops servers, streams multimodal chat (image/audio), plots live GPU/VRAM/latency metrics, deploys Hugging Face models in one click, runs P50/P95/P99 benchmarks, and supports Docker plus ZeroTier remote deploys.",
-      descPT: "Console desktop (PySide6) e web (React + FastAPI) para servidores de inferência SGLang. Sobe e derruba servidores, faz chat multimodal (imagem/áudio), plota GPU/VRAM/latência em tempo real, faz deploy de modelos Hugging Face em um clique, executa benchmarks P50/P95/P99 e suporta Docker e deploys remotos via ZeroTier."
+      descEN: "Open-source desktop (PySide6) and web (React + FastAPI) console for SGLang inference servers. Starts and stops servers, streams multimodal chat (image/audio), plots live GPU/VRAM/latency metrics, deploys Hugging Face models in one click, runs P50/P95/P99 benchmarks, and supports Docker plus ZeroTier remote deploys.",
+      descPT: "Console open source desktop (PySide6) e web (React + FastAPI) para servidores de inferência SGLang. Sobe e derruba servidores, faz chat multimodal (imagem/áudio), plota GPU/VRAM/latência em tempo real, faz deploy de modelos Hugging Face em um clique, executa benchmarks P50/P95/P99 e suporta Docker e deploys remotos via ZeroTier."
     },
     {
       name: "Visualizador 3D FARO",
@@ -224,16 +255,16 @@ const profile = {
     }
   ],
   skills: {
-    aiEN: "Generative AI, LLMs, RAG, Prompt Engineering, Model Fine-Tuning, MLOps, MLflow, Azure AI Foundry, Azure ML.",
-    aiPT: "IA Generativa, LLMs, RAG, Engenharia de Prompts, Fine-Tuning de Modelos, MLOps, MLflow, Azure AI Foundry, Azure ML.",
-    backendEN: "Python, Java, TypeScript, Backend Development, API Integration, Data Engineering.",
-    backendPT: "Python, Java, TypeScript, Desenvolvimento Backend, Integração de APIs, Engenharia de Dados.",
-    cloudEN: "Linux, Git, DevOps, Cloud, Docker, Kubernetes, AWS, Azure Databricks.",
-    cloudPT: "Linux, Git, DevOps, Cloud, Docker, Kubernetes, AWS, Azure Databricks.",
-    dbEN: "PostgreSQL, Azure SQL, CosmosDB, Power BI.",
-    dbPT: "PostgreSQL, Azure SQL, CosmosDB, Power BI.",
-    systemsEN: "Data Governance, Security, Compliance.",
-    systemsPT: "Governança de Dados, Segurança, Conformidade."
+    aiEN: "Generative AI, LLMs, RAG, Prompt Engineering, Model Fine-Tuning (SFT, DPO/RLHF, LoRA/QLoRA), MLOps, vLLM, SGLang, llama.cpp, MCP.",
+    aiPT: "IA Generativa, LLMs, RAG, Engenharia de Prompts, Fine-Tuning de Modelos (SFT, DPO/RLHF, LoRA/QLoRA), MLOps, vLLM, SGLang, llama.cpp, MCP.",
+    backendEN: "TypeScript, Node.js (Next.js server runtime, Express, REST API routes), Python (FastAPI, SQLAlchemy), API design & cross-product API contracts, authentication & authorization (JWT, 2FA, RLS, ACL, HMAC), resilience patterns (retries, fallback, rate-limit/503 handling), GraphQL, Java (Spring Boot), Go.",
+    backendPT: "TypeScript, Node.js (runtime server do Next.js, Express, rotas de API REST), Python (FastAPI, SQLAlchemy), design de APIs & contratos de API entre produtos, autenticação & autorização (JWT, 2FA, RLS, ACL, HMAC), padrões de resiliência (retries, fallback, tratamento de rate-limit/503), GraphQL, Java (Spring Boot), Go.",
+    cloudEN: "Linux, Git, DevOps, Docker, Kubernetes, AWS (S3), GitHub Actions (CI/CD), Vercel, Cloudflare, Proxmox, WireGuard VPN, Terraform.",
+    cloudPT: "Linux, Git, DevOps, Docker, Kubernetes, AWS (S3), GitHub Actions (CI/CD), Vercel, Cloudflare, Proxmox, VPN WireGuard, Terraform.",
+    dbEN: "PostgreSQL, PostGIS, Supabase (Row-Level Security), SQLite (FTS5), NoSQL, ETL/data pipelines.",
+    dbPT: "PostgreSQL, PostGIS, Supabase (Row-Level Security), SQLite (FTS5), NoSQL, pipelines de dados/ETL.",
+    systemsEN: "Data Governance, Security, Compliance, LGPD/PII controls.",
+    systemsPT: "Governança de Dados, Segurança, Conformidade, controles de LGPD/PII."
   },
   languages: {
     en: "Portuguese: Native | English: Fluent (C1) | Spanish/Italian: Advanced technical reading.",
@@ -252,9 +283,9 @@ const i18n = {
     education: "Educação",
     allRights: "Todos os direitos reservados.",
     skillsTitle: "Competências Técnicas",
-    backendLabel: "Engenharia de Dados & Backend",
+    backendLabel: "Backend & APIs",
     cloudLabel: "Cloud & DevOps",
-    dbLabel: "Bancos de Dados & BI",
+    dbLabel: "Bancos de Dados",
     systemsLabel: "Governança, Segurança & Conformidade",
     languagesLabel: "Idiomas",
     projectsTitle: "Projetos Relevantes",
@@ -274,9 +305,9 @@ const i18n = {
     education: "Education",
     allRights: "All rights reserved.",
     skillsTitle: "Technical Skills",
-    backendLabel: "Data Engineering & Backend",
+    backendLabel: "Backend & APIs",
     cloudLabel: "Cloud & DevOps",
-    dbLabel: "Databases & BI",
+    dbLabel: "Databases",
     systemsLabel: "Governance, Security & Compliance",
     languagesLabel: "Languages",
     projectsTitle: "Relevant Projects",

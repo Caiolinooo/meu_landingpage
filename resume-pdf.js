@@ -121,9 +121,9 @@ function writeResume(doc, lang, profile, fonts) {
   sectionTitle(isPT ? "Habilidades Técnicas" : "Technical Skills");
   const skillBlocks = [
     { label: isPT ? "IA & LLMs" : "AI & LLM Engineering", value: isPT ? profile.skills.aiPT : profile.skills.aiEN },
-    { label: isPT ? "Engenharia de Dados & Backend" : "Data Engineering & Backend", value: isPT ? profile.skills.backendPT : profile.skills.backendEN },
+    { label: isPT ? "Backend & APIs" : "Backend & APIs", value: isPT ? profile.skills.backendPT : profile.skills.backendEN },
     { label: isPT ? "Cloud & DevOps" : "Cloud & DevOps", value: isPT ? profile.skills.cloudPT : profile.skills.cloudEN },
-    { label: isPT ? "Bancos de Dados & BI" : "Databases & BI", value: isPT ? profile.skills.dbPT : profile.skills.dbEN },
+    { label: isPT ? "Bancos de Dados" : "Databases", value: isPT ? profile.skills.dbPT : profile.skills.dbEN },
     { label: isPT ? "Governança, Segurança & Conformidade" : "Governance, Security & Compliance", value: isPT ? profile.skills.systemsPT : profile.skills.systemsEN }
   ];
   skillBlocks.forEach((block) => {
