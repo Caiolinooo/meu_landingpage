@@ -57,7 +57,10 @@
       "role": "Proprietário / Diretor",
       "company": "SmartStore",
       "period": "Mai 2021 – Presente",
-      "bullets": [],
+      "bullets": [
+        "Produziu mais de 50 manuais técnicos bilíngues e especificações de sistemas para clientes internacionais.",
+        "Forneceu suporte avançado de pré-vendas e mapeamento detalhado de arquitetura de hardware/software para propostas comerciais complexas."
+      ],
       "location": "Rio das Ostras, RJ · Tempo integral"
     },
     {
@@ -77,7 +80,9 @@
       "role": "Desenhista Técnico II",
       "company": "BRtech3D Laser Scanning Solutions",
       "period": "Mar 2024 – Mar 2025",
-      "bullets": [],
+      "bullets": [
+        "Executou a coleta de dados em campo utilizando equipamentos Leica TLS e introduziu processos de Garantia da Qualidade (QA) para limpeza de outliers e registro de múltiplos escaneamentos."
+      ],
       "location": "Macaé, RJ · Híbrido · Tempo integral"
     },
     {
@@ -91,10 +96,13 @@
       ]
     },
     {
-      "role": "Projetista III",
+      "role": "Operador de Laser Scanner III",
       "company": "Master Serviços",
       "period": "Out 2023 – Mar 2024",
-      "bullets": [],
+      "bullets": [
+        "Operou equipamentos de escaneamento a laser 3D de alta precisão (Leica) em ambientes industriais e arqueológicos complexos.",
+        "Liderou o planejamento de campanhas de campo e documentação técnica, garantindo precisão milimétrica e redundância de backup de dados em coletas de grande escala."
+      ],
       "location": "Macaé, RJ · Presencial · Tempo integral"
     },
     {
