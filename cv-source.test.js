@@ -81,6 +81,8 @@ async function main() {
   const supportPt = pt.experience.find((job) => job.role === "Suporte ao Produto");
   assert.deepEqual(support.bullets, []);
   assert.deepEqual(supportPt.bullets, []);
+  assert.deepEqual(en.experience.find((job) => job.role === "Automation Technician").bullets, []);
+  assert.deepEqual(pt.experience.find((job) => job.role === "Técnico de automação").bullets, []);
   assert.deepEqual(en.experience.find((job) => job.role === "Technician").bullets, [
     "Started career supporting commercial processes, CRM management, and strict application of compliance procedures for diesel and gas systems maintenance."
   ]);
@@ -97,7 +99,6 @@ async function main() {
     "Technical Drafter II": 1,
     "Python Developer": 2,
     "Designer III": 2,
-    "Automation Technician": 2,
     "Training Specialist": 2,
     "Technical Team Lead": 2,
     "Technician": 1
