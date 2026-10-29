@@ -85,8 +85,8 @@ async function main() {
   assert.equal(supportPt.bullets.length, 3);
   assert.equal(en.experience.find((job) => job.role === "Automation Technician").bullets.length, 4);
   assert.equal(pt.experience.find((job) => job.role === "Técnico de Automação").bullets.length, 4);
-  assert.equal(en.experience.find((job) => job.role === "Owner / Director").bullets.length, 7);
-  assert.equal(pt.experience.find((job) => job.role === "Proprietário / Diretor").bullets.length, 7);
+  assert.equal(en.experience.find((job) => job.role === "Owner / Director").bullets.length, 8);
+  assert.equal(pt.experience.find((job) => job.role === "Proprietário / Diretor").bullets.length, 8);
   assert.deepEqual(en.experience.find((job) => job.role === "Technician").bullets, [
     "Started career supporting commercial processes, CRM management, and strict application of compliance procedures for diesel and gas systems maintenance."
   ]);
@@ -100,15 +100,15 @@ async function main() {
   const masterPt = pt.experience.find((job) => job.company === "Master Serviços");
   assert.equal(masterEn.role, "Laser Scanner Operator III");
   assert.equal(masterPt.role, "Operador de Laser Scanner III");
-  assert.equal(masterEn.bullets.length, 3);
-  assert.equal(masterPt.bullets.length, 3);
+  assert.equal(masterEn.bullets.length, 5);
+  assert.equal(masterPt.bullets.length, 5);
   const minimumBullets = {
     "System Analyst": 6,
-    "Owner / Director": 7,
+    "Owner / Director": 8,
     "AI Specialist (Contract)": 5,
     "Technical Drafter II": 6,
     "Python Developer": 3,
-    "Laser Scanner Operator III": 3,
+    "Laser Scanner Operator III": 5,
     "Training Specialist": 2,
     "Technical Team Lead": 2,
     "Technician": 1
@@ -141,7 +141,7 @@ async function main() {
     assert.deepEqual(completed.education, snapshot.education);
     assert.deepEqual(completed.certifications, snapshot.certifications);
     const total = completed.experience.reduce((sum, job) => sum + job.bullets.length, 0);
-    assert.equal(total, 42);
+    assert.equal(total, 45);
   }
 
   const already = normalizeCv({

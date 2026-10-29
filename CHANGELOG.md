@@ -8,7 +8,8 @@
 
 ### Changed
 
-- Experiências atualizadas para o conteúdo v1.1.2: Owner/Director (7 bullets), Technical Drafter II (6), Laser Scanner Operator III (3), Automation Technician (4) e Product Support (3). Total de 42 bullets por idioma.
+- Experiências atualizadas para o conteúdo v1.1.2: Owner/Director (8 bullets), Technical Drafter II (6), Laser Scanner Operator III (5), Automation Technician (4) e Product Support (3). Total de 45 bullets por idioma.
+- Owner/Director e Laser Scanner Operator III recuperam, no final da lista, os bullets da v1.1.1 que tinham sido substituídos.
 
 ## [1.1.1] - 2026-10-29
 
