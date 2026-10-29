@@ -1,0 +1,278 @@
+{
+  "name": "Caio Valerio Goulart Correia",
+  "title": "AI Specialist - Full-Stack Developer & DevOps Engineer | Industrial Automation Specialist | Mechanical Engineering Student | Node.js • Python • AWS • TypeScript",
+  "location": "Rio das Ostras, Brazil",
+  "about": "Backend engineer with 9+ years of technical experience building and maintaining APIs, services, and developer-facing tools — primarily TypeScript and Node.js, with deep Python alongside. Shipped and operates a production HR/operations platform (200+ employees) whose Node.js/TypeScript backend exposes 600+ API routes secured by JWT, two-factor authentication, and role-based authorization (PostgreSQL RLS + ACL). Defines cross-product API contracts (HMAC-authenticated sync), hardens third-party integrations with retries and fallback on rate-limit/503 responses, and maintains open-source developer tools on GitHub. Also deep in AI: LLM training/evaluation (SFT, DPO/RLHF), local serving (vLLM, SGLang), and RAG. Fluent English (C1), remote-first with international teams.",
+  "stack": [
+    "TypeScript",
+    "Node.js",
+    "Express",
+    "Next.js",
+    "REST APIs",
+    "API Design",
+    "GraphQL",
+    "JWT & Auth",
+    "Python",
+    "FastAPI",
+    "PostgreSQL",
+    "Supabase",
+    "PostGIS",
+    "Docker",
+    "Kubernetes",
+    "AWS",
+    "GitHub Actions",
+    "CI/CD",
+    "Linux",
+    "Git",
+    "Java",
+    "Go",
+    "Generative AI",
+    "LLMs",
+    "RAG",
+    "Model Fine-Tuning",
+    "MLOps",
+    "vLLM",
+    "MCP",
+    "Backend Development",
+    "Data Engineering",
+    "Security",
+    "Compliance"
+  ],
+  "experience": [
+    {
+      "role": "System Analyst",
+      "company": "ABZ SERVIÇOS LTDA",
+      "period": "Mar 2025 – Present",
+      "bullets": [
+        "Architected and shipped EmployeeHub (portal.groupabz.com), an HR/operations portal used by 200+ employees — personnel records, crew management, e-Social, vacation, reimbursement, and ACL — on Next.js 15, TypeScript, and Supabase (PostgreSQL with Row-Level Security) on Vercel; reduced HR manual workload by ~40% and approval time by ~95%.",
+        "Built and maintains the platform's Node.js/TypeScript backend — 600+ REST API routes (Next.js App Router) with JWT authentication, two-factor authentication (2FA), and role-based authorization via PostgreSQL Row-Level Security and ACL, protecting sensitive HR/PII data under LGPD.",
+        "Delivered the ABZ product suite around the portal: PontoFlow (bilingual offshore timesheets with manager approval, field annotations, and deadline locks enforced in UI and RLS), Invoice ABZ (FastAPI/SQLAlchemy engine turning payroll and charge-rate spreadsheets into client invoices), and Ticket-Manager (support automation via Microsoft Graph).",
+        "Defined the cross-product API contract (HMAC-authenticated import/export) between the portal and the PontoFlow timesheet product, keeping collaborator identity and period behavior consistent across both systems.",
+        "Led the cloud migration of legacy on-premise Windows Servers (2012–2025), reaching 80% completion with zero production downtime.",
+        "Implemented end-to-end CI/CD with GitHub Actions and Docker, administered Proxmox virtualization and AWS S3, and deployed a WireGuard VPN for 50+ remote employees — sharply reducing connectivity support tickets."
+      ],
+      "location": "Brazil · On-site · Full-time"
+    },
+    {
+      "role": "Owner / Director",
+      "company": "SmartStore",
+      "period": "May 2021 – Present",
+      "bullets": [],
+      "location": "Rio das Ostras, RJ · Full-time"
+    },
+    {
+      "role": "AI Specialist",
+      "company": "micro1",
+      "period": "Aug 2026 – Sep 2026",
+      "bullets": [
+        "Trained and evaluated LLMs for frontier-model programs, running Supervised Fine-Tuning (SFT) and preference optimization (DPO/RLHF) with PyTorch, Hugging Face PEFT (LoRA/QLoRA), Unsloth, and Axolotl.",
+        "Ran adversarial testing (red teaming) to surface hallucinations, logic flaws, and bias, feeding corrections back into training datasets.",
+        "Reviewed and benchmarked AI-generated code across Python, TypeScript, Node.js, FastAPI, React, Next.js, and JavaFX — assessing data-structure choices, execution behavior, and complex API integrations.",
+        "Deployed local LLM serving and agent harnesses on Windows/Linux (vLLM, SGLang, llama.cpp) on dedicated NVIDIA hardware (L4 GPU, 24GB VRAM), plus MCP tool servers for retrieval and graph tools; measured latency/throughput with custom evaluation harnesses.",
+        "Curated high-quality training and synthetic datasets (Self-Instruct, Evol-Instruct) with automated validation for dataset integrity, schema compliance, and model alignment."
+      ],
+      "location": "San Francisco County, CA, US · Remote · Contract"
+    },
+    {
+      "role": "Technical Drafter II",
+      "company": "BRtech3D Laser Scanning Solutions",
+      "period": "Mar 2024 – Mar 2025",
+      "bullets": [],
+      "location": "Macaé, RJ · Hybrid · Full-time"
+    },
+    {
+      "role": "Python Developer",
+      "company": "BRTech3D",
+      "period": "Mar 2024 – Mar 2025",
+      "bullets": [
+        "Developed high-performance Python scripts (NumPy, SciPy, Open3D) to automate geospatial data pipelines, optimizing the processing of dense point clouds (more than 100 million data points).",
+        "Implemented data routines that increased processing speed by 40% and improved data compression, generating significant savings in time and resources across dozens of projects.",
+        "Modeled and optimized PostgreSQL databases using the PostGIS extension for complex spatial queries and seamless integration via REST APIs."
+      ]
+    },
+    {
+      "role": "Designer III",
+      "company": "Master Serviços",
+      "period": "Oct 2023 – Mar 2024",
+      "bullets": [],
+      "location": "Macaé, RJ · On-site · Full-time"
+    },
+    {
+      "role": "Automation Technician",
+      "company": "Jackkk Connection Comercial",
+      "period": "Apr 2021 – Apr 2022",
+      "bullets": [],
+      "location": "Macaé, RJ · Full-time"
+    },
+    {
+      "role": "Training Specialist",
+      "company": "Jackkk Connection Comercial",
+      "period": "May 2017 – Mar 2021",
+      "bullets": [
+        "Coordinated and delivered technical training for over 500 professionals in PLCs, hydraulics, and industrial automation.",
+        "Developed educational simulations and managed B2B technical sales, building direct relationships with international suppliers."
+      ]
+    },
+    {
+      "role": "Partner / Systems Analyst",
+      "company": "TechFix reparos e manutenção",
+      "period": "Feb 2018 – Dec 2018",
+      "bullets": [],
+      "location": "Rio das Ostras · Full-time"
+    },
+    {
+      "role": "Industrial Automation Technical Assistant",
+      "company": "Jackkk Comercial onshore e offshore",
+      "period": "Jun 2017 – Dec 2017",
+      "bullets": [],
+      "location": "Granja dos Cavaleiros (Macaé) · Full-time"
+    },
+    {
+      "role": "Technical Team Lead",
+      "company": "Diesel Line Cambuí",
+      "period": "Aug 2016 – May 2017",
+      "bullets": [
+        "Led field teams specialized in maintenance of large engines and turbines (CAT, Cummins, MAK).",
+        "Managed technical support tickets in English for international clients and formally documented failure analysis processes."
+      ]
+    },
+    {
+      "role": "Product Support",
+      "company": "Diesel Line Cambuí",
+      "period": "Aug 2015 – May 2017",
+      "bullets": [],
+      "location": "Rio das Ostras · Full-time"
+    },
+    {
+      "role": "Technician",
+      "company": "Diesel Line Cambuí",
+      "period": "Oct 2015 – Aug 2016",
+      "bullets": [
+        "Started career supporting commercial processes, CRM management, and strict application of compliance procedures for diesel and gas systems maintenance."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "course": "B.S. in Mechanical Engineering",
+      "school": "Centro Universitário UniFatecie",
+      "period": "May 2024 – May 2027"
+    },
+    {
+      "course": "High School, Industrial Automation",
+      "school": "Instituto Federal Fluminense"
+    },
+    {
+      "course": "High School",
+      "school": "Alternativa Colégio",
+      "period": "2013 – 2015"
+    },
+    {
+      "course": "Technical Diploma in Industrial Automation",
+      "school": "ETP Escola Técnica",
+      "period": "2013 – 2015"
+    }
+  ],
+  "certifications": [
+    {
+      "name": "Micro1 Hackaton 2026",
+      "issuer": "micro1",
+      "date": "Jul 2026"
+    },
+    {
+      "name": "ChatGPT",
+      "issuer": "UniFatecie",
+      "date": "Aug 2024",
+      "credentialId": "332515"
+    },
+    {
+      "name": "Fundamentos da Inteligência Artificial",
+      "issuer": "UniFatecie",
+      "date": "Jul 2024",
+      "credentialId": "332515"
+    },
+    {
+      "name": "Hidráulica e Pneumática",
+      "issuer": "Parker Hannifin",
+      "date": "Jul 2017"
+    },
+    {
+      "name": "Hidráulica e Pneumática",
+      "issuer": "Festo",
+      "date": "Jul 2017"
+    },
+    {
+      "name": "Técnico de Automação",
+      "issuer": "Crea-RJ",
+      "date": "Apr 2015",
+      "credentialId": "2017115401"
+    }
+  ],
+  "projects": [
+    {
+      "name": "Painel ABZ",
+      "stack": "Next.js 15 · TypeScript · PostgreSQL · Supabase",
+      "desc": "Corporate operations portal for ABZ Group: HR, offshore crew management, payroll, reimbursements and internal comms on Next.js 15, React 18 and Supabase/PostgreSQL (50+ tables with RLS) behind a Node.js/TypeScript API layer of 600+ routes with JWT auth and 2FA. Ships e-Social (13 events, RSA-SHA256 XML, SOAP mTLS), OCR (Tesseract) for ASO/ID docs, digital signatures, MIO ERP sync, and an AI companion with LiveKit voice, MS Graph and autonomous KPI agents.",
+      "url": "https://github.com/Caiolinooo/EmployeeHub",
+      "demo": "https://portal.groupabz.com"
+    },
+    {
+      "name": "PontoFlow",
+      "stack": "Next.js 15 · TypeScript · Node.js · Supabase",
+      "desc": "Bilingual (pt-BR/en-GB) timesheet system for offshore crews with manager approval, field-level annotations, and monthly deadline locks enforced in UI and Postgres RLS. Node.js server runtime with Nodemailer cron reminders and multi-tenant admin; syncs with EmployeeHub through an HMAC-authenticated import/export API contract.",
+      "url": "https://github.com/Caiolinooo/PontoFlow",
+      "demo": "https://ponto-flow.vercel.app"
+    },
+    {
+      "name": "CloudSec & FinOps Auditor",
+      "stack": "Next.js · TypeScript · RAG · Gemini",
+      "desc": "Compliance auditor that evaluates cloud architecture scenarios against CIS / SOC 2 / FinOps-style policies, returning structured risk, cost impact, citations, and remediation steps. Hybrid RAG (BM25 + TF-IDF + reciprocal rank fusion) over versioned policies; resilient LLM calls with automatic retry and model fallback on 503/rate-limit responses; Vitest tests and CI evaluation pipeline.",
+      "url": "https://github.com/Caiolinooo/cloudsec-finops-auditor",
+      "demo": "https://cloudsec-finops-auditor.vercel.app"
+    },
+    {
+      "name": "SGLang Commander",
+      "stack": "Python · FastAPI · React · PySide6",
+      "desc": "Open-source desktop (PySide6) and web (React + FastAPI) console for SGLang inference servers. Starts and stops servers, streams multimodal chat (image/audio), plots live GPU/VRAM/latency metrics, deploys Hugging Face models in one click, runs P50/P95/P99 benchmarks, and supports Docker plus ZeroTier remote deploys.",
+      "url": "https://github.com/Caiolinooo/sglang-commander"
+    },
+    {
+      "name": "Visualizador 3D FARO",
+      "stack": "Three.js · React · Open3D · MCP",
+      "desc": "Matterport-style web viewer for FARO Focus scans. Renders PTS/E57 point clouds and TrueView 360 panoramas with Three.js and React Three Fiber, plus dollhouse view, floor plans, distance measurement, annotations, auto-tours and a Model Context Protocol bridge so local LLMs can drive the 3D scene.",
+      "url": "https://github.com/Caiolinooo/Visualizador3D_Matterport_Clone"
+    },
+    {
+      "name": "Gerador de Malha Open3D",
+      "stack": "Python · Open3D · NumPy",
+      "desc": "Desktop pipeline that turns industrial point clouds into production meshes: Poisson reconstruction, hole filling, density-based vertex cleanup, smoothing and export to PLY/OBJ/STL — built for geospatial and laser-scan workflows with 100M+ points.",
+      "url": "https://github.com/Caiolinooo/Projeto_Open_Mesh_"
+    },
+    {
+      "name": "AD Migration Suite",
+      "stack": "C# · .NET 8 · WPF",
+      "desc": "Enterprise Active Directory migration from Windows Server 2012/2016 to 2019/2022. Agent-based architecture on a single port (8765) avoids WinRM/Kerberos setup, preserves SID history, replicates GPOs/OUs and migrates file shares with ACL translation across domains.",
+      "url": "https://github.com/Caiolinooo/AD_Migrator"
+    },
+    {
+      "name": "Auditoria de Dados",
+      "stack": "Python · Pandas · Dash · Plotly",
+      "desc": "Server data-audit toolkit with parallel directory scans, file-type and growth analysis, caching and an interactive Dash/Plotly dashboard. Generates timestamped HTML and XLSX reports with client-level filters for large file-server inventories.",
+      "url": "https://github.com/Caiolinooo/Python_Audit_Script"
+    },
+    {
+      "name": "Network Monitor",
+      "stack": "Python · Flask · PWA",
+      "desc": "Cross-platform network monitor (Windows, Linux, macOS, including Windows Server 2012) with live download/upload/latency, speed tests, history charts, PDF reports and PWA install for offline use on the LAN.",
+      "url": "https://github.com/Caiolinooo/network-monitor"
+    }
+  ],
+  "skills": {
+    "ai": "Generative AI, LLMs, RAG, Prompt Engineering, Model Fine-Tuning (SFT, DPO/RLHF, LoRA/QLoRA), MLOps, vLLM, SGLang, llama.cpp, MCP.",
+    "backend": "TypeScript, Node.js (Next.js server runtime, Express, REST API routes), Python (FastAPI, SQLAlchemy), API design & cross-product API contracts, authentication & authorization (JWT, 2FA, RLS, ACL, HMAC), resilience patterns (retries, fallback, rate-limit/503 handling), GraphQL, Java (Spring Boot), Go.",
+    "cloud": "Linux, Git, DevOps, Docker, Kubernetes, AWS (S3), GitHub Actions (CI/CD), Vercel, Cloudflare, Proxmox, WireGuard VPN, Terraform.",
+    "db": "PostgreSQL, PostGIS, Supabase (Row-Level Security), SQLite (FTS5), NoSQL, ETL/data pipelines.",
+    "systems": "Data Governance, Security, Compliance, LGPD/PII controls."
+  },
+  "languages": "Portuguese: Native | English: Fluent (C1) | Spanish/Italian: Advanced technical reading."
+}
