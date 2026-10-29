@@ -1,0 +1,278 @@
+{
+  "name": "Caio Valerio Goulart Correia",
+  "title": "AI Specialist - Desenvolvedor Full-Stack & Engenheiro DevOps | Especialista em Automação Industrial | Estudante de Engenharia Mecânica | Node.js • Python • AWS • TypeScript",
+  "location": "Rio das Ostras, Brasil",
+  "about": "Engenheiro backend com mais de 9 anos de experiência técnica construindo e mantendo APIs, serviços e ferramentas para desenvolvedores — principalmente TypeScript e Node.js, com Python profundo em paralelo. Entregou e opera uma plataforma de RH/operações em produção (200+ colaboradores) cujo backend Node.js/TypeScript expõe mais de 600 rotas de API protegidas por JWT, autenticação em dois fatores e autorização baseada em papéis (RLS + ACL no PostgreSQL). Define contratos de API entre produtos (sync autenticado via HMAC), robustece integrações com terceiros com retries e fallback em respostas de rate-limit/503 e mantém ferramentas de desenvolvedor open source no GitHub. Também profundo em IA: treinamento/avaliação de LLMs (SFT, DPO/RLHF), serving local (vLLM, SGLang) e RAG. Inglês fluente (C1), atuação remota com times internacionais.",
+  "stack": [
+    "TypeScript",
+    "Node.js",
+    "Express",
+    "Next.js",
+    "REST APIs",
+    "API Design",
+    "GraphQL",
+    "JWT & Auth",
+    "Python",
+    "FastAPI",
+    "PostgreSQL",
+    "Supabase",
+    "PostGIS",
+    "Docker",
+    "Kubernetes",
+    "AWS",
+    "GitHub Actions",
+    "CI/CD",
+    "Linux",
+    "Git",
+    "Java",
+    "Go",
+    "Generative AI",
+    "LLMs",
+    "RAG",
+    "Model Fine-Tuning",
+    "MLOps",
+    "vLLM",
+    "MCP",
+    "Backend Development",
+    "Data Engineering",
+    "Security",
+    "Compliance"
+  ],
+  "experience": [
+    {
+      "role": "Analista de Sistemas",
+      "company": "ABZ SERVIÇOS LTDA",
+      "period": "Mar 2025 – Presente",
+      "bullets": [
+        "Arquitetou e entregou o EmployeeHub (portal.groupabz.com), portal de RH/operações usado por mais de 200 colaboradores — registros de pessoal, gestão de tripulantes, e-Social, férias, reembolso e ACL — em Next.js 15, TypeScript e Supabase (PostgreSQL com Row-Level Security) na Vercel; reduziu a carga manual do RH em ~40% e o tempo de aprovação em ~95%.",
+        "Construiu e mantém o backend Node.js/TypeScript da plataforma — mais de 600 rotas de API REST (Next.js App Router) com autenticação JWT, autenticação em dois fatores (2FA) e autorização baseada em papéis via Row-Level Security e ACL, protegendo dados sensíveis de RH/PII sob LGPD.",
+        "Entregou a suíte de produtos ABZ em torno do portal: PontoFlow (timesheets offshore bilíngues com aprovação de gestor, anotações por campo e bloqueio de prazo na UI e no RLS), Invoice ABZ (motor FastAPI/SQLAlchemy que transforma planilhas de folha e charge-rate em invoices de clientes) e Ticket-Manager (automação de suporte via Microsoft Graph).",
+        "Definiu o contrato de API entre produtos (import/export autenticado via HMAC) entre o portal e o produto de timesheet PontoFlow, mantendo identidade de colaboradores e comportamento de períodos consistente nos dois sistemas.",
+        "Liderou a migração para nuvem de Windows Servers legados on-premise (2012–2025), atingindo 80% de conclusão com zero downtime em produção.",
+        "Implementou CI/CD de ponta a ponta com GitHub Actions e Docker, administrou virtualização Proxmox e AWS S3 e implantou VPN WireGuard para mais de 50 colaboradores remotos — reduzindo drasticamente tickets de suporte de conectividade."
+      ],
+      "location": "Brasil · Presencial · Tempo integral"
+    },
+    {
+      "role": "Proprietário / Diretor",
+      "company": "SmartStore",
+      "period": "Mai 2021 – Presente",
+      "bullets": [],
+      "location": "Rio das Ostras, RJ · Tempo integral"
+    },
+    {
+      "role": "AI Specialist",
+      "company": "micro1",
+      "period": "Ago 2026 – Set 2026",
+      "bullets": [
+        "Treinou e avaliou LLMs para programas de frontier models, executando Fine-Tuning Supervisionado (SFT) e otimização de preferência (DPO/RLHF) com PyTorch, Hugging Face PEFT (LoRA/QLoRA), Unsloth e Axolotl.",
+        "Executou testes adversariais (red teaming) para identificar alucinações, falhas de lógica e vieses, realimentando correções nos datasets de treinamento.",
+        "Revisou e fez benchmarking de código gerado por IA em Python, TypeScript, Node.js, FastAPI, React, Next.js e JavaFX — avaliando escolhas de estruturas de dados, comportamento de execução e integrações complexas de APIs.",
+        "Implantou serving local de LLMs e agent harnesses em Windows/Linux (vLLM, SGLang, llama.cpp) em hardware NVIDIA dedicado (GPU L4, 24GB VRAM), além de servidores de ferramentas MCP para retrieval e grafos; mediu latência/throughput com harnesses de avaliação customizados.",
+        "Curou datasets de treinamento e dados sintéticos de alta qualidade (Self-Instruct, Evol-Instruct) com validação automatizada de integridade, conformidade de schema e alinhamento do modelo."
+      ],
+      "location": "San Francisco County, CA, EUA · Remoto · Contrato"
+    },
+    {
+      "role": "Desenhista Técnico II",
+      "company": "BRtech3D Laser Scanning Solutions",
+      "period": "Mar 2024 – Mar 2025",
+      "bullets": [],
+      "location": "Macaé, RJ · Híbrido · Tempo integral"
+    },
+    {
+      "role": "Desenvolvedor Python",
+      "company": "BRTech3D",
+      "period": "Mar 2024 – Mar 2025",
+      "bullets": [
+        "Desenvolveu scripts de alta performance em Python (NumPy, SciPy, Open3D) para automatizar pipelines de dados geoespaciais, otimizando o processamento de nuvens de pontos densas (mais de 100 milhões de pontos de dados).",
+        "Implementou rotinas de dados que aumentaram a velocidade de processamento em 40% e melhoraram a compressão de dados, gerando economias significativas de tempo e recursos em dezenas de projetos.",
+        "Modelou e otimizou bancos de dados PostgreSQL utilizando a extensão PostGIS para consultas espaciais complexas e integração perfeita via APIs REST."
+      ]
+    },
+    {
+      "role": "Projetista III",
+      "company": "Master Serviços",
+      "period": "Out 2023 – Mar 2024",
+      "bullets": [],
+      "location": "Macaé, RJ · Presencial · Tempo integral"
+    },
+    {
+      "role": "Técnico de automação",
+      "company": "Jackkk Connection Comercial",
+      "period": "Abr 2021 – Abr 2022",
+      "bullets": [],
+      "location": "Macaé, RJ · Tempo integral"
+    },
+    {
+      "role": "Especialista em Treinamento",
+      "company": "Jackkk Connection Comercial",
+      "period": "Mai 2017 – Mar 2021",
+      "bullets": [
+        "Coordenou e ministrou treinamentos técnicos para mais de 500 profissionais em CLPs, hidráulica e automação industrial.",
+        "Desenvolveu simulações educacionais e gerenciou vendas técnicas B2B, construindo relacionamento direto com fornecedores internacionais."
+      ]
+    },
+    {
+      "role": "Sócio / Analista de sistemas",
+      "company": "TechFix reparos e manutenção",
+      "period": "Fev 2018 – Dez 2018",
+      "bullets": [],
+      "location": "Rio das Ostras · Tempo integral"
+    },
+    {
+      "role": "Assistente técnico de Automação Industrial",
+      "company": "Jackkk Comercial onshore e offshore",
+      "period": "Jun 2017 – Dez 2017",
+      "bullets": [],
+      "location": "Granja dos Cavaleiros (Macaé) · Tempo integral"
+    },
+    {
+      "role": "Líder de Equipe Técnica",
+      "company": "Diesel Line Cambuí",
+      "period": "Ago 2016 – Mai 2017",
+      "bullets": [
+        "Liderou equipes de campo especializadas na manutenção de motores e turbinas de grande porte (CAT, Cummins, MAK).",
+        "Gerenciou tickets de suporte técnico em inglês para clientes internacionais e documentou formalmente processos de análise de falhas."
+      ]
+    },
+    {
+      "role": "Suporte ao Produto",
+      "company": "Diesel Line Cambuí",
+      "period": "Ago 2015 – Mai 2017",
+      "bullets": [],
+      "location": "Rio das Ostras · Tempo integral"
+    },
+    {
+      "role": "Técnico",
+      "company": "Diesel Line Cambuí",
+      "period": "Out 2015 – Ago 2016",
+      "bullets": [
+        "Iniciou a carreira prestando suporte a processos comerciais, gestão de CRM e aplicação estrita de procedimentos de conformidade para manutenção de sistemas a diesel e gás."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "course": "Bacharelado em Engenharia Mecânica",
+      "school": "Centro Universitário UniFatecie",
+      "period": "Mai 2024 – Mai 2027"
+    },
+    {
+      "course": "Ensino Médio, Automação Industrial",
+      "school": "Instituto Federal Fluminense"
+    },
+    {
+      "course": "Ensino Médio",
+      "school": "Alternativa Colégio",
+      "period": "2013 – 2015"
+    },
+    {
+      "course": "Técnico em Automação Industrial",
+      "school": "ETP Escola Técnica",
+      "period": "2013 – 2015"
+    }
+  ],
+  "certifications": [
+    {
+      "name": "Micro1 Hackaton 2026",
+      "issuer": "micro1",
+      "date": "Jul 2026"
+    },
+    {
+      "name": "ChatGPT",
+      "issuer": "UniFatecie",
+      "date": "Ago 2024",
+      "credentialId": "332515"
+    },
+    {
+      "name": "Fundamentos da Inteligência Artificial",
+      "issuer": "UniFatecie",
+      "date": "Jul 2024",
+      "credentialId": "332515"
+    },
+    {
+      "name": "Hidráulica e Pneumática",
+      "issuer": "Parker Hannifin",
+      "date": "Jul 2017"
+    },
+    {
+      "name": "Hidráulica e Pneumática",
+      "issuer": "Festo",
+      "date": "Jul 2017"
+    },
+    {
+      "name": "Técnico de Automação",
+      "issuer": "Crea-RJ",
+      "date": "Abr 2015",
+      "credentialId": "2017115401"
+    }
+  ],
+  "projects": [
+    {
+      "name": "Painel ABZ",
+      "stack": "Next.js 15 · TypeScript · PostgreSQL · Supabase",
+      "desc": "Portal corporativo do Grupo ABZ: RH, gestão de tripulantes offshore, folha, reembolsos e comunicação interna em Next.js 15, React 18 e Supabase/PostgreSQL (50+ tabelas com RLS) atrás de uma camada de API Node.js/TypeScript com mais de 600 rotas, JWT e 2FA. Inclui e-Social (13 eventos, XML RSA-SHA256, SOAP mTLS), OCR (Tesseract) de ASO/documentos, assinatura digital, sync com o ERP MIO e um AI Companion com voz LiveKit, MS Graph e agentes autônomos de KPI.",
+      "url": "https://github.com/Caiolinooo/EmployeeHub",
+      "demo": "https://portal.groupabz.com"
+    },
+    {
+      "name": "PontoFlow",
+      "stack": "Next.js 15 · TypeScript · Node.js · Supabase",
+      "desc": "Sistema bilíngue (pt-BR/en-GB) de timesheet para equipes offshore com aprovação de gestor, anotações por campo e bloqueio mensal de prazo na UI e no RLS do Postgres. Runtime Node.js com lembretes via Nodemailer/cron e admin multi-tenant; sincroniza com o EmployeeHub por um contrato de API de import/export autenticado via HMAC.",
+      "url": "https://github.com/Caiolinooo/PontoFlow",
+      "demo": "https://ponto-flow.vercel.app"
+    },
+    {
+      "name": "CloudSec & FinOps Auditor",
+      "stack": "Next.js · TypeScript · RAG · Gemini",
+      "desc": "Auditor de conformidade que avalia cenários de arquitetura cloud contra políticas estilo CIS / SOC 2 / FinOps, retornando risco estruturado, impacto de custo, citações e remediação. RAG híbrido (BM25 + TF-IDF + reciprocal rank fusion) sobre políticas versionadas; chamadas LLM resilientes com retry automático e fallback de modelo em respostas 503/rate-limit; testes Vitest e pipeline de avaliação em CI.",
+      "url": "https://github.com/Caiolinooo/cloudsec-finops-auditor",
+      "demo": "https://cloudsec-finops-auditor.vercel.app"
+    },
+    {
+      "name": "SGLang Commander",
+      "stack": "Python · FastAPI · React · PySide6",
+      "desc": "Console open source desktop (PySide6) e web (React + FastAPI) para servidores de inferência SGLang. Sobe e derruba servidores, faz chat multimodal (imagem/áudio), plota GPU/VRAM/latência em tempo real, faz deploy de modelos Hugging Face em um clique, executa benchmarks P50/P95/P99 e suporta Docker e deploys remotos via ZeroTier.",
+      "url": "https://github.com/Caiolinooo/sglang-commander"
+    },
+    {
+      "name": "Visualizador 3D FARO",
+      "stack": "Three.js · React · Open3D · MCP",
+      "desc": "Visualizador web estilo Matterport para scans FARO Focus. Renderiza nuvens PTS/E57 e panorâmicas TrueView 360 com Three.js e React Three Fiber, com vista dollhouse, planta baixa, medição, anotações, tour automático e uma ponte Model Context Protocol para LLMs locais controlarem a cena 3D.",
+      "url": "https://github.com/Caiolinooo/Visualizador3D_Matterport_Clone"
+    },
+    {
+      "name": "Gerador de Malha Open3D",
+      "stack": "Python · Open3D · NumPy",
+      "desc": "Pipeline desktop que transforma nuvens de pontos industriais em malhas de produção: reconstrução Poisson, preenchimento de buracos, limpeza por densidade, suavização e exportação PLY/OBJ/STL — feito para fluxos geoespaciais e laser scan com 100M+ pontos.",
+      "url": "https://github.com/Caiolinooo/Projeto_Open_Mesh_"
+    },
+    {
+      "name": "AD Migration Suite",
+      "stack": "C# · .NET 8 · WPF",
+      "desc": "Migração empresarial de Active Directory de Windows Server 2012/2016 para 2019/2022. Arquitetura com agente em uma única porta (8765) evita WinRM/Kerberos, preserva SID History, replica GPOs/OUs e migra shares de arquivo com tradução de ACL entre domínios.",
+      "url": "https://github.com/Caiolinooo/AD_Migrator"
+    },
+    {
+      "name": "Auditoria de Dados",
+      "stack": "Python · Pandas · Dash · Plotly",
+      "desc": "Ferramenta de auditoria de dados em servidores: varredura paralela de diretórios, análise de tipos e crescimento, cache e dashboard interativo Dash/Plotly. Gera relatórios HTML e XLSX com timestamp e filtros por cliente para inventários grandes de file server.",
+      "url": "https://github.com/Caiolinooo/Python_Audit_Script"
+    },
+    {
+      "name": "Network Monitor",
+      "stack": "Python · Flask · PWA",
+      "desc": "Monitor de rede multiplataforma (Windows, Linux, macOS, inclusive Windows Server 2012) com download/upload/latência ao vivo, testes de velocidade, gráficos de histórico, relatórios PDF e PWA para uso offline na LAN.",
+      "url": "https://github.com/Caiolinooo/network-monitor"
+    }
+  ],
+  "skills": {
+    "ai": "IA Generativa, LLMs, RAG, Engenharia de Prompts, Fine-Tuning de Modelos (SFT, DPO/RLHF, LoRA/QLoRA), MLOps, vLLM, SGLang, llama.cpp, MCP.",
+    "backend": "TypeScript, Node.js (runtime server do Next.js, Express, rotas de API REST), Python (FastAPI, SQLAlchemy), design de APIs & contratos de API entre produtos, autenticação & autorização (JWT, 2FA, RLS, ACL, HMAC), padrões de resiliência (retries, fallback, tratamento de rate-limit/503), GraphQL, Java (Spring Boot), Go.",
+    "cloud": "Linux, Git, DevOps, Docker, Kubernetes, AWS (S3), GitHub Actions (CI/CD), Vercel, Cloudflare, Proxmox, VPN WireGuard, Terraform.",
+    "db": "PostgreSQL, PostGIS, Supabase (Row-Level Security), SQLite (FTS5), NoSQL, pipelines de dados/ETL.",
+    "systems": "Governança de Dados, Segurança, Conformidade, controles de LGPD/PII."
+  },
+  "languages": "Português: Nativo | Inglês: Fluente (C1) | Espanhol/Italiano: Leitura técnica avançada."
+}

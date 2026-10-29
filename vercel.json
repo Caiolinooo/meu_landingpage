@@ -1,7 +1,7 @@
 {
   "functions": {
     "api/index.js": {
-      "includeFiles": "fonts/**"
+      "includeFiles": "fonts/**,data/**"
     }
   },
   "rewrites": [

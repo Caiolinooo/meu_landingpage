@@ -82,10 +82,12 @@ function writeResume(doc, lang, profile, fonts) {
   profile.experience.forEach((job) => {
     const role = isPT ? job.rolePT : job.roleEN;
     const period = isPT ? job.periodPT : job.periodEN;
+    const location = isPT ? job.locationPT || "" : job.locationEN || "";
     const bullets = isPT ? job.bulletsPT : job.bulletsEN;
+    const meta = [job.company, location, period].filter(Boolean).join("  ·  ");
     ensureSpace(doc, 52);
     doc.font(fonts.bold).fontSize(10).fillColor(TEXT).text(role);
-    doc.font(fonts.regular).fontSize(8.5).fillColor(MUTED).text(`${job.company}  ·  ${period}`);
+    doc.font(fonts.regular).fontSize(8.5).fillColor(MUTED).text(meta);
     doc.moveDown(0.12);
     bullets.forEach((bullet) => {
       ensureSpace(doc, 22);
@@ -99,9 +101,22 @@ function writeResume(doc, lang, profile, fonts) {
 
   sectionTitle(isPT ? "Formação Acadêmica" : "Education");
   profile.education.forEach((item) => {
+    const period = isPT ? item.periodPT || "" : item.periodEN || "";
+    const meta = [item.school, period].filter(Boolean).join("  ·  ");
     ensureSpace(doc, 24);
     doc.font(fonts.bold).fontSize(10).fillColor(TEXT).text(isPT ? item.coursePT : item.courseEN);
-    doc.font(fonts.regular).fontSize(8.5).fillColor(MUTED).text(item.school);
+    doc.font(fonts.regular).fontSize(8.5).fillColor(MUTED).text(meta);
+    doc.moveDown(0.2);
+  });
+
+  sectionTitle(isPT ? "Certificações" : "Certifications");
+  profile.certifications.forEach((item) => {
+    const date = isPT ? item.datePT : item.dateEN;
+    const id = item.credentialId ? `ID ${item.credentialId}` : "";
+    const meta = [item.issuer, date, id].filter(Boolean).join("  ·  ");
+    ensureSpace(doc, 24);
+    doc.font(fonts.bold).fontSize(10).fillColor(TEXT).text(item.name);
+    doc.font(fonts.regular).fontSize(8.5).fillColor(MUTED).text(meta);
     doc.moveDown(0.2);
   });
 

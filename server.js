@@ -1,275 +1,30 @@
 const express = require('express');
 const path = require('path');
 const { buildResumePdf } = require('./resume-pdf');
+const { loadCvResult, toPdfProfile } = require('./cv-source');
+
+const REMOTE_CV_CACHE = 'public, s-maxage=3600, stale-while-revalidate=86400';
+const FALLBACK_CV_CACHE = 'public, s-maxage=60';
+
+function cachePublicCv(res, sources) {
+  const allRemote = sources.every((source) => source === 'remote');
+  res.setHeader('Cache-Control', allRemote ? REMOTE_CV_CACHE : FALLBACK_CV_CACHE);
+}
 const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use('/public', express.static(path.join(__dirname, 'public')));
 app.get('/favicon.ico', (_req, res) => res.status(204).end());
 
-const profile = {
-  name: "Caio Valerio Goulart Correia",
-  titleEN: "Backend Engineer (TypeScript/Node.js) · APIs & Developer Tools · AI Specialist",
-  titlePT: "Engenheiro Backend (TypeScript/Node.js) · APIs e Ferramentas para Devs · Especialista em IA",
+const site = {
   email: "caiovaleriogoulartcorreia@gmail.com",
   linkedin: "https://www.linkedin.com/in/caio-goulart",
   github: "https://github.com/Caiolinooo",
   hackerearth: "https://www.hackerearth.com/@caiovaleriogoulartcorreia/",
-  resumePdf: "/resume.pdf",
   phones: [
     { number: "22997847289", label: "WhatsApp Principal" },
     { number: "22992180404", label: "WhatsApp Secundário" }
-  ],
-  locationEN: "Rio das Ostras, Brazil",
-  locationPT: "Rio das Ostras, Brasil",
-  aboutEN: "Backend engineer with 9+ years of technical experience building and maintaining APIs, services, and developer-facing tools — primarily TypeScript and Node.js, with deep Python alongside. Shipped and operates a production HR/operations platform (200+ employees) whose Node.js/TypeScript backend exposes 600+ API routes secured by JWT, two-factor authentication, and role-based authorization (PostgreSQL RLS + ACL). Defines cross-product API contracts (HMAC-authenticated sync), hardens third-party integrations with retries and fallback on rate-limit/503 responses, and maintains open-source developer tools on GitHub. Also deep in AI: LLM training/evaluation (SFT, DPO/RLHF), local serving (vLLM, SGLang), and RAG. Fluent English (C1), remote-first with international teams.",
-  aboutPT: "Engenheiro backend com mais de 9 anos de experiência técnica construindo e mantendo APIs, serviços e ferramentas para desenvolvedores — principalmente TypeScript e Node.js, com Python profundo em paralelo. Entregou e opera uma plataforma de RH/operações em produção (200+ colaboradores) cujo backend Node.js/TypeScript expõe mais de 600 rotas de API protegidas por JWT, autenticação em dois fatores e autorização baseada em papéis (RLS + ACL no PostgreSQL). Define contratos de API entre produtos (sync autenticado via HMAC), robustece integrações com terceiros com retries e fallback em respostas de rate-limit/503 e mantém ferramentas de desenvolvedor open source no GitHub. Também profundo em IA: treinamento/avaliação de LLMs (SFT, DPO/RLHF), serving local (vLLM, SGLang) e RAG. Inglês fluente (C1), atuação remota com times internacionais.",
-  stack: [
-    "TypeScript", "Node.js", "Express", "Next.js", "REST APIs", "API Design", "GraphQL", "JWT & Auth", "Python", "FastAPI", "PostgreSQL", "Supabase", "PostGIS", "Docker", "Kubernetes", "AWS", "GitHub Actions", "CI/CD", "Linux", "Git", "Java", "Go", "Generative AI", "LLMs", "RAG", "Model Fine-Tuning", "MLOps", "vLLM", "MCP", "Backend Development", "Data Engineering", "Security", "Compliance"
-  ],
-  experience: [
-    {
-      roleEN: "AI Specialist (Contract)",
-      rolePT: "AI Specialist (Contrato)",
-      company: "micro1",
-      periodEN: "Aug 2026 – Sep 2026",
-      periodPT: "Ago 2026 – Set 2026",
-      bulletsEN: [
-        "Trained and evaluated LLMs for frontier-model programs, running Supervised Fine-Tuning (SFT) and preference optimization (DPO/RLHF) with PyTorch, Hugging Face PEFT (LoRA/QLoRA), Unsloth, and Axolotl.",
-        "Ran adversarial testing (red teaming) to surface hallucinations, logic flaws, and bias, feeding corrections back into training datasets.",
-        "Reviewed and benchmarked AI-generated code across Python, TypeScript, Node.js, FastAPI, React, Next.js, and JavaFX — assessing data-structure choices, execution behavior, and complex API integrations.",
-        "Deployed local LLM serving and agent harnesses on Windows/Linux (vLLM, SGLang, llama.cpp) on dedicated NVIDIA hardware (L4 GPU, 24GB VRAM), plus MCP tool servers for retrieval and graph tools; measured latency/throughput with custom evaluation harnesses.",
-        "Curated high-quality training and synthetic datasets (Self-Instruct, Evol-Instruct) with automated validation for dataset integrity, schema compliance, and model alignment."
-      ],
-      bulletsPT: [
-        "Treinou e avaliou LLMs para programas de frontier models, executando Fine-Tuning Supervisionado (SFT) e otimização de preferência (DPO/RLHF) com PyTorch, Hugging Face PEFT (LoRA/QLoRA), Unsloth e Axolotl.",
-        "Executou testes adversariais (red teaming) para identificar alucinações, falhas de lógica e vieses, realimentando correções nos datasets de treinamento.",
-        "Revisou e fez benchmarking de código gerado por IA em Python, TypeScript, Node.js, FastAPI, React, Next.js e JavaFX — avaliando escolhas de estruturas de dados, comportamento de execução e integrações complexas de APIs.",
-        "Implantou serving local de LLMs e agent harnesses em Windows/Linux (vLLM, SGLang, llama.cpp) em hardware NVIDIA dedicado (GPU L4, 24GB VRAM), além de servidores de ferramentas MCP para retrieval e grafos; mediu latência/throughput com harnesses de avaliação customizados.",
-        "Curou datasets de treinamento e dados sintéticos de alta qualidade (Self-Instruct, Evol-Instruct) com validação automatizada de integridade, conformidade de schema e alinhamento do modelo."
-      ]
-    },
-    {
-      roleEN: "Full-Stack Developer & DevOps Engineer",
-      rolePT: "Desenvolvedor Full-Stack & Engenheiro DevOps",
-      company: "ABZ Serviços",
-      periodEN: "Mar 2025 – Present",
-      periodPT: "Mar 2025 – Presente",
-      bulletsEN: [
-        "Architected and shipped EmployeeHub (portal.groupabz.com), an HR/operations portal used by 200+ employees — personnel records, crew management, e-Social, vacation, reimbursement, and ACL — on Next.js 15, TypeScript, and Supabase (PostgreSQL with Row-Level Security) on Vercel; reduced HR manual workload by ~40% and approval time by ~95%.",
-        "Built and maintains the platform's Node.js/TypeScript backend — 600+ REST API routes (Next.js App Router) with JWT authentication, two-factor authentication (2FA), and role-based authorization via PostgreSQL Row-Level Security and ACL, protecting sensitive HR/PII data under LGPD.",
-        "Delivered the ABZ product suite around the portal: PontoFlow (bilingual offshore timesheets with manager approval, field annotations, and deadline locks enforced in UI and RLS), Invoice ABZ (FastAPI/SQLAlchemy engine turning payroll and charge-rate spreadsheets into client invoices), and Ticket-Manager (support automation via Microsoft Graph).",
-        "Defined the cross-product API contract (HMAC-authenticated import/export) between the portal and the PontoFlow timesheet product, keeping collaborator identity and period behavior consistent across both systems.",
-        "Led the cloud migration of legacy on-premise Windows Servers (2012–2025), reaching 80% completion with zero production downtime.",
-        "Implemented end-to-end CI/CD with GitHub Actions and Docker, administered Proxmox virtualization and AWS S3, and deployed a WireGuard VPN for 50+ remote employees — sharply reducing connectivity support tickets."
-      ],
-      bulletsPT: [
-        "Arquitetou e entregou o EmployeeHub (portal.groupabz.com), portal de RH/operações usado por mais de 200 colaboradores — registros de pessoal, gestão de tripulantes, e-Social, férias, reembolso e ACL — em Next.js 15, TypeScript e Supabase (PostgreSQL com Row-Level Security) na Vercel; reduziu a carga manual do RH em ~40% e o tempo de aprovação em ~95%.",
-        "Construiu e mantém o backend Node.js/TypeScript da plataforma — mais de 600 rotas de API REST (Next.js App Router) com autenticação JWT, autenticação em dois fatores (2FA) e autorização baseada em papéis via Row-Level Security e ACL, protegendo dados sensíveis de RH/PII sob LGPD.",
-        "Entregou a suíte de produtos ABZ em torno do portal: PontoFlow (timesheets offshore bilíngues com aprovação de gestor, anotações por campo e bloqueio de prazo na UI e no RLS), Invoice ABZ (motor FastAPI/SQLAlchemy que transforma planilhas de folha e charge-rate em invoices de clientes) e Ticket-Manager (automação de suporte via Microsoft Graph).",
-        "Definiu o contrato de API entre produtos (import/export autenticado via HMAC) entre o portal e o produto de timesheet PontoFlow, mantendo identidade de colaboradores e comportamento de períodos consistente nos dois sistemas.",
-        "Liderou a migração para nuvem de Windows Servers legados on-premise (2012–2025), atingindo 80% de conclusão com zero downtime em produção.",
-        "Implementou CI/CD de ponta a ponta com GitHub Actions e Docker, administrou virtualização Proxmox e AWS S3 e implantou VPN WireGuard para mais de 50 colaboradores remotos — reduzindo drasticamente tickets de suporte de conectividade."
-      ]
-    },
-    {
-      roleEN: "Python Developer & Spatial Data Engineer",
-      rolePT: "Desenvolvedor Python & Engenheiro de Dados Espaciais",
-      company: "BRTech3D",
-      periodEN: "Mar 2024 – Mar 2025",
-      periodPT: "Mar 2024 – Mar 2025",
-      bulletsEN: [
-        "Built high-performance Python pipelines (NumPy, SciPy, Open3D) automating geospatial data processing for dense point clouds (100M+ points), increasing processing speed by 40% and improving data compression across dozens of projects.",
-        "Modeled and optimized PostgreSQL databases with the PostGIS extension for complex spatial queries, designing and maintaining the REST APIs that exposed them to internal processing pipelines."
-      ],
-      bulletsPT: [
-        "Construiu pipelines Python de alta performance (NumPy, SciPy, Open3D) automatizando o processamento de dados geoespaciais de nuvens de pontos densas (100M+ pontos), aumentando a velocidade de processamento em 40% e melhorando a compressão de dados em dezenas de projetos.",
-        "Modelou e otimizou bancos PostgreSQL com a extensão PostGIS para consultas espaciais complexas, projetando e mantendo as APIs REST que as expunham a pipelines internos de processamento."
-      ]
-    },
-    {
-      roleEN: "Topographical Survey Operator III (Laser Scanning)",
-      rolePT: "Operador de Levantamento Topográfico III (Laser Scanning)",
-      company: "Laser Master Engineering Services",
-      periodEN: "Aug 2023 – Mar 2024",
-      periodPT: "Ago 2023 – Mar 2024",
-      bulletsEN: [
-        "Operated high-precision 3D laser scanning equipment (Leica) in complex industrial and archaeological environments.",
-        "Led field campaign planning and technical documentation, ensuring millimeter-level precision and data backup redundancy for large-scale data collection."
-      ],
-      bulletsPT: [
-        "Operou equipamentos de escaneamento a laser 3D de alta precisão (Leica) em ambientes industriais e arqueológicos complexos.",
-        "Liderou o planejamento de campanhas de campo e documentação técnica, garantindo precisão milimétrica e redundância de backup de dados em coletas de grande escala."
-      ]
-    },
-    {
-      roleEN: "Topographical Survey Operator II",
-      rolePT: "Operador de Levantamento Topográfico II",
-      company: "BRTech3D",
-      periodEN: "Dec 2022 – Aug 2023",
-      periodPT: "Dez 2022 – Ago 2023",
-      bulletsEN: [
-        "Executed field data collection using Leica TLS equipment and introduced Quality Assurance (QA) processes for outlier cleaning and multiple scan registration."
-      ],
-      bulletsPT: [
-        "Executou a coleta de dados em campo utilizando equipamentos Leica TLS e introduziu processos de Garantia da Qualidade (QA) para limpeza de outliers e registro de múltiplos escaneamentos."
-      ]
-    },
-    {
-      roleEN: "Technical Documentation & Support Specialist",
-      rolePT: "Especialista em Documentação Técnica e Suporte",
-      company: "SmartStore / Jackkk Connection",
-      periodEN: "Mar 2021 – Dec 2022",
-      periodPT: "Mar 2021 – Dez 2022",
-      bulletsEN: [
-        "Produced 50+ bilingual technical manuals and system specifications for international clients.",
-        "Provided advanced pre-sales support and detailed hardware/software architecture mapping for complex business proposals."
-      ],
-      bulletsPT: [
-        "Produziu mais de 50 manuais técnicos bilíngues e especificações de sistemas para clientes internacionais.",
-        "Forneceu suporte avançado de pré-vendas e mapeamento detalhado de arquitetura de hardware/software para propostas comerciais complexas."
-      ]
-    },
-    {
-      roleEN: "Training Specialist & Automation Technician",
-      rolePT: "Especialista em Treinamento e Técnico em Automação",
-      company: "Jackkk Connection Comercial",
-      periodEN: "May 2017 – Mar 2021",
-      periodPT: "Mai 2017 – Mar 2021",
-      bulletsEN: [
-        "Coordinated and delivered technical training for over 500 professionals in PLCs, hydraulics, and industrial automation.",
-        "Developed educational simulations and managed B2B technical sales, building direct relationships with international suppliers."
-      ],
-      bulletsPT: [
-        "Coordenou e ministrou treinamentos técnicos para mais de 500 profissionais em CLPs, hidráulica e automação industrial.",
-        "Desenvolveu simulações educacionais e gerenciou vendas técnicas B2B, construindo relacionamento direto com fornecedores internacionais."
-      ]
-    },
-    {
-      roleEN: "Technical Team Lead & Specialized Support",
-      rolePT: "Líder de Equipe Técnica e Suporte Especializado",
-      company: "Diesel Line Cambuí",
-      periodEN: "Aug 2016 – May 2017",
-      periodPT: "Ago 2016 – Mai 2017",
-      bulletsEN: [
-        "Led specialized field teams in the maintenance of large-scale engines and turbines (CAT, Cummins, MAK).",
-        "Managed English-language technical support tickets for international clients and formally documented failure analysis processes."
-      ],
-      bulletsPT: [
-        "Liderou equipes de campo especializadas na manutenção de motores e turbinas de grande porte (CAT, Cummins, MAK).",
-        "Gerenciou tickets de suporte técnico em inglês para clientes internacionais e documentou formalmente processos de análise de falhas."
-      ]
-    },
-    {
-      roleEN: "Apprentice Technician",
-      rolePT: "Técnico Aprendiz",
-      company: "Diesel Line Cambuí",
-      periodEN: "Oct 2015 – Aug 2016",
-      periodPT: "Out 2015 – Ago 2016",
-      bulletsEN: [
-        "Began career providing support to commercial processes, CRM management, and strict application of compliance procedures for diesel and gas systems maintenance."
-      ],
-      bulletsPT: [
-        "Iniciou a carreira prestando suporte a processos comerciais, gestão de CRM e aplicação estrita de procedimentos de conformidade para manutenção de sistemas a diesel e gás."
-      ]
-    }
-  ],
-  education: [
-    {
-      school: "UniFatecie",
-      courseEN: "B.S. in Mechanical Engineering",
-      coursePT: "Bacharelado em Engenharia Mecânica"
-    },
-    {
-      school: "ETP Escola Técnica Brasil",
-      courseEN: "Technical Diploma in Industrial Automation",
-      coursePT: "Técnico em Automação Industrial"
-    }
-  ],
-  projects: [
-    {
-      name: "Painel ABZ",
-      stack: "Next.js 15 · TypeScript · PostgreSQL · Supabase",
-      url: "https://github.com/Caiolinooo/EmployeeHub",
-      demo: "https://portal.groupabz.com",
-      descEN: "Corporate operations portal for ABZ Group: HR, offshore crew management, payroll, reimbursements and internal comms on Next.js 15, React 18 and Supabase/PostgreSQL (50+ tables with RLS) behind a Node.js/TypeScript API layer of 600+ routes with JWT auth and 2FA. Ships e-Social (13 events, RSA-SHA256 XML, SOAP mTLS), OCR (Tesseract) for ASO/ID docs, digital signatures, MIO ERP sync, and an AI companion with LiveKit voice, MS Graph and autonomous KPI agents.",
-      descPT: "Portal corporativo do Grupo ABZ: RH, gestão de tripulantes offshore, folha, reembolsos e comunicação interna em Next.js 15, React 18 e Supabase/PostgreSQL (50+ tabelas com RLS) atrás de uma camada de API Node.js/TypeScript com mais de 600 rotas, JWT e 2FA. Inclui e-Social (13 eventos, XML RSA-SHA256, SOAP mTLS), OCR (Tesseract) de ASO/documentos, assinatura digital, sync com o ERP MIO e um AI Companion com voz LiveKit, MS Graph e agentes autônomos de KPI."
-    },
-    {
-      name: "PontoFlow",
-      stack: "Next.js 15 · TypeScript · Node.js · Supabase",
-      url: "https://github.com/Caiolinooo/PontoFlow",
-      demo: "https://ponto-flow.vercel.app",
-      descEN: "Bilingual (pt-BR/en-GB) timesheet system for offshore crews with manager approval, field-level annotations, and monthly deadline locks enforced in UI and Postgres RLS. Node.js server runtime with Nodemailer cron reminders and multi-tenant admin; syncs with EmployeeHub through an HMAC-authenticated import/export API contract.",
-      descPT: "Sistema bilíngue (pt-BR/en-GB) de timesheet para equipes offshore com aprovação de gestor, anotações por campo e bloqueio mensal de prazo na UI e no RLS do Postgres. Runtime Node.js com lembretes via Nodemailer/cron e admin multi-tenant; sincroniza com o EmployeeHub por um contrato de API de import/export autenticado via HMAC."
-    },
-    {
-      name: "CloudSec & FinOps Auditor",
-      stack: "Next.js · TypeScript · RAG · Gemini",
-      url: "https://github.com/Caiolinooo/cloudsec-finops-auditor",
-      demo: "https://cloudsec-finops-auditor.vercel.app",
-      descEN: "Compliance auditor that evaluates cloud architecture scenarios against CIS / SOC 2 / FinOps-style policies, returning structured risk, cost impact, citations, and remediation steps. Hybrid RAG (BM25 + TF-IDF + reciprocal rank fusion) over versioned policies; resilient LLM calls with automatic retry and model fallback on 503/rate-limit responses; Vitest tests and CI evaluation pipeline.",
-      descPT: "Auditor de conformidade que avalia cenários de arquitetura cloud contra políticas estilo CIS / SOC 2 / FinOps, retornando risco estruturado, impacto de custo, citações e remediação. RAG híbrido (BM25 + TF-IDF + reciprocal rank fusion) sobre políticas versionadas; chamadas LLM resilientes com retry automático e fallback de modelo em respostas 503/rate-limit; testes Vitest e pipeline de avaliação em CI."
-    },
-    {
-      name: "SGLang Commander",
-      stack: "Python · FastAPI · React · PySide6",
-      url: "https://github.com/Caiolinooo/sglang-commander",
-      descEN: "Open-source desktop (PySide6) and web (React + FastAPI) console for SGLang inference servers. Starts and stops servers, streams multimodal chat (image/audio), plots live GPU/VRAM/latency metrics, deploys Hugging Face models in one click, runs P50/P95/P99 benchmarks, and supports Docker plus ZeroTier remote deploys.",
-      descPT: "Console open source desktop (PySide6) e web (React + FastAPI) para servidores de inferência SGLang. Sobe e derruba servidores, faz chat multimodal (imagem/áudio), plota GPU/VRAM/latência em tempo real, faz deploy de modelos Hugging Face em um clique, executa benchmarks P50/P95/P99 e suporta Docker e deploys remotos via ZeroTier."
-    },
-    {
-      name: "Visualizador 3D FARO",
-      stack: "Three.js · React · Open3D · MCP",
-      url: "https://github.com/Caiolinooo/Visualizador3D_Matterport_Clone",
-      descEN: "Matterport-style web viewer for FARO Focus scans. Renders PTS/E57 point clouds and TrueView 360 panoramas with Three.js and React Three Fiber, plus dollhouse view, floor plans, distance measurement, annotations, auto-tours and a Model Context Protocol bridge so local LLMs can drive the 3D scene.",
-      descPT: "Visualizador web estilo Matterport para scans FARO Focus. Renderiza nuvens PTS/E57 e panorâmicas TrueView 360 com Three.js e React Three Fiber, com vista dollhouse, planta baixa, medição, anotações, tour automático e uma ponte Model Context Protocol para LLMs locais controlarem a cena 3D."
-    },
-    {
-      name: "Gerador de Malha Open3D",
-      stack: "Python · Open3D · NumPy",
-      url: "https://github.com/Caiolinooo/Projeto_Open_Mesh_",
-      descEN: "Desktop pipeline that turns industrial point clouds into production meshes: Poisson reconstruction, hole filling, density-based vertex cleanup, smoothing and export to PLY/OBJ/STL — built for geospatial and laser-scan workflows with 100M+ points.",
-      descPT: "Pipeline desktop que transforma nuvens de pontos industriais em malhas de produção: reconstrução Poisson, preenchimento de buracos, limpeza por densidade, suavização e exportação PLY/OBJ/STL — feito para fluxos geoespaciais e laser scan com 100M+ pontos."
-    },
-    {
-      name: "AD Migration Suite",
-      stack: "C# · .NET 8 · WPF",
-      url: "https://github.com/Caiolinooo/AD_Migrator",
-      descEN: "Enterprise Active Directory migration from Windows Server 2012/2016 to 2019/2022. Agent-based architecture on a single port (8765) avoids WinRM/Kerberos setup, preserves SID history, replicates GPOs/OUs and migrates file shares with ACL translation across domains.",
-      descPT: "Migração empresarial de Active Directory de Windows Server 2012/2016 para 2019/2022. Arquitetura com agente em uma única porta (8765) evita WinRM/Kerberos, preserva SID History, replica GPOs/OUs e migra shares de arquivo com tradução de ACL entre domínios."
-    },
-    {
-      name: "Auditoria de Dados",
-      stack: "Python · Pandas · Dash · Plotly",
-      url: "https://github.com/Caiolinooo/Python_Audit_Script",
-      descEN: "Server data-audit toolkit with parallel directory scans, file-type and growth analysis, caching and an interactive Dash/Plotly dashboard. Generates timestamped HTML and XLSX reports with client-level filters for large file-server inventories.",
-      descPT: "Ferramenta de auditoria de dados em servidores: varredura paralela de diretórios, análise de tipos e crescimento, cache e dashboard interativo Dash/Plotly. Gera relatórios HTML e XLSX com timestamp e filtros por cliente para inventários grandes de file server."
-    },
-    {
-      name: "Network Monitor",
-      stack: "Python · Flask · PWA",
-      url: "https://github.com/Caiolinooo/network-monitor",
-      descEN: "Cross-platform network monitor (Windows, Linux, macOS, including Windows Server 2012) with live download/upload/latency, speed tests, history charts, PDF reports and PWA install for offline use on the LAN.",
-      descPT: "Monitor de rede multiplataforma (Windows, Linux, macOS, inclusive Windows Server 2012) com download/upload/latência ao vivo, testes de velocidade, gráficos de histórico, relatórios PDF e PWA para uso offline na LAN."
-    }
-  ],
-  skills: {
-    aiEN: "Generative AI, LLMs, RAG, Prompt Engineering, Model Fine-Tuning (SFT, DPO/RLHF, LoRA/QLoRA), MLOps, vLLM, SGLang, llama.cpp, MCP.",
-    aiPT: "IA Generativa, LLMs, RAG, Engenharia de Prompts, Fine-Tuning de Modelos (SFT, DPO/RLHF, LoRA/QLoRA), MLOps, vLLM, SGLang, llama.cpp, MCP.",
-    backendEN: "TypeScript, Node.js (Next.js server runtime, Express, REST API routes), Python (FastAPI, SQLAlchemy), API design & cross-product API contracts, authentication & authorization (JWT, 2FA, RLS, ACL, HMAC), resilience patterns (retries, fallback, rate-limit/503 handling), GraphQL, Java (Spring Boot), Go.",
-    backendPT: "TypeScript, Node.js (runtime server do Next.js, Express, rotas de API REST), Python (FastAPI, SQLAlchemy), design de APIs & contratos de API entre produtos, autenticação & autorização (JWT, 2FA, RLS, ACL, HMAC), padrões de resiliência (retries, fallback, tratamento de rate-limit/503), GraphQL, Java (Spring Boot), Go.",
-    cloudEN: "Linux, Git, DevOps, Docker, Kubernetes, AWS (S3), GitHub Actions (CI/CD), Vercel, Cloudflare, Proxmox, WireGuard VPN, Terraform.",
-    cloudPT: "Linux, Git, DevOps, Docker, Kubernetes, AWS (S3), GitHub Actions (CI/CD), Vercel, Cloudflare, Proxmox, VPN WireGuard, Terraform.",
-    dbEN: "PostgreSQL, PostGIS, Supabase (Row-Level Security), SQLite (FTS5), NoSQL, ETL/data pipelines.",
-    dbPT: "PostgreSQL, PostGIS, Supabase (Row-Level Security), SQLite (FTS5), NoSQL, pipelines de dados/ETL.",
-    systemsEN: "Data Governance, Security, Compliance, LGPD/PII controls.",
-    systemsPT: "Governança de Dados, Segurança, Conformidade, controles de LGPD/PII."
-  },
-  languages: {
-    en: "Portuguese: Native | English: Fluent (C1) | Spanish/Italian: Advanced technical reading.",
-    pt: "Português: Nativo | Inglês: Fluente (C1) | Espanhol/Italiano: Leitura técnica avançada."
-  }
+  ]
 };
 
 const i18n = {
@@ -281,6 +36,7 @@ const i18n = {
     techJourney: "Trajetória Técnica",
     techArsenal: "Arsenal Tecnológico",
     education: "Educação",
+    certifications: "Certificações",
     allRights: "Todos os direitos reservados.",
     skillsTitle: "Competências Técnicas",
     backendLabel: "Backend & APIs",
@@ -303,6 +59,7 @@ const i18n = {
     techJourney: "Technical Journey",
     techArsenal: "Tech Arsenal",
     education: "Education",
+    certifications: "Certifications",
     allRights: "All rights reserved.",
     skillsTitle: "Technical Skills",
     backendLabel: "Backend & APIs",
@@ -319,139 +76,187 @@ const i18n = {
   }
 };
 
+function escapeHtml(value) {
+  return String(value)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
+function safeUrl(url) {
+  if (typeof url !== "string" || url.trim() === "") return "";
+  try {
+    const parsed = new URL(url);
+    if (parsed.protocol !== "https:" && parsed.protocol !== "http:") return "";
+    return escapeHtml(url);
+  } catch {
+    return "";
+  }
+}
+
 function bullets(items) {
-  return items.map((item) => `<li>${item}</li>`).join("");
+  return items.map((item) => `<li>${escapeHtml(item)}</li>`).join("");
 }
 
-function renderExperienceCards(lang) {
-  const isPT = lang === "pt";
-  return profile.experience.map((job) => `
+function renderExperienceCards(cv) {
+  return cv.experience.map((job) => {
+    const meta = [job.period, job.company, job.location || ""].filter(Boolean).map(escapeHtml).join(" • ");
+    const list = job.bullets.length ? `<ul>${bullets(job.bullets)}</ul>` : "";
+    return `
                     <div class="card">
-                        <div class="meta">${isPT ? job.periodPT : job.periodEN} • ${job.company}</div>
-                        <h3>${isPT ? job.rolePT : job.roleEN}</h3>
-                        <ul>${bullets(isPT ? job.bulletsPT : job.bulletsEN)}</ul>
-                    </div>`).join("");
+                        <div class="meta">${meta}</div>
+                        <h3>${escapeHtml(job.role)}</h3>
+                        ${list}
+                    </div>`;
+  }).join("");
 }
 
-function renderResumeJobs(lang) {
-  const isPT = lang === "pt";
-  return profile.experience.map((job) => `
+function renderResumeJobs(cv) {
+  return cv.experience.map((job) => {
+    const meta = [job.company, job.location || "", job.period].filter(Boolean).map(escapeHtml).join(" • ");
+    const list = job.bullets.length ? `<ul class="job-details">${bullets(job.bullets)}</ul>` : "";
+    return `
             <div class="job">
                 <div class="job-header">
-                    <span class="job-title">${isPT ? job.rolePT : job.roleEN}</span>
-                    <span class="job-meta">${job.company} • ${isPT ? job.periodPT : job.periodEN}</span>
+                    <span class="job-title">${escapeHtml(job.role)}</span>
+                    <span class="job-meta">${meta}</span>
                 </div>
-                <ul class="job-details">${bullets(isPT ? job.bulletsPT : job.bulletsEN)}</ul>
-            </div>`).join("");
+                ${list}
+            </div>`;
+  }).join("");
 }
 
-function renderProjectCards(lang) {
-  const isPT = lang === "pt";
+function projectLinks(project, lang) {
   const t = i18n[lang];
-  return profile.projects.map((project) => {
-    const links = [];
-    if (project.url) {
-      links.push(`<a href="${project.url}" target="_blank" rel="noopener">${t.viewCode}</a>`);
-    }
-    if (project.demo) {
-      links.push(`<a href="${project.demo}" target="_blank" rel="noopener">${t.liveDemo}</a>`);
-    }
+  const links = [];
+  const url = safeUrl(project.url);
+  const demo = safeUrl(project.demo);
+  if (url) links.push(`<a href="${url}" target="_blank" rel="noopener">${t.viewCode}</a>`);
+  if (demo) links.push(`<a href="${demo}" target="_blank" rel="noopener">${t.liveDemo}</a>`);
+  return links;
+}
+
+function renderProjectCards(lang, cv) {
+  return cv.projects.map((project) => {
+    const links = projectLinks(project, lang);
     return `
                 <div class="card">
-                    <div class="meta">${project.stack}</div>
-                    <h3>${project.name}</h3>
-                    <p>${isPT ? project.descPT : project.descEN}</p>
+                    <div class="meta">${escapeHtml(project.stack)}</div>
+                    <h3>${escapeHtml(project.name)}</h3>
+                    <p>${escapeHtml(project.desc)}</p>
                     <div class="project-links">${links.join("")}</div>
                 </div>`;
   }).join("");
 }
 
-function renderResumeProjects(lang) {
-  const isPT = lang === "pt";
-  const t = i18n[lang];
-  return profile.projects.map((project) => {
-    const links = [];
-    if (project.url) {
-      links.push(`<a href="${project.url}" target="_blank" rel="noopener">${t.viewCode}</a>`);
-    }
-    if (project.demo) {
-      links.push(`<a href="${project.demo}" target="_blank" rel="noopener">${t.liveDemo}</a>`);
-    }
+function renderResumeProjects(lang, cv) {
+  return cv.projects.map((project) => {
+    const links = projectLinks(project, lang);
     return `
             <div class="job">
                 <div class="job-header">
-                    <span class="job-title">${project.name}</span>
-                    <span class="job-meta">${project.stack}</span>
+                    <span class="job-title">${escapeHtml(project.name)}</span>
+                    <span class="job-meta">${escapeHtml(project.stack)}</span>
                 </div>
-                <p class="project-copy">${isPT ? project.descPT : project.descEN}</p>
+                <p class="project-copy">${escapeHtml(project.desc)}</p>
                 <p class="project-links">${links.join(" · ")}</p>
             </div>`;
   }).join("");
 }
 
-function renderEducationCards(lang) {
-  const isPT = lang === "pt";
-  return profile.education.map((item) => `
+function datedMeta(primary, period) {
+  return [primary, period].filter(Boolean).join(" • ");
+}
+
+function renderEducationCards(cv) {
+  return cv.education.map((item) => `
                  <div class="card">
-                    <h3>${isPT ? item.coursePT : item.courseEN}</h3>
-                    <div class="meta">${item.school}</div>
+                    <h3>${escapeHtml(item.course)}</h3>
+                    <div class="meta">${escapeHtml(datedMeta(item.school, item.period))}</div>
                  </div>`).join("");
 }
 
-function renderResumeEducation(lang) {
-  const isPT = lang === "pt";
-  return profile.education.map((item) => `
+function renderResumeEducation(cv) {
+  return cv.education.map((item) => `
             <div class="job">
                 <div class="job-header">
-                    <span class="job-title">${isPT ? item.coursePT : item.courseEN}</span>
-                    <span class="job-meta">${item.school}</span>
+                    <span class="job-title">${escapeHtml(item.course)}</span>
+                    <span class="job-meta">${escapeHtml(datedMeta(item.school, item.period))}</span>
                 </div>
             </div>`).join("");
 }
 
-function renderSkillsGrid(lang) {
+function certificationMeta(item) {
+  const id = item.credentialId ? `ID ${item.credentialId}` : "";
+  return [item.issuer, item.date, id].filter(Boolean).map(escapeHtml).join(" • ");
+}
+
+function renderCertificationCards(cv) {
+  return cv.certifications.map((item) => `
+                 <div class="card">
+                    <h3>${escapeHtml(item.name)}</h3>
+                    <div class="meta">${certificationMeta(item)}</div>
+                 </div>`).join("");
+}
+
+function renderResumeCertifications(cv) {
+  return cv.certifications.map((item) => `
+            <div class="job">
+                <div class="job-header">
+                    <span class="job-title">${escapeHtml(item.name)}</span>
+                    <span class="job-meta">${certificationMeta(item)}</span>
+                </div>
+            </div>`).join("");
+}
+
+function renderSkillsGrid(lang, cv) {
   const t = i18n[lang];
-  const isPT = lang === "pt";
   return `
             <div class="skills-grid">
                 <div class="skill-category">
                     <strong>${t.aiLabel}</strong>
-                    <p>${isPT ? profile.skills.aiPT : profile.skills.aiEN}</p>
+                    <p>${escapeHtml(cv.skills.ai)}</p>
                 </div>
                 <div class="skill-category">
                     <strong>${t.backendLabel}</strong>
-                    <p>${isPT ? profile.skills.backendPT : profile.skills.backendEN}</p>
+                    <p>${escapeHtml(cv.skills.backend)}</p>
                 </div>
                 <div class="skill-category">
                     <strong>${t.cloudLabel}</strong>
-                    <p>${isPT ? profile.skills.cloudPT : profile.skills.cloudEN}</p>
+                    <p>${escapeHtml(cv.skills.cloud)}</p>
                 </div>
                 <div class="skill-category">
                     <strong>${t.dbLabel}</strong>
-                    <p>${isPT ? profile.skills.dbPT : profile.skills.dbEN}</p>
+                    <p>${escapeHtml(cv.skills.db)}</p>
                 </div>
                 <div class="skill-category">
                     <strong>${t.systemsLabel}</strong>
-                    <p>${isPT ? profile.skills.systemsPT : profile.skills.systemsEN}</p>
+                    <p>${escapeHtml(cv.skills.systems)}</p>
                 </div>
             </div>`;
 }
 
-function renderStack() {
-  return profile.stack.map((tech) => `
+function renderStack(cv) {
+  return cv.stack.map((tech) => `
                     <div class="tech-item">
-                        <i class="fa-solid fa-code" style="margin-right:8px; color:var(--primary)"></i> ${tech}
+                        <i class="fa-solid fa-code" style="margin-right:8px; color:var(--primary)"></i> ${escapeHtml(tech)}
                     </div>`).join("");
 }
 
-app.get('/', (req, res) => {
+app.get('/', async (req, res) => {
+  const [enResult, ptResult] = await Promise.all([loadCvResult('en'), loadCvResult('pt')]);
+  const cvEn = enResult.cv;
+  const cvPt = ptResult.cv;
+  cachePublicCv(res, [enResult.source, ptResult.source]);
   res.send(`
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>${profile.name} | Portfolio</title>
+    <title>${escapeHtml(cvEn.name)} | Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
@@ -518,13 +323,13 @@ app.get('/', (req, res) => {
 
     <div class="container">
         <header>
-            <div class="logo">&lt; ${profile.name.split(' ')[0]} /&gt;</div>
+            <div class="logo">&lt; ${escapeHtml(cvEn.name.split(' ')[0])} /&gt;</div>
             <div style="display:flex; gap:20px; align-items:center;">
                 <div class="lang-toggle">
                     <a href="#" class="active" onclick="switchLang('en'); return false;">EN</a>
                     <a href="#" onclick="switchLang('pt'); return false;">PT</a>
                 </div>
-                <a href="${profile.linkedin}" target="_blank" class="btn btn-outline" style="padding: 10px 20px; font-size: 0.9rem;">
+                <a href="${site.linkedin}" target="_blank" class="btn btn-outline" style="padding: 10px 20px; font-size: 0.9rem;">
                     LinkedIn
                 </a>
             </div>
@@ -532,14 +337,14 @@ app.get('/', (req, res) => {
 
         <section class="hero lang-content active" data-lang="en">
             <h2>${i18n.en.greeting}</h2>
-            <h1>${i18n.en.heroTitle} <span style="color:var(--primary)">${profile.name}</span>.</h1>
-            <p class="role">${profile.titleEN} • ${profile.locationEN}</p>
-            <p>${profile.aboutEN}</p>
+            <h1>${i18n.en.heroTitle} <span style="color:var(--primary)">${escapeHtml(cvEn.name)}</span>.</h1>
+            <p class="role">${escapeHtml(cvEn.title)} • ${escapeHtml(cvEn.location)}</p>
+            <p>${escapeHtml(cvEn.about)}</p>
             <div class="btn-group">
-                <a href="${profile.github}" target="_blank" class="btn btn-primary">
+                <a href="${site.github}" target="_blank" class="btn btn-primary">
                     <i class="fa-brands fa-github"></i> ${i18n.en.viewProjects}
                 </a>
-                <a href="https://wa.me/55${profile.phones[0].number}" class="btn btn-outline" target="_blank">
+                <a href="https://wa.me/55${site.phones[0].number}" class="btn btn-outline" target="_blank">
                     <i class="fa-brands fa-whatsapp"></i> ${i18n.en.talkToMe}
                 </a>
                 <a href="/resume" class="btn btn-outline">
@@ -553,14 +358,14 @@ app.get('/', (req, res) => {
 
         <section class="hero lang-content" data-lang="pt">
             <h2>${i18n.pt.greeting}</h2>
-            <h1>${i18n.pt.heroTitle} <span style="color:var(--primary)">${profile.name}</span>.</h1>
-            <p class="role">${profile.titlePT} • ${profile.locationPT}</p>
-            <p>${profile.aboutPT}</p>
+            <h1>${i18n.pt.heroTitle} <span style="color:var(--primary)">${escapeHtml(cvPt.name)}</span>.</h1>
+            <p class="role">${escapeHtml(cvPt.title)} • ${escapeHtml(cvPt.location)}</p>
+            <p>${escapeHtml(cvPt.about)}</p>
             <div class="btn-group">
-                <a href="${profile.github}" target="_blank" class="btn btn-primary">
+                <a href="${site.github}" target="_blank" class="btn btn-primary">
                     <i class="fa-brands fa-github"></i> ${i18n.pt.viewProjects}
                 </a>
-                <a href="https://wa.me/55${profile.phones[0].number}" class="btn btn-outline" target="_blank">
+                <a href="https://wa.me/55${site.phones[0].number}" class="btn btn-outline" target="_blank">
                     <i class="fa-brands fa-whatsapp"></i> ${i18n.pt.talkToMe}
                 </a>
                 <a href="/resume" class="btn btn-outline">
@@ -574,52 +379,62 @@ app.get('/', (req, res) => {
 
         <section class="lang-content active" data-lang="en">
             <h2 class="section-title">${i18n.en.techJourney}</h2>
-            <div class="grid">${renderExperienceCards("en")}</div>
+            <div class="grid">${renderExperienceCards(cvEn)}</div>
         </section>
 
         <section class="lang-content" data-lang="pt">
             <h2 class="section-title">${i18n.pt.techJourney}</h2>
-            <div class="grid">${renderExperienceCards("pt")}</div>
+            <div class="grid">${renderExperienceCards(cvPt)}</div>
         </section>
 
         <section class="lang-content active" data-lang="en">
             <h2 class="section-title">${i18n.en.skillsTitle}</h2>
-            ${renderSkillsGrid("en")}
+            ${renderSkillsGrid("en", cvEn)}
         </section>
 
         <section class="lang-content" data-lang="pt">
             <h2 class="section-title">${i18n.pt.skillsTitle}</h2>
-            ${renderSkillsGrid("pt")}
+            ${renderSkillsGrid("pt", cvPt)}
         </section>
 
         <section class="lang-content active" data-lang="en">
             <h2 class="section-title">${i18n.en.techArsenal}</h2>
-            <div class="tech-grid">${renderStack()}</div>
+            <div class="tech-grid">${renderStack(cvEn)}</div>
         </section>
 
         <section class="lang-content" data-lang="pt">
             <h2 class="section-title">${i18n.pt.techArsenal}</h2>
-            <div class="tech-grid">${renderStack()}</div>
+            <div class="tech-grid">${renderStack(cvPt)}</div>
         </section>
 
         <section class="lang-content active" data-lang="en">
             <h2 class="section-title">${i18n.en.projectsTitle}</h2>
-            <div class="projects-grid">${renderProjectCards("en")}</div>
+            <div class="projects-grid">${renderProjectCards("en", cvEn)}</div>
         </section>
 
         <section class="lang-content" data-lang="pt">
             <h2 class="section-title">${i18n.pt.projectsTitle}</h2>
-            <div class="projects-grid">${renderProjectCards("pt")}</div>
+            <div class="projects-grid">${renderProjectCards("pt", cvPt)}</div>
         </section>
 
         <section class="lang-content active" data-lang="en">
             <h2 class="section-title">${i18n.en.education}</h2>
-            <div class="grid">${renderEducationCards("en")}</div>
+            <div class="grid">${renderEducationCards(cvEn)}</div>
         </section>
 
         <section class="lang-content" data-lang="pt">
             <h2 class="section-title">${i18n.pt.education}</h2>
-            <div class="grid">${renderEducationCards("pt")}</div>
+            <div class="grid">${renderEducationCards(cvPt)}</div>
+        </section>
+
+        <section class="lang-content active" data-lang="en">
+            <h2 class="section-title">${i18n.en.certifications}</h2>
+            <div class="grid">${renderCertificationCards(cvEn)}</div>
+        </section>
+
+        <section class="lang-content" data-lang="pt">
+            <h2 class="section-title">${i18n.pt.certifications}</h2>
+            <div class="grid">${renderCertificationCards(cvPt)}</div>
         </section>
 
         <section>
@@ -627,22 +442,22 @@ app.get('/', (req, res) => {
             <h2 class="section-title lang-content" data-lang="pt">${i18n.pt.languagesLabel}</h2>
             <div class="skills-grid" style="grid-template-columns: 1fr;">
                 <div class="skill-category">
-                    <p class="lang-content active" data-lang="en">${profile.languages.en}</p>
-                    <p class="lang-content" data-lang="pt">${profile.languages.pt}</p>
+                    <p class="lang-content active" data-lang="en">${escapeHtml(cvEn.languages)}</p>
+                    <p class="lang-content" data-lang="pt">${escapeHtml(cvPt.languages)}</p>
                 </div>
             </div>
         </section>
 
         <footer>
-            <p class="lang-content active" data-lang="en">&copy; ${new Date().getFullYear()} ${profile.name}. ${i18n.en.allRights}</p>
-            <p class="lang-content" data-lang="pt">&copy; ${new Date().getFullYear()} ${profile.name}. ${i18n.pt.allRights}</p>
+            <p class="lang-content active" data-lang="en">&copy; ${new Date().getFullYear()} ${escapeHtml(cvEn.name)}. ${i18n.en.allRights}</p>
+            <p class="lang-content" data-lang="pt">&copy; ${new Date().getFullYear()} ${escapeHtml(cvPt.name)}. ${i18n.pt.allRights}</p>
         </footer>
     </div>
 
     <div class="contact-bar">
-        <a href="https://wa.me/55${profile.phones[0].number}" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-        <a href="mailto:${profile.email}" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
-        <a href="${profile.github}" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="https://wa.me/55${site.phones[0].number}" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="mailto:${site.email}" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+        <a href="${site.github}" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
         <a href="/resume.pdf?lang=en" class="pdf-download" aria-label="Download PDF"><i class="fa-solid fa-file-pdf"></i></a>
     </div>
 
@@ -697,10 +512,11 @@ app.get('/', (req, res) => {
 app.get('/resume.pdf', async (req, res) => {
   const lang = String(req.query.lang || '').toLowerCase() === 'pt' ? 'pt' : 'en';
   try {
-    const { buffer, filename } = await buildResumePdf(lang, profile);
+    const result = await loadCvResult(lang);
+    const { buffer, filename } = await buildResumePdf(lang, toPdfProfile(result.cv, site));
     res.setHeader('Content-Type', 'application/pdf');
     res.setHeader('Content-Disposition', `inline; filename="${filename}"`);
-    res.setHeader('Cache-Control', 'no-store');
+    cachePublicCv(res, [result.source]);
     res.send(buffer);
   } catch (err) {
     console.error('PDF generation failed:', err);
@@ -710,13 +526,17 @@ app.get('/resume.pdf', async (req, res) => {
   }
 });
 
-app.get('/resume', (req, res) => {
+app.get('/resume', async (req, res) => {
+  const [enResult, ptResult] = await Promise.all([loadCvResult('en'), loadCvResult('pt')]);
+  const cvEn = enResult.cv;
+  const cvPt = ptResult.cv;
+  cachePublicCv(res, [enResult.source, ptResult.source]);
   res.send(`<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>${profile.name} - Resume / Currículo</title>
+    <title>${escapeHtml(cvEn.name)} - Resume / Currículo</title>
     <style>
         :root { --bg: #ffffff; --text: #24292e; --muted: #586069; --accent: #0366d6; --border: #eaecef; --btn-bg: #f6f8fa; }
         body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; color: var(--text); line-height: 1.6; max-width: 850px; margin: 0 auto; padding: 30px 20px; background-color: var(--bg); }
@@ -735,7 +555,7 @@ app.get('/resume', (req, res) => {
         .job { margin-bottom: 25px; }
         .job-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px; gap: 12px; }
         .job-title { font-weight: 600; font-size: 16px; }
-        .job-meta { font-size: 14px; color: var(--muted); white-space: nowrap; }
+        .job-meta { font-size: 14px; color: var(--muted); text-align: right; }
         .job-details { margin: 0; padding-left: 20px; font-size: 14px; color: #24292e; }
         .job-details li { margin-bottom: 8px; }
         .project-copy { margin: 0; font-size: 14px; color: #24292e; }
@@ -786,81 +606,89 @@ app.get('/resume', (req, res) => {
 
     <div class="lang-en">
         <header>
-            <h1>${profile.name}</h1>
-            <h2>${profile.titleEN}</h2>
+            <h1>${escapeHtml(cvEn.name)}</h1>
+            <h2>${escapeHtml(cvEn.title)}</h2>
             <div class="contact">
-                <span>${profile.locationEN}</span>
-                <span><a href="mailto:${profile.email}">${profile.email}</a></span>
+                <span>${escapeHtml(cvEn.location)}</span>
+                <span><a href="mailto:${site.email}">${site.email}</a></span>
                 <span>+55 22 99784-7289</span>
-                <span><a href="${profile.github}" target="_blank">github.com/Caiolinooo</a></span>
-                <span><a href="${profile.hackerearth}" target="_blank">HackerEarth</a></span>
-                <span><a href="${profile.linkedin}" target="_blank">linkedin.com/in/caio-goulart</a></span>
+                <span><a href="${site.github}" target="_blank">github.com/Caiolinooo</a></span>
+                <span><a href="${site.hackerearth}" target="_blank">HackerEarth</a></span>
+                <span><a href="${site.linkedin}" target="_blank">linkedin.com/in/caio-goulart</a></span>
             </div>
         </header>
-        <div class="summary"><p>${profile.aboutEN}</p></div>
+        <div class="summary"><p>${escapeHtml(cvEn.about)}</p></div>
         <section>
             <h3>Skills</h3>
-            <div class="skill-tags">${profile.stack.map((skill) => `<span>${skill}</span>`).join("")}</div>
+            <div class="skill-tags">${cvEn.stack.map((skill) => `<span>${escapeHtml(skill)}</span>`).join("")}</div>
         </section>
         <section>
             <h3>Professional Experience</h3>
-            ${renderResumeJobs("en")}
+            ${renderResumeJobs(cvEn)}
         </section>
         <section>
             <h3>Education</h3>
-            ${renderResumeEducation("en")}
+            ${renderResumeEducation(cvEn)}
+        </section>
+        <section>
+            <h3>Certifications</h3>
+            ${renderResumeCertifications(cvEn)}
         </section>
         <section>
             <h3>Relevant Projects</h3>
-            ${renderResumeProjects("en")}
+            ${renderResumeProjects("en", cvEn)}
         </section>
         <section>
             <h3>Technical Skills</h3>
-            ${renderSkillsGrid("en")}
+            ${renderSkillsGrid("en", cvEn)}
         </section>
         <section>
             <h3>Languages</h3>
-            <div class="skills-grid" style="grid-template-columns: 1fr;"><div class="skill-category"><p>${profile.languages.en}</p></div></div>
+            <div class="skills-grid" style="grid-template-columns: 1fr;"><div class="skill-category"><p>${escapeHtml(cvEn.languages)}</p></div></div>
         </section>
     </div>
 
     <div class="lang-pt">
         <header>
-            <h1>${profile.name}</h1>
-            <h2>${profile.titlePT}</h2>
+            <h1>${escapeHtml(cvPt.name)}</h1>
+            <h2>${escapeHtml(cvPt.title)}</h2>
             <div class="contact">
-                <span>${profile.locationPT}</span>
-                <span><a href="mailto:${profile.email}">${profile.email}</a></span>
+                <span>${escapeHtml(cvPt.location)}</span>
+                <span><a href="mailto:${site.email}">${site.email}</a></span>
                 <span>+55 22 99784-7289</span>
-                <span><a href="${profile.github}" target="_blank">github.com/Caiolinooo</a></span>
-                <span><a href="${profile.hackerearth}" target="_blank">HackerEarth</a></span>
-                <span><a href="${profile.linkedin}" target="_blank">linkedin.com/in/caio-goulart</a></span>
+                <span><a href="${site.github}" target="_blank">github.com/Caiolinooo</a></span>
+                <span><a href="${site.hackerearth}" target="_blank">HackerEarth</a></span>
+                <span><a href="${site.linkedin}" target="_blank">linkedin.com/in/caio-goulart</a></span>
             </div>
         </header>
-        <div class="summary"><p>${profile.aboutPT}</p></div>
+        <div class="summary"><p>${escapeHtml(cvPt.about)}</p></div>
         <section>
             <h3>Competências</h3>
-            <div class="skill-tags">${profile.stack.map((skill) => `<span>${skill}</span>`).join("")}</div>
+            <div class="skill-tags">${cvPt.stack.map((skill) => `<span>${escapeHtml(skill)}</span>`).join("")}</div>
         </section>
         <section>
             <h3>Experiência Profissional</h3>
-            ${renderResumeJobs("pt")}
+            ${renderResumeJobs(cvPt)}
         </section>
         <section>
             <h3>Formação Acadêmica</h3>
-            ${renderResumeEducation("pt")}
+            ${renderResumeEducation(cvPt)}
+        </section>
+        <section>
+            <h3>Certificações</h3>
+            ${renderResumeCertifications(cvPt)}
         </section>
         <section>
             <h3>Projetos Relevantes</h3>
-            ${renderResumeProjects("pt")}
+            ${renderResumeProjects("pt", cvPt)}
         </section>
         <section>
             <h3>Habilidades Técnicas</h3>
-            ${renderSkillsGrid("pt")}
+            ${renderSkillsGrid("pt", cvPt)}
         </section>
         <section>
             <h3>Idiomas</h3>
-            <div class="skills-grid" style="grid-template-columns: 1fr;"><div class="skill-category"><p>${profile.languages.pt}</p></div></div>
+            <div class="skills-grid" style="grid-template-columns: 1fr;"><div class="skill-category"><p>${escapeHtml(cvPt.languages)}</p></div></div>
         </section>
     </div>
 </body>
