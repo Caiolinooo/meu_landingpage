@@ -90,6 +90,23 @@ async function main() {
   assert.equal(en.experience.find((job) => job.role === "Python Developer").bullets[2].includes("seamless integration"), true);
   assert.equal(en.experience.find((job) => job.role === "Python Developer").bullets.join(" ").includes("perfect"), false);
   assert.equal(en.experience.find((job) => job.role === "Technical Team Lead").bullets[0], "Led field teams specialized in maintenance of large engines and turbines (CAT, Cummins, MAK).");
+  const minimumBullets = {
+    "System Analyst": 6,
+    "Owner / Director": 2,
+    "AI Specialist": 5,
+    "Technical Drafter II": 1,
+    "Python Developer": 2,
+    "Designer III": 2,
+    "Automation Technician": 2,
+    "Training Specialist": 2,
+    "Technical Team Lead": 2,
+    "Technician": 1
+  };
+  for (const [role, minimum] of Object.entries(minimumBullets)) {
+    const job = en.experience.find((item) => item.role === role);
+    assert.ok(job, role);
+    assert.ok(job.bullets.length >= minimum, `${role} has ${job.bullets.length} bullets, minimum ${minimum}`);
+  }
   assert.equal(pt.experience.find((job) => job.role === "Desenvolvedor Python").bullets.length, 3);
   assert.equal(pt.title.startsWith("AI Specialist - Desenvolvedor Full-Stack"), true);
   assert.equal(en.title.startsWith("AI Specialist - Full-Stack Developer"), true);

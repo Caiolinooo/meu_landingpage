@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.1.1] - 2026-10-29
+
+### Fixed
+
+- Restaura os bullets de experiência que a v1.1.0 tinha zerado (SmartStore, Desenhista Técnico II, Projetista III, Técnico de automação), a partir do commit anterior ao merge. Cargos, datas, locais e as descrições exatas de Training Specialist, Technical Team Lead, Technician e Python Developer permanecem as do LinkedIn.
+
 ## [1.1.0] - 2026-10-29
 
 ### Added

@@ -2,7 +2,7 @@
 
 Landing page e currículo de Caio Valerio Goulart Correia.
 
-Versão atual: **1.1.0**
+Versão atual: **1.1.1**
 
 ## Rotas
 
