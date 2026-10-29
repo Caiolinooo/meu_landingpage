@@ -92,13 +92,19 @@ async function main() {
   assert.equal(en.experience.find((job) => job.role === "Python Developer").bullets[2].includes("seamless integration"), true);
   assert.equal(en.experience.find((job) => job.role === "Python Developer").bullets.join(" ").includes("perfect"), false);
   assert.equal(en.experience.find((job) => job.role === "Technical Team Lead").bullets[0], "Led field teams specialized in maintenance of large engines and turbines (CAT, Cummins, MAK).");
+  const masterEn = en.experience.find((job) => job.company === "Master Serviços");
+  const masterPt = pt.experience.find((job) => job.company === "Master Serviços");
+  assert.equal(masterEn.role, "Laser Scanner Operator III");
+  assert.equal(masterPt.role, "Operador de Laser Scanner III");
+  assert.equal(masterEn.bullets.length, 2);
+  assert.equal(masterPt.bullets.length, 2);
   const minimumBullets = {
     "System Analyst": 6,
     "Owner / Director": 2,
     "AI Specialist": 5,
     "Technical Drafter II": 1,
     "Python Developer": 2,
-    "Designer III": 2,
+    "Laser Scanner Operator III": 2,
     "Training Specialist": 2,
     "Technical Team Lead": 2,
     "Technician": 1
