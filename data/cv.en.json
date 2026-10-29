@@ -51,20 +51,25 @@
         "Led the cloud migration of legacy on-premise Windows Servers (2012–2025), reaching 80% completion with zero production downtime.",
         "Implemented end-to-end CI/CD with GitHub Actions and Docker, administered Proxmox virtualization and AWS S3, and deployed a WireGuard VPN for 50+ remote employees — sharply reducing connectivity support tickets."
       ],
-      "location": "Brazil · On-site · Full-time"
+      "location": "Brazil, On-site"
     },
     {
       "role": "Owner / Director",
       "company": "SmartStore",
       "period": "May 2021 – Present",
       "bullets": [
-        "Produced 50+ bilingual technical manuals and system specifications for international clients.",
-        "Provided advanced pre-sales support and detailed hardware/software architecture mapping for complex business proposals."
+        "Founded and managed a technical sales and services company specializing in B2B industrial solutions, growing market presence by 30% and keeping customer satisfaction above 95%.",
+        "Led negotiations, logistics and procurement of custom digital solutions, preparing complex technical proposals and using a CRM to track opportunities.",
+        "Delivered end-to-end solutions that increased customer engagement and operational efficiency.",
+        "Managed on-premises server, PC and network/firewall infrastructure, with proactive monitoring, troubleshooting and security best practices and hardening.",
+        "Automated critical IT tasks, backups and hardware maintenance with Python and Shell scripting, including custom monitoring scripts, cutting manual intervention by 40%.",
+        "Deployed custom Windows builds and configured ERP and software (Totvs RM, AutoCAD, Navisworks), standardizing deployments and documenting installations.",
+        "Established contingency and disaster recovery plans."
       ],
-      "location": "Rio das Ostras, RJ · Full-time"
+      "location": "Rio das Ostras, RJ"
     },
     {
-      "role": "AI Specialist",
+      "role": "AI Specialist (Contract)",
       "company": "micro1",
       "period": "Aug 2026 – Sep 2026",
       "bullets": [
@@ -74,16 +79,21 @@
         "Deployed local LLM serving and agent harnesses on Windows/Linux (vLLM, SGLang, llama.cpp) on dedicated NVIDIA hardware (L4 GPU, 24GB VRAM), plus MCP tool servers for retrieval and graph tools; measured latency/throughput with custom evaluation harnesses.",
         "Curated high-quality training and synthetic datasets (Self-Instruct, Evol-Instruct) with automated validation for dataset integrity, schema compliance, and model alignment."
       ],
-      "location": "San Francisco County, CA, US · Remote · Contract"
+      "location": "San Francisco County, CA, US, Remote"
     },
     {
       "role": "Technical Drafter II",
       "company": "BRtech3D Laser Scanning Solutions",
       "period": "Mar 2024 – Mar 2025",
       "bullets": [
-        "Executed field data collection using Leica TLS equipment and introduced Quality Assurance (QA) processes for outlier cleaning and multiple scan registration."
+        "Executed field data collection using Leica TLS equipment and introduced Quality Assurance (QA) processes for outlier cleaning and multiple scan registration.",
+        "Pioneered the implementation of Unreal Engine for visualization and analysis of digital twins of industrial facilities, with Leica Cyclone integration, interactive navigation and real-time analysis, photorealistic models for predictive maintenance and simulation, and Blueprint Visual Scripting and C++.",
+        "Operated professional-grade 3D laser scanners to capture data from complex facilities, processing point clouds in Leica Cyclone and cleaning and optimizing them for real-time rendering.",
+        "Designed technically detailed 3D models, AutoCAD drawings and as-built/BIM documentation for predictive maintenance, coordinating with engineering to ensure dimensional accuracy and automatically detecting material deviations from point clouds.",
+        "Led R&D efforts to optimize point cloud processing workflows, automated reporting and custom tooling; the automation pipelines cut processing time by 25%, and the technical documentation standardized the processes.",
+        "Collaborated with multidisciplinary teams on the continuous improvement of capture and analysis methodologies."
       ],
-      "location": "Macaé, RJ · Hybrid · Full-time"
+      "location": "Macaé, RJ, Hybrid"
     },
     {
       "role": "Python Developer",
@@ -100,17 +110,23 @@
       "company": "Master Serviços",
       "period": "Oct 2023 – Mar 2024",
       "bullets": [
-        "Operated high-precision 3D laser scanning equipment (Leica) in complex industrial and archaeological environments.",
-        "Led field campaign planning and technical documentation, ensuring millimeter-level precision and data backup redundancy for large-scale data collection."
+        "Led field scanning and point cloud capture projects at complex industrial facilities, increasing accuracy by 20% through capture optimization and reducing completion time by 15% through workflow refinement.",
+        "Produced isometric and orthogonal drawings, material deviation analyses and assembly simulations, with automated quality checks and technical feedback to mechanical teams that delivered 15% higher efficiency and 10% fewer errors.",
+        "Mentored new operators in data capture and processing techniques."
       ],
-      "location": "Macaé, RJ · On-site · Full-time"
+      "location": "Macaé, RJ, On-site"
     },
     {
       "role": "Automation Technician",
       "company": "Jackkk Connection Comercial",
       "period": "Apr 2021 – Apr 2022",
-      "bullets": [],
-      "location": "Macaé, RJ · Full-time"
+      "bullets": [
+        "Delivered specialized technical training in hydraulics, pneumatics and PLC programming, with structured educational modules and hands-on training for customers and partners.",
+        "Designed and simulated complex automation systems with FluidSim and Automation Studio, validating them before implementation to reduce errors and rework.",
+        "Managed technical sales, import logistics and specialized B2B support, including negotiation with international suppliers and technical after-sales support.",
+        "Created system documentation and operating guides for customers."
+      ],
+      "location": "Macaé, RJ"
     },
     {
       "role": "Training Specialist",
@@ -126,14 +142,14 @@
       "company": "TechFix reparos e manutenção",
       "period": "Feb 2018 – Dec 2018",
       "bullets": [],
-      "location": "Rio das Ostras · Full-time"
+      "location": "Rio das Ostras"
     },
     {
       "role": "Industrial Automation Technical Assistant",
       "company": "Jackkk Comercial onshore e offshore",
       "period": "Jun 2017 – Dec 2017",
       "bullets": [],
-      "location": "Granja dos Cavaleiros (Macaé) · Full-time"
+      "location": "Granja dos Cavaleiros (Macaé)"
     },
     {
       "role": "Technical Team Lead",
@@ -148,8 +164,12 @@
       "role": "Product Support",
       "company": "Diesel Line Cambuí",
       "period": "Aug 2015 – May 2017",
-      "bullets": [],
-      "location": "Rio das Ostras · Full-time"
+      "bullets": [
+        "Created technical data books and specialized documentation.",
+        "Managed bilingual negotiations with customers.",
+        "Led teams supporting engine and turbine repairs (CAT, MAK, Cummins, Wärtsilä, STX)."
+      ],
+      "location": "Rio das Ostras"
     },
     {
       "role": "Technician",
@@ -162,9 +182,9 @@
   ],
   "education": [
     {
-      "course": "B.S. in Mechanical Engineering",
+      "course": "B.S. in Mechanical Engineering (in progress)",
       "school": "Centro Universitário UniFatecie",
-      "period": "May 2024 – May 2027"
+      "period": "May 2024 – May 2027 (expected)"
     },
     {
       "course": "High School, Industrial Automation",

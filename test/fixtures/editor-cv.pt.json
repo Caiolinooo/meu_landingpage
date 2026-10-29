@@ -1,0 +1,176 @@
+{
+  "lang": "pt",
+  "name": "Caio Valerio Goulart Correia",
+  "headline": "AI Specialist - Desenvolvedor Full-Stack & Engenheiro DevOps | Especialista em Automação Industrial | Estudante de Engenharia Mecânica | Node.js • Python • AWS • TypeScript",
+  "contact": {
+    "location": "Rio das Ostras, RJ — Brasil (Remoto)",
+    "email": "caiovaleriogoulartcorreia@gmail.com",
+    "phone": "+55 22 99784-7289",
+    "github": "https://github.com/Caiolinooo",
+    "linkedin": "https://linkedin.com/in/caio-goulart"
+  },
+  "experience": [
+    {
+      "title": "Analista de Sistemas",
+      "meta": "ABZ SERVIÇOS LTDA • Mar 2025 – Presente • Brasil, Presencial",
+      "bullets": [
+        "Arquitetou e entregou o EmployeeHub (portal.groupabz.com), portal de RH/operações usado por mais de 200 colaboradores — registros de pessoal, gestão de tripulantes, e-Social, férias, reembolso e ACL — em Next.js 15, TypeScript e Supabase (PostgreSQL com Row-Level Security) na Vercel; reduziu a carga manual do RH em ~40% e o tempo de aprovação em ~95%.",
+        "Construiu e mantém o backend Node.js/TypeScript da plataforma — mais de 600 rotas de API REST (Next.js App Router) com autenticação JWT, autenticação em dois fatores (2FA) e autorização baseada em papéis via Row-Level Security e ACL, protegendo dados sensíveis de RH/PII sob LGPD.",
+        "Entregou a suíte de produtos ABZ em torno do portal: PontoFlow (timesheets offshore bilíngues com aprovação de gestor, anotações por campo e bloqueio de prazo na UI e no RLS), Invoice ABZ (motor FastAPI/SQLAlchemy que transforma planilhas de folha e charge-rate em invoices de clientes) e Ticket-Manager (automação de suporte via Microsoft Graph).",
+        "Definiu o contrato de API entre produtos (import/export autenticado via HMAC) entre o portal e o produto de timesheet PontoFlow, mantendo identidade de colaboradores e comportamento de períodos consistente nos dois sistemas.",
+        "Liderou a migração para nuvem de Windows Servers legados on-premise (2012–2025), atingindo 80% de conclusão com zero downtime em produção.",
+        "Implementou CI/CD de ponta a ponta com GitHub Actions e Docker, administrou virtualização Proxmox e AWS S3 e implantou VPN WireGuard para mais de 50 colaboradores remotos — reduzindo drasticamente tickets de suporte de conectividade."
+      ]
+    },
+    {
+      "title": "Proprietário / Diretor",
+      "meta": "SmartStore • Mai 2021 – Presente • Rio das Ostras, RJ",
+      "bullets": [
+        "Fundou e gerenciou uma empresa de vendas e serviços técnicos especializada em soluções industriais B2B, ampliando a presença de mercado em 30% e mantendo a satisfação dos clientes acima de 95%.",
+        "Liderou negociações, logística e compras de soluções digitais customizadas, elaborando propostas técnicas complexas e usando CRM para acompanhar oportunidades.",
+        "Entregou soluções completas (end-to-end) que aumentaram o engajamento dos clientes e a eficiência operacional.",
+        "Gerenciou a infraestrutura de servidores, PCs e sistemas de rede/firewall on-premises, com monitoramento proativo, troubleshooting e aplicação de boas práticas de segurança e hardening.",
+        "Automatizou tarefas críticas de TI, backup e manutenção de hardware com Python e Shell scripting, incluindo scripts de monitoramento customizados, reduzindo a intervenção manual em 40%.",
+        "Implantou builds customizados do Windows e configurou ERP e softwares (Totvs RM, AutoCAD, Navisworks), padronizando as implantações e documentando as instalações.",
+        "Estabeleceu planos de contingência e de recuperação de desastres."
+      ]
+    },
+    {
+      "title": "AI Specialist (Contrato)",
+      "meta": "micro1 • Ago 2026 – Set 2026 • San Francisco County, CA, EUA, Remoto",
+      "bullets": [
+        "Treinou e avaliou LLMs para programas de frontier models, executando Fine-Tuning Supervisionado (SFT) e otimização de preferência (DPO/RLHF) com PyTorch, Hugging Face PEFT (LoRA/QLoRA), Unsloth e Axolotl.",
+        "Executou testes adversariais (red teaming) para identificar alucinações, falhas de lógica e vieses, realimentando correções nos datasets de treinamento.",
+        "Revisou e fez benchmarking de código gerado por IA em Python, TypeScript, Node.js, FastAPI, React, Next.js e JavaFX — avaliando escolhas de estruturas de dados, comportamento de execução e integrações complexas de APIs.",
+        "Implantou serving local de LLMs e agent harnesses em Windows/Linux (vLLM, SGLang, llama.cpp) em hardware NVIDIA dedicado (GPU L4, 24GB VRAM), além de servidores de ferramentas MCP para retrieval e grafos; mediu latência/throughput com harnesses de avaliação customizados.",
+        "Curou datasets de treinamento e dados sintéticos de alta qualidade (Self-Instruct, Evol-Instruct) com validação automatizada de integridade, conformidade de schema e alinhamento do modelo."
+      ]
+    },
+    {
+      "title": "Desenhista Técnico II",
+      "meta": "BRtech3D Laser Scanning Solutions • Mar 2024 – Mar 2025 • Macaé, RJ, Híbrido",
+      "bullets": [
+        "Executou a coleta de dados em campo utilizando equipamentos Leica TLS e introduziu processos de Garantia da Qualidade (QA) para limpeza de outliers e registro de múltiplos escaneamentos.",
+        "Foi pioneiro na implementação do Unreal Engine para visualização e análise de digital twins de instalações industriais, com integração ao Leica Cyclone, navegação interativa e análise em tempo real, modelos fotorrealísticos para manutenção preditiva e simulação, e uso de Blueprint Visual Scripting e C++.",
+        "Operou laser scanners 3D de nível profissional para captura de dados de instalações complexas, processando nuvens de pontos no Leica Cyclone e realizando limpeza e otimização para renderização em tempo real.",
+        "Projetou modelos 3D com detalhamento técnico, desenhos em AutoCAD e documentação as-built/BIM para manutenção preditiva, em coordenação com a engenharia para garantir precisão dimensional e com detecção automática de desvios de material por nuvem de pontos.",
+        "Liderou esforços de P&D para otimizar workflows de processamento de nuvem de pontos, relatórios automatizados e ferramentas customizadas; os pipelines de automação reduziram o tempo de processamento em 25%, e a documentação técnica padronizou os processos.",
+        "Colaborou com equipes multidisciplinares na melhoria contínua das metodologias de captura e análise."
+      ]
+    },
+    {
+      "title": "Desenvolvedor Python",
+      "meta": "BRTech3D • Mar 2024 – Mar 2025",
+      "bullets": [
+        "Desenvolveu scripts de alta performance em Python (NumPy, SciPy, Open3D) para automatizar pipelines de dados geoespaciais, otimizando o processamento de nuvens de pontos densas (mais de 100 milhões de pontos de dados).",
+        "Implementou rotinas de dados que aumentaram a velocidade de processamento em 40% e melhoraram a compressão de dados, gerando economias significativas de tempo e recursos em dezenas de projetos.",
+        "Modelou e otimizou bancos de dados PostgreSQL utilizando a extensão PostGIS para consultas espaciais complexas e integração perfeita via APIs REST."
+      ]
+    },
+    {
+      "title": "Operador de Laser Scanner III",
+      "meta": "Master Serviços • Out 2023 – Mar 2024 • Macaé, RJ, Presencial",
+      "bullets": [
+        "Liderou projetos de escaneamento em campo e captura de nuvem de pontos em instalações industriais complexas, aumentando a precisão em 20% com a otimização da captura e reduzindo o tempo de conclusão em 15% com o refinamento do workflow.",
+        "Produziu desenhos isométricos e ortogonais, análises de desvio de materiais e simulações de montagem, com verificação automática de qualidade e feedback técnico às equipes mecânicas que gerou 15% mais eficiência e 10% menos erros.",
+        "Orientou novos operadores em técnicas de captura e processamento de dados."
+      ]
+    },
+    {
+      "title": "Técnico de Automação",
+      "meta": "Jackkk Connection Comercial • Abr 2021 – Abr 2022 • Macaé, RJ",
+      "bullets": [
+        "Ministrou treinamento técnico especializado em hidráulica, pneumática e programação de CLP, com módulos educacionais estruturados e treinamento prático para clientes e parceiros.",
+        "Projetou e simulou sistemas de automação complexos com FluidSim e Automation Studio, validando-os antes da implementação para reduzir erros e retrabalho.",
+        "Gerenciou vendas técnicas, logística de importação e suporte B2B especializado, incluindo negociação com fornecedores internacionais e suporte técnico pós-venda.",
+        "Criou documentação de sistemas e guias de operação para clientes."
+      ]
+    },
+    {
+      "title": "Especialista em Treinamento",
+      "meta": "Jackkk Connection Comercial • Mai 2017 – Mar 2021",
+      "bullets": [
+        "Coordenou e ministrou treinamentos técnicos para mais de 500 profissionais em CLPs, hidráulica e automação industrial.",
+        "Desenvolveu simulações educacionais e gerenciou vendas técnicas B2B, construindo relacionamento direto com fornecedores internacionais."
+      ]
+    },
+    {
+      "title": "Sócio / Analista de Sistemas",
+      "meta": "TechFix reparos e manutenção • Fev 2018 – Dez 2018 • Rio das Ostras",
+      "bullets": []
+    },
+    {
+      "title": "Assistente Técnico de Automação Industrial",
+      "meta": "Jackkk Comercial onshore e offshore • Jun 2017 – Dez 2017 • Granja dos Cavaleiros (Macaé)",
+      "bullets": []
+    },
+    {
+      "title": "Líder de Equipe Técnica",
+      "meta": "Diesel Line Cambuí • Ago 2016 – Mai 2017",
+      "bullets": [
+        "Liderou equipes de campo especializadas na manutenção de motores e turbinas de grande porte (CAT, Cummins, MAK).",
+        "Gerenciou tickets de suporte técnico em inglês para clientes internacionais e documentou formalmente processos de análise de falhas."
+      ]
+    },
+    {
+      "title": "Suporte ao Produto",
+      "meta": "Diesel Line Cambuí • Ago 2015 – Mai 2017 • Rio das Ostras",
+      "bullets": [
+        "Criou technical data books e documentação especializada.",
+        "Conduziu negociações bilíngues com clientes.",
+        "Liderou equipes no suporte a reparos de motores e turbinas (CAT, MAK, Cummins, Wärtsilä, STX)."
+      ]
+    },
+    {
+      "title": "Técnico",
+      "meta": "Diesel Line Cambuí • Out 2015 – Ago 2016",
+      "bullets": [
+        "Iniciou a carreira prestando suporte a processos comerciais, gestão de CRM e aplicação estrita de procedimentos de conformidade para manutenção de sistemas a diesel e gás."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "title": "Bacharelado em Engenharia Mecânica (em andamento)",
+      "meta": "Centro Universitário UniFatecie • Mai 2024 – Mai 2027 (previsão)"
+    },
+    {
+      "title": "Ensino Médio, Automação Industrial",
+      "meta": "Instituto Federal Fluminense"
+    },
+    {
+      "title": "Ensino Médio",
+      "meta": "Alternativa Colégio • 2013 – 2015"
+    },
+    {
+      "title": "Técnico em Automação Industrial",
+      "meta": "ETP Escola Técnica • 2013 – 2015"
+    }
+  ],
+  "certifications": [
+    {
+      "title": "Micro1 Hackaton 2026",
+      "meta": "micro1 • Jul 2026"
+    },
+    {
+      "title": "ChatGPT",
+      "meta": "UniFatecie • Ago 2024 • ID 332515"
+    },
+    {
+      "title": "Fundamentos da Inteligência Artificial",
+      "meta": "UniFatecie • Jul 2024 • ID 332515"
+    },
+    {
+      "title": "Hidráulica e Pneumática",
+      "meta": "Parker Hannifin • Jul 2017"
+    },
+    {
+      "title": "Hidráulica e Pneumática",
+      "meta": "Festo • Jul 2017"
+    },
+    {
+      "title": "Técnico de Automação",
+      "meta": "Crea-RJ • Abr 2015 • ID 2017115401"
+    }
+  ]
+}
