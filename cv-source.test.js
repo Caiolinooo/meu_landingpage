@@ -85,6 +85,10 @@ async function main() {
   assert.equal(supportPt.bullets.length, 3);
   assert.equal(en.experience.find((job) => job.role === "Automation Technician").bullets.length, 4);
   assert.equal(pt.experience.find((job) => job.role === "Técnico de Automação").bullets.length, 4);
+  assert.equal(en.experience.find((job) => job.role === "Partner / Systems Analyst").bullets.length, 2);
+  assert.equal(pt.experience.find((job) => job.role === "Sócio / Analista de Sistemas").bullets.length, 2);
+  assert.equal(en.experience.find((job) => job.role === "Industrial Automation Technical Assistant").bullets.length, 2);
+  assert.equal(pt.experience.find((job) => job.role === "Assistente Técnico de Automação Industrial").bullets.length, 2);
   assert.equal(en.experience.find((job) => job.role === "Owner / Director").bullets.length, 8);
   assert.equal(pt.experience.find((job) => job.role === "Proprietário / Diretor").bullets.length, 8);
   assert.deepEqual(en.experience.find((job) => job.role === "Technician").bullets, [
@@ -141,7 +145,7 @@ async function main() {
     assert.deepEqual(completed.education, snapshot.education);
     assert.deepEqual(completed.certifications, snapshot.certifications);
     const total = completed.experience.reduce((sum, job) => sum + job.bullets.length, 0);
-    assert.equal(total, 45);
+    assert.equal(total, 49);
   }
 
   const already = normalizeCv({

@@ -144,14 +144,20 @@
       "role": "Partner / Systems Analyst",
       "company": "TechFix reparos e manutenção",
       "period": "Feb 2018 – Dec 2018",
-      "bullets": [],
+      "bullets": [
+        "Co-managed the business as a partner, serving clients in equipment and systems repair and maintenance.",
+        "Analyzed and configured client systems and computers, handling fault diagnosis, installation and technical support."
+      ],
       "location": "Rio das Ostras"
     },
     {
       "role": "Industrial Automation Technical Assistant",
       "company": "Jackkk Comercial onshore e offshore",
       "period": "Jun 2017 – Dec 2017",
-      "bullets": [],
+      "bullets": [
+        "Supported assembly, testing and maintenance of hydraulic, pneumatic and PLC automation systems for onshore and offshore clients.",
+        "Simulated hydraulic and pneumatic circuits in FluidSim and Automation Studio to validate solutions before implementation, applying Parker and Festo hydraulics and pneumatics training."
+      ],
       "location": "Granja dos Cavaleiros (Macaé)"
     },
     {

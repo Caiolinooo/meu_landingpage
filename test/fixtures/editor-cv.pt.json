@@ -100,12 +100,18 @@
     {
       "title": "Sócio / Analista de Sistemas",
       "meta": "TechFix reparos e manutenção • Fev 2018 – Dez 2018 • Rio das Ostras",
-      "bullets": []
+      "bullets": [
+        "Coadministrou a empresa como sócio, atendendo clientes em reparo e manutenção de equipamentos e sistemas.",
+        "Analisou e configurou sistemas e computadores de clientes, realizando diagnóstico de falhas, instalação e suporte técnico."
+      ]
     },
     {
       "title": "Assistente Técnico de Automação Industrial",
       "meta": "Jackkk Comercial onshore e offshore • Jun 2017 – Dez 2017 • Granja dos Cavaleiros (Macaé)",
-      "bullets": []
+      "bullets": [
+        "Apoiou montagem, testes e manutenção de sistemas hidráulicos, pneumáticos e de automação com CLP para clientes onshore e offshore.",
+        "Simulou circuitos hidráulicos e pneumáticos no FluidSim e no Automation Studio para validar soluções antes da implementação, aplicando a formação Parker e Festo em hidráulica e pneumática."
+      ]
     },
     {
       "title": "Líder de Equipe Técnica",
