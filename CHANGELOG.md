@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.1.2] - 2026-10-29
+
+### Added
+
+- O leitor de `https://cveditor.caiodev.app/api/cv` normaliza `title` e `meta` para cargo, empresa, período e local antes da validação. Itens que já trazem `role`, `company` e `period` permanecem. O fallback e o cache não mudam.
+
+### Changed
+
+- Experiências atualizadas para o conteúdo v1.1.2: Owner/Director (8 bullets), Technical Drafter II (6), Laser Scanner Operator III (5), Automation Technician (4) e Product Support (3). Total de 45 bullets por idioma.
+- Owner/Director e Laser Scanner Operator III recuperam, no final da lista, os bullets da v1.1.1 que tinham sido substituídos.
+- Sócio / Analista de Sistemas (TechFix) e Assistente Técnico de Automação Industrial (Jackkk Comercial onshore e offshore) passam a ter 2 bullets cada. Total de 49 bullets por idioma.
+
 ## [1.1.1] - 2026-10-29
 
 ### Fixed

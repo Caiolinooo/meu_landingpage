@@ -1,5 +1,7 @@
 const assert = require("assert");
-const { isValidCv, loadCv, loadCvResult, fallbackFor } = require("./cv-source");
+const fs = require("fs");
+const path = require("path");
+const { isValidCv, loadCv, loadCvResult, fallbackFor, normalizeCv, withFallbackSections } = require("./cv-source");
 
 function validCv() {
   const cv = structuredClone(fallbackFor("en"));
@@ -79,10 +81,16 @@ async function main() {
   ]);
   const support = en.experience.find((job) => job.role === "Product Support");
   const supportPt = pt.experience.find((job) => job.role === "Suporte ao Produto");
-  assert.deepEqual(support.bullets, []);
-  assert.deepEqual(supportPt.bullets, []);
-  assert.deepEqual(en.experience.find((job) => job.role === "Automation Technician").bullets, []);
-  assert.deepEqual(pt.experience.find((job) => job.role === "Técnico de automação").bullets, []);
+  assert.equal(support.bullets.length, 3);
+  assert.equal(supportPt.bullets.length, 3);
+  assert.equal(en.experience.find((job) => job.role === "Automation Technician").bullets.length, 4);
+  assert.equal(pt.experience.find((job) => job.role === "Técnico de Automação").bullets.length, 4);
+  assert.equal(en.experience.find((job) => job.role === "Partner / Systems Analyst").bullets.length, 2);
+  assert.equal(pt.experience.find((job) => job.role === "Sócio / Analista de Sistemas").bullets.length, 2);
+  assert.equal(en.experience.find((job) => job.role === "Industrial Automation Technical Assistant").bullets.length, 2);
+  assert.equal(pt.experience.find((job) => job.role === "Assistente Técnico de Automação Industrial").bullets.length, 2);
+  assert.equal(en.experience.find((job) => job.role === "Owner / Director").bullets.length, 8);
+  assert.equal(pt.experience.find((job) => job.role === "Proprietário / Diretor").bullets.length, 8);
   assert.deepEqual(en.experience.find((job) => job.role === "Technician").bullets, [
     "Started career supporting commercial processes, CRM management, and strict application of compliance procedures for diesel and gas systems maintenance."
   ]);
@@ -96,15 +104,15 @@ async function main() {
   const masterPt = pt.experience.find((job) => job.company === "Master Serviços");
   assert.equal(masterEn.role, "Laser Scanner Operator III");
   assert.equal(masterPt.role, "Operador de Laser Scanner III");
-  assert.equal(masterEn.bullets.length, 2);
-  assert.equal(masterPt.bullets.length, 2);
+  assert.equal(masterEn.bullets.length, 5);
+  assert.equal(masterPt.bullets.length, 5);
   const minimumBullets = {
     "System Analyst": 6,
-    "Owner / Director": 2,
-    "AI Specialist": 5,
-    "Technical Drafter II": 1,
-    "Python Developer": 2,
-    "Laser Scanner Operator III": 2,
+    "Owner / Director": 8,
+    "AI Specialist (Contract)": 5,
+    "Technical Drafter II": 6,
+    "Python Developer": 3,
+    "Laser Scanner Operator III": 5,
     "Training Specialist": 2,
     "Technical Team Lead": 2,
     "Technician": 1
@@ -119,6 +127,40 @@ async function main() {
   assert.equal(en.title.startsWith("AI Specialist - Full-Stack Developer"), true);
   assert.equal(pt.about.includes("PostgreSQL"), true);
   assert.equal(en.about.includes("PostgreSQL"), true);
+
+  for (const lang of ["en", "pt"]) {
+    const editor = JSON.parse(fs.readFileSync(path.join(__dirname, "test", "fixtures", `editor-cv.${lang}.json`), "utf8"));
+    const snapshot = fallbackFor(lang);
+    const completed = withFallbackSections(normalizeCv(editor), snapshot);
+    assert.equal(isValidCv(completed), true, lang);
+    assert.equal(completed.experience.length, snapshot.experience.length);
+    completed.experience.forEach((job, index) => {
+      const expected = snapshot.experience[index];
+      assert.equal(job.role, expected.role);
+      assert.equal(job.company, expected.company);
+      assert.equal(job.period, expected.period);
+      assert.equal(job.location || "", expected.location || "");
+      assert.deepEqual(job.bullets, expected.bullets);
+    });
+    assert.deepEqual(completed.education, snapshot.education);
+    assert.deepEqual(completed.certifications, snapshot.certifications);
+    const total = completed.experience.reduce((sum, job) => sum + job.bullets.length, 0);
+    assert.equal(total, 49);
+  }
+
+  const already = normalizeCv({
+    experience: [{
+      role: "Kept Role",
+      company: "Kept Co",
+      period: "Jan 2020 – Feb 2020",
+      title: "Ignored",
+      meta: "Other • Mar 2021 – Apr 2021 • Nowhere",
+      bullets: ["keep me"]
+    }]
+  });
+  assert.equal(already.experience[0].role, "Kept Role");
+  assert.equal(already.experience[0].company, "Kept Co");
+  assert.equal(already.experience[0].period, "Jan 2020 – Feb 2020");
 
   console.log("cv-source.test.js ok");
 }

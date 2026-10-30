@@ -96,8 +96,75 @@ function fallbackResult(lang) {
   return { cv: fallbackFor(lang), source: "fallback" };
 }
 
+function metaParts(meta) {
+  if (!isString(meta)) return [];
+  return meta.split(" • ").map((part) => part.trim()).filter((part) => part.length > 0);
+}
+
+function normalizeExperienceItem(job) {
+  if (!job || typeof job !== "object" || Array.isArray(job)) return job;
+  if (isNonEmptyString(job.role) && isNonEmptyString(job.company) && isNonEmptyString(job.period)) {
+    return job;
+  }
+  const parts = metaParts(job.meta);
+  const next = {
+    role: isString(job.title) ? job.title : (job.role || ""),
+    company: parts[0] || "",
+    period: parts[1] || "",
+    bullets: Array.isArray(job.bullets) ? job.bullets : []
+  };
+  if (parts[2]) next.location = parts[2];
+  return next;
+}
+
+function normalizeEducationItem(item) {
+  if (!item || typeof item !== "object" || Array.isArray(item)) return item;
+  if (isNonEmptyString(item.course) && isNonEmptyString(item.school)) return item;
+  const parts = metaParts(item.meta);
+  const next = {
+    course: isString(item.title) ? item.title : (item.course || ""),
+    school: parts[0] || ""
+  };
+  if (parts[1]) next.period = parts[1];
+  return next;
+}
+
+function normalizeCertificationItem(item) {
+  if (!item || typeof item !== "object" || Array.isArray(item)) return item;
+  if (isNonEmptyString(item.name) && isNonEmptyString(item.issuer) && isNonEmptyString(item.date)) {
+    return item;
+  }
+  const parts = metaParts(item.meta);
+  const next = {
+    name: isString(item.title) ? item.title : (item.name || ""),
+    issuer: parts[0] || "",
+    date: parts[1] || ""
+  };
+  if (parts[2]) next.credentialId = parts[2].replace(/^ID\s+/i, "");
+  return next;
+}
+
+function normalizeCv(data) {
+  if (!data || typeof data !== "object" || Array.isArray(data)) return data;
+  const cv = { ...data };
+  if (!isNonEmptyString(cv.title) && isNonEmptyString(cv.headline)) cv.title = cv.headline;
+  if (Array.isArray(cv.experience)) cv.experience = cv.experience.map(normalizeExperienceItem);
+  if (Array.isArray(cv.education)) cv.education = cv.education.map(normalizeEducationItem);
+  if (Array.isArray(cv.certifications)) cv.certifications = cv.certifications.map(normalizeCertificationItem);
+  return cv;
+}
+
+function withFallbackSections(cv, fallback) {
+  const next = { ...cv };
+  for (const key of ["location", "about", "stack", "projects", "skills", "languages"]) {
+    if (next[key] == null || next[key] === "") next[key] = fallback[key];
+  }
+  return next;
+}
+
 async function loadCvResult(lang) {
   const normalized = lang === "pt" ? "pt" : "en";
+  const fallback = fallbackFor(normalized);
   try {
     const response = await fetch(`${CV_ENDPOINT}?lang=${normalized}`, {
       signal: AbortSignal.timeout(FETCH_TIMEOUT_MS),
@@ -105,8 +172,9 @@ async function loadCvResult(lang) {
     });
     if (!response.ok) return fallbackResult(normalized);
     const data = await response.json();
-    if (!isValidCv(data)) return fallbackResult(normalized);
-    return { cv: data, source: "remote" };
+    const completed = withFallbackSections(normalizeCv(data), fallback);
+    if (!isValidCv(completed)) return fallbackResult(normalized);
+    return { cv: completed, source: "remote" };
   } catch {
     return fallbackResult(normalized);
   }
@@ -187,5 +255,7 @@ module.exports = {
   loadCv,
   loadCvResult,
   fallbackFor,
+  normalizeCv,
+  withFallbackSections,
   toPdfProfile
 };
